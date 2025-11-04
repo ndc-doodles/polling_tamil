@@ -14,17 +14,18 @@
 
 <nav id="navbar" class="fixed w-full top-0 z-50 bg-transparent backdrop-blur-md border-b border-white/30 transition-colors duration-300">
   <div class="px-6 md:px-20 flex justify-between items-center h-16">
-    <a href="index.html" class="text-2xl font-bold text-white">TN Polls 2026</a>
+    <a href="index.html" class="text-2xl font-bold text-white" data-en="TN Polls 2026" data-ta="தமிழ்நாடு தேர்தல் 2026">தமிழ்நாடு தேர்தல் 2026</a>
 
     <div class="hidden md:flex items-center space-x-6">
-      <a href="index.html" class="px-4 py-2 border border-white rounded bg-white/10 text-white hover:bg-white/20 transition">
-        Home
-      </a>
-      <a href="information.html" class="text-white hover:text-gray-200 transition">Overview</a>
-      <a href="blogs.html" class="text-white hover:text-gray-200 transition">Blogs</a>
+      <a href="index.html" class="px-4 py-2 border border-white rounded bg-white/10 text-white hover:bg-white/20 transition"
+         data-en="Home" data-ta="முகப்பு">முகப்பு</a>
+      <a href="information.html" class="text-white hover:text-gray-200 transition"
+         data-en="Overview" data-ta="தகவல்">தகவல்</a>
+      <a href="blogs.html" class="text-white hover:text-gray-200 transition"
+         data-en="Blogs" data-ta="வலைப்பதிவுகள்">வலைப்பதிவுகள்</a>
 
       <div class="flex items-center space-x-2">
-        <span id="lang-label" class="text-white font-semibold text-sm">TAMIL</span>
+        <span id="lang-label" class="text-white font-semibold text-sm">தமிழ்</span>
         <label class="relative inline-flex items-center cursor-pointer">
           <input type="checkbox" class="sr-only peer" id="lang-toggle">
           <div class="w-10 h-6 bg-gray-300 rounded-full peer-checked:bg-blue-500 transition-colors"></div>
@@ -32,132 +33,97 @@
         </label>
       </div>
     </div>
-
-    <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
-  </div>
-
-  <div id="overlay" class="fixed inset-0 bg-black/50 hidden z-50"></div>
-
-  <div id="mobile-menu" class="fixed top-0 right-[-70%] h-screen w-[70%] bg-[#06038D]/95 text-white shadow-lg transition-all duration-500 z-[9999] flex flex-col px-6 py-8 space-y-4">
-    <a href="index.html" class="px-4 py-2 border border-white rounded bg-white/10 text-white hover:bg-white/20 transition">Home</a>
-    <a href="information.html" class="hover:text-red-500 transition">Overview</a>
-    <a href="blogs.html" class="hover:text-red-500 transition">Blogs</a>
-
-    <div class="flex items-center space-x-2 mt-6">
-      <span id="mobile-lang-label" class="text-white font-semibold text-sm">TAMIL</span>
-      <label class="relative inline-flex items-center cursor-pointer">
-        <input type="checkbox" class="sr-only peer" id="mobile-lang-toggle">
-        <div class="w-10 h-6 bg-gray-300 rounded-full peer-checked:bg-blue-500 transition-colors"></div>
-        <div class="absolute left-[2px] top-[2px] w-5 h-5 bg-white rounded-full shadow-md peer-checked:translate-x-[18px] transition-transform duration-300"></div>
-      </label>
-    </div>
   </div>
 </nav>
 
-
-
 <section id="carousel" class="relative w-full h-screen overflow-hidden">
 
+  <!-- === SLIDE 1 === -->
   <div class="absolute inset-0 opacity-0 transition-opacity duration-1000 slide">
     <img src="./static/images/india.png" class="w-full h-full object-cover" alt="Tamil Nadu Map">
     <div class="absolute inset-0 bg-black/40"></div>
     <div class="absolute bottom-[50%] md:bottom-[20%] left-[5%] z-20 space-y-8">
-      <h1 class="text-5xl md:text-[4rem]  font-bold space-y-2 md:space-y-12 uppercase">
-        <span class="block text-white">Empower Democracy</span>
-        <span class="block outlined-text">Vote Now!</span>
+      <h1 class="text-5xl md:text-[4rem] font-bold uppercase">
+        <span class="block text-white" data-en="Empower Democracy" data-ta="ஜனநாயகத்தை வலுப்படுத்துங்கள்">ஜனநாயகத்தை வலுப்படுத்துங்கள்</span>
+        <span class="block outlined-text" data-en="Vote Now!" data-ta="இப்போதே வாக்களியுங்கள்!">இப்போதே வாக்களியுங்கள்!</span>
       </h1>
-      <p class="text-white/90">Shape the future of Tamil Nadu with every choice you make</p>
+      <p class="text-white/90" data-en="Shape the future of Tamil Nadu with every choice you make" data-ta="நீங்கள் எடுக்கும் ஒவ்வொரு தேர்வும் தமிழ்நாட்டின் எதிர்காலத்தை வடிவமைக்கிறது">நீங்கள் எடுக்கும் ஒவ்வொரு தேர்வும் தமிழ்நாட்டின் எதிர்காலத்தை வடிவமைக்கிறது</p>
     </div>
   </div>
 
- 
+  <!-- === SLIDE 2 === -->
   <div class="absolute inset-0 opacity-0 transition-opacity duration-1000 slide">
-
-  <img src="./static/images/img0.jpg" 
-       class="hidden md:block w-full h-full object-cover" 
-       alt="Chennai">
-
-  <img src="./static/images/mobile_img0.jpg" 
-       class="block md:hidden w-full h-full object-cover" 
-       alt="Chennai Mobile">
-
-  <div class="absolute inset-0 bg-black/40"></div>
-
-  <div class="absolute bottom-[50%] md:bottom-[20%] left-[5%] z-20 space-y-8">
-    <h1 class="text-5xl md:text-[4rem] font-bold space-y-2 md:space-y-12 uppercase">
-      <span class="block text-white">Your Vote Matters</span>
-      <span class="block outlined-text">Be Heard!</span>
-    </h1>
-    <p class="text-white/90 text-sm md:text-base">
-      Be informed, be responsible and make your voice heard
-    </p>
+    <img src="./static/images/img0.jpg" class="hidden md:block w-full h-full object-cover" alt="Chennai">
+    <img src="./static/images/mobile_img0.jpg" class="block md:hidden w-full h-full object-cover" alt="Chennai Mobile">
+    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="absolute bottom-[50%] md:bottom-[20%] left-[5%] z-20 space-y-8">
+      <h1 class="text-5xl md:text-[4rem] font-bold uppercase">
+        <span class="block text-white" data-en="Your Vote Matters" data-ta="உங்கள் வாக்கு முக்கியம்">உங்கள் வாக்கு முக்கியம்</span>
+        <span class="block outlined-text" data-en="Be Heard!" data-ta="உங்கள் குரல் கேட்கப்படட்டும்!">உங்கள் குரல் கேட்கப்படட்டும்!</span>
+      </h1>
+      <p class="text-white/90 text-sm md:text-base"
+         data-en="Be informed, be responsible and make your voice heard"
+         data-ta="தகவலுடன் இருங்கள், பொறுப்புடன் இருங்கள், உங்கள் குரலை வெளிப்படுத்துங்கள்">தகவலுடன் இருங்கள், பொறுப்புடன் இருங்கள், உங்கள் குரலை வெளிப்படுத்துங்கள்</p>
+    </div>
   </div>
 
-</div>
-
-
+  <!-- === SLIDE 3 === -->
   <div class="absolute inset-0 opacity-0 transition-opacity duration-1000 slide">
     <img src="./static/images/india2.png" class="w-full h-full object-cover" alt="Madurai">
     <div class="absolute inset-0 bg-black/40"></div>
-  <div class="absolute bottom-[50%] md:bottom-[20%]  left-[5%] z-20 space-y-8">
-      <h1 class="text-5xl md:text-[4rem] font-bold space-y-2 md:space-y-12 uppercase">
- <span class="block text-white">Meet Candidates</span>
-<span class="block outlined-text">Vote Wise</span>
-
-</h1>
-
-      <p class="text-white/90">Explore policies promises and visions before casting your vote</p>
+    <div class="absolute bottom-[50%] md:bottom-[20%] left-[5%] z-20 space-y-8">
+      <h1 class="text-5xl md:text-[4rem] font-bold uppercase">
+        <span class="block text-white" data-en="Meet Candidates" data-ta="வேட்பாளர்களை சந்திக்கவும்">வேட்பாளர்களை சந்திக்கவும்</span>
+        <span class="block outlined-text" data-en="Vote Wise" data-ta="விவேகமாக வாக்களிக்கவும்">விவேகமாக வாக்களிக்கவும்</span>
+      </h1>
+      <p class="text-white/90"
+         data-en="Explore policies, promises, and visions before casting your vote"
+         data-ta="வாக்களிக்கும் முன் கொள்கைகள், வாக்குறுதிகள் மற்றும் பார்வைகளை அறிந்துகொள்ளுங்கள்">வாக்களிக்கும் முன் கொள்கைகள், வாக்குறுதிகள் மற்றும் பார்வைகளை அறிந்துகொள்ளுங்கள்</p>
     </div>
   </div>
 
-
-  <div class="absolute right-0 top-[50%] md:top-1/4 w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 bg-white/70 backdrop-blur-md border-l-4 border-[#FF671F] rounded-2xl flex flex-col justify-center p-6 space-y-4 slide-box md:mr-10" data-slide="0">
-    <h1 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800">Vote for Your Candidate</h1>
-    <p class="text-xs sm:text-sm md:text-sm text-gray-800 max-w-sm">
-      Make your voice count by choosing the candidate who best represents your vision for Tamil Nadu’s future.
-    </p>
-    <a href="#polling" onclick="document.querySelector('#polling').scrollIntoView({ behavior: 'smooth', block: 'start' }); return false;"
-       class="bg-[#FF671F] hover:bg-[#FF671F]/80 text-white font-semibold px-4 py-2 rounded-full shadow-lg transition">
-      Go to Polling
-    </a>
+  <!-- === SLIDE BOXES === -->
+  <div class="absolute right-0 top-[50%] md:top-1/4 w-64 md:w-80 bg-white/70 backdrop-blur-md border-l-4 border-[#FF671F] rounded-2xl flex flex-col justify-center p-6 space-y-4 slide-box" data-slide="0">
+    <h1 class="text-xl md:text-3xl font-bold text-gray-800" data-en="Vote for Your Candidate" data-ta="உங்கள் வேட்பாளருக்காக வாக்களியுங்கள்">உங்கள் வேட்பாளருக்காக வாக்களியுங்கள்</h1>
+    <p class="text-xs md:text-sm text-gray-800" data-en="Make your voice count by choosing the candidate who best represents your vision for Tamil Nadu’s future." data-ta="தமிழ்நாட்டின் எதிர்காலத்துக்கான உங்கள் பார்வையை பிரதிநிதித்துவப்படுத்தும் வேட்பாளரைத் தேர்ந்தெடுத்து உங்கள் குரலை வெளிப்படுத்துங்கள்.">தமிழ்நாட்டின் எதிர்காலத்துக்கான உங்கள் பார்வையை பிரதிநிதித்துவப்படுத்தும் வேட்பாளரைத் தேர்ந்தெடுத்து உங்கள் குரலை வெளிப்படுத்துங்கள்.</p>
+  <a href="#polling"
+   onclick="document.querySelector('#polling').scrollIntoView({ behavior: 'smooth', block: 'start' }); return false;"
+   class="bg-[#FF671F] hover:bg-[#FF671F]/80 text-white font-semibold px-4 py-2 rounded-full shadow-lg transition"
+   data-en="Go to Polling"
+   data-ta="வாக்குப்பதிவு பகுதிக்கு செல்லவும்">
+   வாக்குப்பதிவு பகுதிக்கு செல்லவும்
+</a>
   </div>
 
-
-  <div class="absolute right-0 top-[50%] md:top-1/4 w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 bg-white/70 backdrop-blur-md border-l-4 border-[#06038D] rounded-2xl flex flex-col justify-center p-6 space-y-4 slide-box hidden md:mr-10" data-slide="1">
-    <h1 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800">Participate in Democracy</h1>
-    <p class="text-xs sm:text-sm md:text-sm text-gray-800 max-w-sm">
-      Stay informed about candidates, policies and key issues to make responsible choices.
-    </p>
-    <a href="#info-section" class="bg-[#06038D] hover:bg-[#06038D]/80 text-white font-semibold px-4 py-2 rounded-full shadow-lg transition">
-      Learn More
-    </a>
+  <div class="absolute right-0 top-[50%] md:top-1/4 w-64 md:w-80 bg-white/70 backdrop-blur-md border-l-4 border-[#06038D] rounded-2xl flex flex-col justify-center p-6 space-y-4 slide-box hidden" data-slide="1">
+    <h1 class="text-xl md:text-3xl font-bold text-gray-800" data-en="Participate in Democracy" data-ta="ஜனநாயகத்தில் பங்கேற்கவும்">ஜனநாயகத்தில் பங்கேற்கவும்</h1>
+    <p class="text-xs md:text-sm text-gray-800" data-en="Stay informed about candidates, policies and key issues to make responsible choices." data-ta="வேட்பாளர்கள், கொள்கைகள் மற்றும் முக்கிய பிரச்சினைகள் குறித்து விழிப்புடன் இருங்கள்.">வேட்பாளர்கள், கொள்கைகள் மற்றும் முக்கிய பிரச்சினைகள் குறித்து விழிப்புடன் இருங்கள்.</p>
+ <a href="#info-section"
+   class="bg-[#06038D] hover:bg-[#06038D]/80 text-white font-semibold px-4 py-2 rounded-full shadow-lg transition"
+   data-en="Learn More"
+   data-ta="மேலும் அறிக">
+   மேலும் அறிக
+</a>
   </div>
 
-
-  <div class="absolute right-0 top-[50%] md:top-1/4 w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 bg-white/70 backdrop-blur-md border-l-4 border-[#046A38] rounded-2xl flex flex-col justify-center p-6 space-y-4 slide-box hidden md:mr-10" data-slide="2">
-    <h1 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800">Latest Political Updates</h1>
-    <p class="text-xs sm:text-sm md:text-sm text-gray-800 max-w-sm">
-      Get the newest insights, news and developments from the political landscape of Tamil Nadu.
-    </p>
-    <a href="#news" class="bg-[#046A38] hover:bg-[#046A38]/80 text-white font-semibold px-4 py-2 rounded-full shadow-lg transition">
-      Read Updates
-    </a>
+  <div class="absolute right-0 top-[50%] md:top-1/4 w-64 md:w-80 bg-white/70 backdrop-blur-md border-l-4 border-[#046A38] rounded-2xl flex flex-col justify-center p-6 space-y-4 slide-box hidden" data-slide="2">
+    <h1 class="text-xl md:text-3xl font-bold text-gray-800" data-en="Latest Political Updates" data-ta="சமீபத்திய அரசியல் புதுப்பிப்புகள்">சமீபத்திய அரசியல் புதுப்பிப்புகள்</h1>
+    <p class="text-xs md:text-sm text-gray-800" data-en="Get the newest insights, news and developments from the political landscape of Tamil Nadu." data-ta="தமிழ்நாட்டின் அரசியல் நிலவரத்தின் புதிய செய்திகள் மற்றும் நிகழ்வுகளை அறிந்து கொள்ளுங்கள்.">தமிழ்நாட்டின் அரசியல் நிலவரத்தின் புதிய செய்திகள் மற்றும் நிகழ்வுகளை அறிந்து கொள்ளுங்கள்.</p>
+  <a href="#news"
+   class="bg-[#046A38] hover:bg-[#046A38]/80 text-white font-semibold px-4 py-2 rounded-full shadow-lg transition"
+   data-en="Read Updates"
+   data-ta="செய்திகளைப் படிக்கவும்">
+   செய்திகளைப் படிக்கவும்
+</a>
   </div>
 
-
+  <!-- SLIDER ARROWS -->
   <div class="absolute bottom-6 right-6 flex gap-3 z-30">
-    
     <button id="prev-slide" class="w-12 h-12 flex items-center justify-center bg-white/30 border border-white rounded-lg hover:bg-white/50 transition">
       <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
       </svg>
     </button>
-
 
     <button id="next-slide" class="w-12 h-12 flex items-center justify-center bg-white/30 border border-white rounded-lg hover:bg-white/50 transition">
       <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -170,478 +136,184 @@
 
 
 
-
 <div id="polling">
 
 </div>
 
+<!-- ✅ Candidate Section with Filters, Voting & Language Support -->
 <section class="my-20 px-4 max-w-7xl mx-auto">
   <!-- Header -->
   <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
     <div class="md:w-2/3">
-      <p class="text-xl text-[#06038D] font-semibold uppercase mb-2">Your Voice Matters</p>
-      <h1 class="text-4xl md:text-5xl font-bold uppercase text-black tracking-wide mb-4">
-        Meet the Candidates
+      <p class="text-xl text-[#06038D] font-semibold uppercase mb-2" data-en="Your Voice Matters" data-ta="உங்கள் குரல் முக்கியம்">
+        உங்கள் குரல் முக்கியம்
+      </p>
+      <h1 class="text-4xl md:text-5xl font-bold uppercase text-black tracking-wide mb-4" data-en="Meet the Candidates" data-ta="வேட்பாளர்களை சந்திக்கவும்">
+        வேட்பாளர்களை சந்திக்கவும்
       </h1>
-      <p class="text-gray-800 text-lg leading-relaxed">
-        Explore the candidates contesting the Tamil Nadu Legislative Assembly Election 2026.
-        <span class="text-[#046A38]">Check your district and constituency, learn about their vision, and vote here!</span>
+      <p class="text-gray-800 text-lg leading-relaxed" data-en="Explore the candidates contesting the Tamil Nadu Legislative Assembly Election 2026. Check your district and constituency, learn about their vision, and vote here!" data-ta="தமிழ்நாடு சட்டமன்றத் தேர்தல் 2026ல் போட்டியிடும் வேட்பாளர்களை ஆராயுங்கள். உங்கள் மாவட்டம் மற்றும் தொகுதியை சரிபார்த்து, அவர்களின் நோக்கத்தை அறிந்து, இங்கே வாக்களிக்கவும்!">
+        தமிழ்நாடு சட்டமன்றத் தேர்தல் 2026ல் போட்டியிடும் வேட்பாளர்களை ஆராயுங்கள். உங்கள் மாவட்டம் மற்றும் தொகுதியை சரிபார்த்து, அவர்களின் நோக்கத்தை அறிந்து, இங்கே வாக்களிக்கவும்!
       </p>
     </div>
   </div>
 
- <!-- Filters -->
-<div
-  class="relative flex flex-wrap md:flex-nowrap items-center justify-between gap-4 mt-10 border-t border-blue-200 pt-6"
->
-  <div class="flex items-center gap-2 md:gap-3 w-full md:w-auto">
-    <div
-      class="h-[3px] w-10 md:w-16 bg-[#06038D] rounded-full animate-pulse"
-    ></div>
-    <p
-      class="text-[#06038D] font-semibold text-xs md:text-sm whitespace-nowrap"
-    >
-      Filter by <span class="text-green-700">District</span>,
-      <span class="text-orange-600">Constituency</span> or search by
-      <span class="text-[#06038D]">Candidate</span> /
-      <span class="text-[#FF671F]">Party</span>.
-    </p>
+  <!-- Filters -->
+  <div class="relative flex flex-wrap md:flex-nowrap items-center justify-between gap-4 mt-10 border-t border-blue-200 pt-6">
+    <div class="flex items-center gap-2 md:gap-3 w-full md:w-auto">
+      <div class="h-[3px] w-10 md:w-16 bg-[#06038D] rounded-full animate-pulse"></div>
+      <p class="text-[#06038D] font-semibold text-xs md:text-sm whitespace-nowrap" data-en="Filter by District, Constituency or search by Candidate / Party." data-ta="மாவட்டம், தொகுதி அல்லது வேட்பாளர் / கட்சி மூலம் வடிகட்டவும்.">
+        மாவட்டம், தொகுதி அல்லது வேட்பாளர் / கட்சி மூலம் வடிகட்டவும்.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap md:flex-nowrap justify-end items-center gap-3 w-full">
+      <!-- District -->
+      <!-- 🌍 DISTRICT DROPDOWN -->
+<select id="districtFilter"
+  class="border-2 border-blue-700 bg-blue-100 text-blue-900 font-semibold px-4 py-2 rounded-full w-full md:w-[180px] text-sm">
+  <option value="all" data-en="District" data-ta="மாவட்டம்">மாவட்டம்</option>
+</select>
+
+
+      <!-- Constituency -->
+      <select id="constituencyFilter" class="border-2 border-green-700 bg-green-100 text-green-900 font-semibold px-4 py-2 rounded-full w-full md:w-[180px] text-sm">
+        <option value="all" data-en="Constituency" data-ta="தொகுதி">தொகுதி</option>
+      </select>
+
+      <!-- Search -->
+      <input type="text" id="searchInput" placeholder="தேடல்..." data-en="Search..." data-ta="தேடல்..." class="border-2 border-[#06038D] bg-white px-4 py-2 rounded-full text-gray-800 focus:ring-4 focus:ring-blue-400 focus:outline-none w-full md:w-[200px] text-sm" />
+    </div>
   </div>
 
-  <div
-    class="flex flex-wrap md:flex-nowrap justify-end items-center gap-3 w-full"
-  >
-    <!-- District -->
-    <select
-      id="districtFilter"
-      class="border-2 border-blue-700 bg-blue-100 text-blue-900 font-semibold px-4 py-2 rounded-full w-full md:w-[180px] text-sm"
-    >
-      <option value="all">District</option>
-      <option value="Ariyalur">Ariyalur</option>
-      <option value="Chengalpattu">Chengalpattu</option>
-      <option value="Chennai">Chennai</option>
-      <option value="Coimbatore">Coimbatore</option>
-      <option value="Cuddalore">Cuddalore</option>
-      <option value="Dharmapuri">Dharmapuri</option>
-      <option value="Dindigul">Dindigul</option>
-      <option value="Erode">Erode</option>
-      <option value="Kallakurichi">Kallakurichi</option>
-      <option value="Kanchipuram">Kanchipuram</option>
-      <option value="Kanyakumari">Kanyakumari</option>
-      <option value="Karur">Karur</option>
-      <option value="Krishnagiri">Krishnagiri</option>
-      <option value="Madurai">Madurai</option>
-      <option value="Mayiladuthurai">Mayiladuthurai</option>
-      <option value="Nagapattinam">Nagapattinam</option>
-      <option value="Namakkal">Namakkal</option>
-      <option value="Perambalur">Perambalur</option>
-      <option value="Pudukkottai">Pudukkottai</option>
-      <option value="Ramanathapuram">Ramanathapuram</option>
-      <option value="Ranipet">Ranipet</option>
-      <option value="Salem">Salem</option>
-      <option value="Sivaganga">Sivaganga</option>
-      <option value="Tenkasi">Tenkasi</option>
-      <option value="Thanjavur">Thanjavur</option>
-      <option value="Theni">Theni</option>
-      <option value="Thoothukudi">Thoothukudi</option>
-      <option value="Tiruchirappalli">Tiruchirappalli</option>
-      <option value="Tirunelveli">Tirunelveli</option>
-      <option value="Tirupathur">Tirupathur</option>
-      <option value="Tiruppur">Tiruppur</option>
-      <option value="Tiruvallur">Tiruvallur</option>
-      <option value="Tiruvannamalai">Tiruvannamalai</option>
-      <option value="Tiruvarur">Tiruvarur</option>
-      <option value="Vellore">Vellore</option>
-      <option value="Viluppuram">Viluppuram</option>
-      <option value="Virudhunagar">Virudhunagar</option>
-    </select>
 
-    <!-- Constituency -->
-    <select
-      id="constituencyFilter"
-      class="border-2 border-green-700 bg-green-100 text-green-900 font-semibold px-4 py-2 rounded-full w-full md:w-[180px] text-sm"
-    >
-      <option value="all">Constituency</option>
-    </select>
+<!-- Candidate Grid -->
+<div id="candidatesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
 
-    <!-- Search -->
-    <input
-      type="text"
-      id="searchInput"
-      placeholder="Search..."
-      class="border-2 border-[#06038D] bg-white px-4 py-2 rounded-full text-gray-800 focus:ring-4 focus:ring-blue-400 focus:outline-none w-full md:w-[200px] text-sm"
-    />
+  <!-- EPS -->
+  <div class="relative group rounded-2xl overflow-hidden shadow-xl bg-white hover:shadow-2xl transition"
+    data-name="Edappadi K. Palaniswami" data-party="AIADMK" data-district="Salem" data-constituency="Edappadi">
+    <div class="absolute top-3 right-3 z-20">
+      <img src="./static/images/aiadmk.png" class="w-16 h-16 object-cover rounded-full">
+    </div>
+    <img src="./static/images/palaniswami.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+    <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
+      <h1 class="text-2xl font-bold" data-en="Edappadi K. Palaniswami" data-ta="எடப்பாடி கே. பழனிசாமி">எடப்பாடி கே. பழனிசாமி</h1>
+      <p class="text-sm" data-en="District: Salem" data-ta="மாவட்டம்: சேலம்">மாவட்டம்: சேலம்</p>
+      <p class="text-sm" data-en="Constituency: Edappadi" data-ta="தொகுதி: எடப்பாடி">தொகுதி: எடப்பாடி</p>
+      <p class="text-sm" data-en="Party: AIADMK" data-ta="கட்சி: அதிமுக">கட்சி: அதிமுக</p>
+      <button class="vote-btn mt-3 bg-green-700 hover:bg-green-500 px-7 py-2 rounded-full font-semibold transition"
+        data-en="Vote" data-ta="வாக்களி">வாக்களி</button>
+    </div>
   </div>
+
+  <!-- Annamalai -->
+  <div class="relative group rounded-2xl overflow-hidden shadow-xl bg-white hover:shadow-2xl transition"
+    data-name="K. Annamalai" data-party="BJP" data-district="Coimbatore" data-constituency="Coimbatore South">
+    <div class="absolute top-3 right-3 z-20">
+      <img src="./static/images/bjp.png" class="w-16 h-16 object-cover rounded-full">
+    </div>
+    <img src="./static/images/annamalai.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+    <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
+      <h1 class="text-2xl font-bold" data-en="K. Annamalai" data-ta="கே. அண்ணாமலை">கே. அண்ணாமலை</h1>
+      <p class="text-sm" data-en="District: Coimbatore" data-ta="மாவட்டம்: கோயம்புத்தூர்">மாவட்டம்: கோயம்புத்தூர்</p>
+      <p class="text-sm" data-en="Constituency: Coimbatore South" data-ta="தொகுதி: கோயம்புத்தூர் தெற்கு">தொகுதி: கோயம்புத்தூர் தெற்கு</p>
+      <p class="text-sm" data-en="Party: BJP" data-ta="கட்சி: பாஜக">கட்சி: பாஜக</p>
+      <button class="vote-btn mt-3 bg-green-700 hover:bg-green-500 px-7 py-2 rounded-full font-semibold transition"
+        data-en="Vote" data-ta="வாக்களி">வாக்களி</button>
+    </div>
+  </div>
+
+  <!-- Vijay -->
+  <div class="relative group rounded-2xl overflow-hidden shadow-xl bg-white hover:shadow-2xl transition"
+    data-name="Vijay" data-party="TVK" data-district="Chennai" data-constituency="Saidapet">
+    <div class="absolute top-3 right-3 z-20">
+      <img src="./static/images/tvk.png" class="w-16 h-16 object-cover rounded-full">
+    </div>
+    <img src="./static/images/vijay.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+    <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
+      <h1 class="text-2xl font-bold" data-en="Vijay" data-ta="விஜய்">விஜய்</h1>
+      <p class="text-sm" data-en="District: Chennai" data-ta="மாவட்டம்: சென்னை">மாவட்டம்: சென்னை</p>
+      <p class="text-sm" data-en="Constituency: Saidapet" data-ta="தொகுதி: சைதாப்பேட்டை">தொகுதி: சைதாப்பேட்டை</p>
+      <p class="text-sm" data-en="Party: TVK" data-ta="கட்சி: டிவிகே">கட்சி: டிவிகே</p>
+      <button class="vote-btn mt-3 bg-green-700 hover:bg-green-500 px-7 py-2 rounded-full font-semibold transition"
+        data-en="Vote" data-ta="வாக்களி">வாக்களி</button>
+    </div>
+  </div>
+
+  <!-- Stalin -->
+  <div class="relative group rounded-2xl overflow-hidden shadow-xl bg-white hover:shadow-2xl transition"
+    data-name="M. K. Stalin" data-party="DMK" data-district="Chennai" data-constituency="Kolathur">
+    <div class="absolute top-3 right-3 z-20">
+      <img src="./static/images/dmk.png" class="w-16 h-16 object-cover rounded-full">
+    </div>
+    <img src="./static/images/stalin.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+    <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
+      <h1 class="text-2xl font-bold" data-en="M. K. Stalin" data-ta="எம். கே. ஸ்டாலின்">எம். கே. ஸ்டாலின்</h1>
+      <p class="text-sm" data-en="District: Chennai" data-ta="மாவட்டம்: சென்னை">மாவட்டம்: சென்னை</p>
+      <p class="text-sm" data-en="Constituency: Kolathur" data-ta="தொகுதி: கோளத்தூர்">தொகுதி: கோளத்தூர்</p>
+      <p class="text-sm" data-en="Party: DMK" data-ta="கட்சி: திமுக">கட்சி: திமுக</p>
+      <button class="vote-btn mt-3 bg-green-700 hover:bg-green-500 px-7 py-2 rounded-full font-semibold transition"
+        data-en="Vote" data-ta="வாக்களி">வாக்களி</button>
+    </div>
+  </div>
+
 </div>
 
 
-  <!-- Candidate Grid -->
-  <div id="candidatesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-    <!-- EPS -->
-    <div class="relative group rounded-2xl overflow-hidden shadow-xl bg-white hover:shadow-2xl transition"
-      data-name="Edappadi K. Palaniswami" data-party="AIADMK" data-district="Salem" data-constituency="Edappadi">
-      <div class="absolute top-3 right-3 z-20">
-        <img src="./static/images/aiadmk.png" class="w-16 h-16 object-cover rounded-full">
-      </div>
-      <img src="./static/images/palaniswami.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-      <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-      <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
-        <h1 class="text-2xl font-bold">Edappadi K. Palaniswami</h1>
-        <p class="text-sm">District: Salem</p>
-        <p class="text-sm">Constituency: Edappadi</p>
-        <p class="text-sm">Party: AIADMK</p>
-        <button class="mt-3 bg-green-700 hover:bg-green-500 px-7 py-2 rounded-full font-semibold transition">Vote</button>
-      </div>
-    </div>
-
-    <!-- Annamalai -->
-    <div class="relative group rounded-2xl overflow-hidden shadow-xl bg-white hover:shadow-2xl transition"
-      data-name="K. Annamalai" data-party="BJP" data-district="Coimbatore" data-constituency="Coimbatore South">
-      <div class="absolute top-3 right-3 z-20">
-        <img src="./static/images/bjp.png" class="w-16 h-16 object-cover rounded-full">
-      </div>
-      <img src="./static/images/annamalai.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-      <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-      <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
-        <h1 class="text-2xl font-bold">K. Annamalai</h1>
-        <p class="text-sm">District: Coimbatore</p>
-        <p class="text-sm">Constituency: Coimbatore South</p>
-        <p class="text-sm">Party: BJP</p>
-        <button class="mt-3 bg-green-700 hover:bg-green-500 px-7 py-2 rounded-full font-semibold transition">Vote</button>
-      </div>
-    </div>
-
-    <!-- Vijay -->
-    <div class="relative group rounded-2xl overflow-hidden shadow-xl bg-white hover:shadow-2xl transition"
-      data-name="Vijay" data-party="TVK" data-district="Chennai" data-constituency="Saidapet">
-      <div class="absolute top-3 right-3 z-20">
-        <img src="./static/images/tvk.png" class="w-16 h-16 object-cover rounded-full">
-      </div>
-      <img src="./static/images/vijay.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-      <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-      <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
-        <h1 class="text-2xl font-bold">Vijay</h1>
-        <p class="text-sm">District: Chennai</p>
-        <p class="text-sm">Constituency: Saidapet</p>
-        <p class="text-sm">Party: TVK</p>
-        <button class="mt-3 bg-green-700 hover:bg-green-500 px-7 py-2 rounded-full font-semibold transition">Vote</button>
-      </div>
-    </div>
-
-    <div class="relative group rounded-2xl overflow-hidden shadow-xl bg-white hover:shadow-2xl transition"
-     data-name="M. K. Stalin" data-party="DMK" data-district="Chennai" data-constituency="Kolathur">
-  <div class="absolute top-3 right-3 z-20">
-    <img src="./static/images/dmk.png" class="w-16 h-16 object-cover rounded-full" alt="DMK symbol">
-  </div>
-  <img src="./static/images/stalin.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="M. K. Stalin">
-  <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-  <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
-    <h1 class="text-2xl font-bold">M. K. Stalin</h1>
-    <p class="text-sm">District: Chennai</p>
-    <p class="text-sm">Constituency: Kolathur</p>
-    <p class="text-sm">Party: DMK</p>
-    <button class="mt-3 bg-green-700 hover:bg-green-500 px-7 py-2 rounded-full font-semibold transition">Vote</button>
-  </div>
-</div>
-
-  </div>
 </section>
 
-<!-- Login Modal -->
-<div id="loginModal"
-  class="fixed inset-0 bg-black/70 hidden justify-center items-center z-[9999]">
+<!-- ✅ Login Modal -->
+<div id="loginModal" class="fixed inset-0 bg-black/70 hidden justify-center items-center z-[9999]">
   <div class="bg-white p-8 rounded-2xl w-full max-w-md relative">
-    <h2 class="text-2xl font-bold mb-6 text-center text-[#06038D]">Login to Vote</h2>
-
+    <h2 class="text-2xl font-bold mb-6 text-center text-[#06038D]" data-en="Login to Vote" data-ta="வாக்களிக்க உள்நுழையவும்">வாக்களிக்க உள்நுழையவும்</h2>
     <div class="space-y-4">
-      <!-- Name -->
       <div>
-        <label class="block text-gray-700 text-sm font-semibold mb-1">Name</label>
-        <input id="loginName" type="text"
-          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#06038D] text-black" />
+        <label class="block text-gray-700 text-sm font-semibold mb-1" data-en="Name" data-ta="பெயர்">பெயர்</label>
+        <input id="loginName" type="text" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#06038D] text-black" />
       </div>
-
-      <!-- Age -->
       <div>
-        <label class="block text-gray-700 text-sm font-semibold mb-1">Age</label>
-        <input id="loginAge" type="number"
-          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#06038D] text-black" />
+        <label class="block text-gray-700 text-sm font-semibold mb-1" data-en="Age" data-ta="வயது">வயது</label>
+        <input id="loginAge" type="number" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#06038D] text-black" />
       </div>
-
-      <!-- Phone + Send OTP -->
       <div class="flex items-center space-x-2">
-        <input id="phone" type="text" placeholder="Phone Number"
-          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#06038D] text-black" />
-        <button id="sendOtpBtn"
-          class="bg-[#06038D] text-white px-4 py-2 rounded-lg hover:bg-[#030268] text-sm font-semibold whitespace-nowrap">
-          Send OTP
-        </button>
+        <input id="phone" type="text" placeholder="Phone Number" data-en="Phone Number" data-ta="தொலைபேசி எண்" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#06038D] text-black" />
+        <button id="sendOtpBtn" class="bg-[#06038D] text-white px-4 py-2 rounded-lg hover:bg-[#030268] text-sm font-semibold" data-en="Send OTP" data-ta="OTP அனுப்பு">OTP அனுப்பு</button>
       </div>
-
-      <!-- OTP Field (hidden by default) -->
       <div id="otpContainer" class="hidden">
-        <label class="block text-gray-700 text-sm font-semibold mb-1">Enter OTP</label>
-        <input id="otpInput" type="text" placeholder="Enter OTP"
-          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#06038D] text-black" />
+        <label class="block text-gray-700 text-sm font-semibold mb-1" data-en="Enter OTP" data-ta="OTP ஐ உள்ளிடவும்">OTP ஐ உள்ளிடவும்</label>
+        <input id="otpInput" type="text" placeholder="Enter OTP" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#06038D] text-black" />
       </div>
-
-      <!-- Submit -->
-      <button id="loginSubmit"
-        class="w-full bg-[#06038D] hover:bg-[#030268] text-white font-semibold py-2 rounded-lg mt-4">
-        Verify & Continue
-      </button>
+      <button id="loginSubmit" class="w-full bg-[#06038D] hover:bg-[#030268] text-white font-semibold py-2 rounded-lg mt-4" data-en="Verify & Continue" data-ta="சரிபார்த்து தொடரவும்">சரிபார்த்து தொடரவும்</button>
     </div>
   </div>
 </div>
 
-
-<!-- Vote Confirmation Modal -->
+<!-- ✅ Vote Confirmation Modal -->
 <div id="voteConfirmModal" class="fixed inset-0 bg-black/60 hidden justify-center items-center z-[9999]">
   <div class="bg-white p-6 rounded-xl w-80 shadow-lg text-center">
     <h2 id="confirmText" class="text-lg font-semibold mb-4 text-gray-800"></h2>
     <div class="flex justify-center gap-3">
-      <button id="confirmVoteBtn" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">Confirm</button>
-      <button onclick="closeConfirmModal()" class="bg-gray-300 px-4 py-2 rounded">Cancel</button>
+      <button id="confirmVoteBtn" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded" data-en="Confirm" data-ta="உறுதிசெய்">உறுதிசெய்</button>
+      <button onclick="closeConfirmModal()" class="bg-gray-300 px-4 py-2 rounded" data-en="Cancel" data-ta="ரத்து">ரத்து</button>
     </div>
   </div>
 </div>
 
-<!-- Success Modal -->
+<!-- ✅ Success Modal -->
 <div id="successModal" class="fixed inset-0 bg-black/60 hidden justify-center items-center z-[9999]">
   <div class="bg-white p-6 rounded-xl w-80 shadow-lg text-center">
-    <h2 class="text-green-700 text-xl font-bold mb-2">Vote Submitted!</h2>
-    <p class="text-gray-600 text-sm">Thank you for casting your vote.</p>
-    <button onclick="closeSuccessModal()" class="mt-3 bg-blue-600 text-white px-4 py-2 rounded">OK</button>
+    <h2 class="text-green-700 text-xl font-bold mb-2" data-en="Vote Submitted!" data-ta="வாக்கு சமர்ப்பிக்கப்பட்டது!">வாக்கு சமர்ப்பிக்கப்பட்டது!</h2>
+    <p class="text-gray-600 text-sm" data-en="Thank you for casting your vote." data-ta="உங்கள் வாக்குக்கு நன்றி.">உங்கள் வாக்குக்கு நன்றி.</p>
+    <button onclick="closeSuccessModal()" class="mt-3 bg-blue-600 text-white px-4 py-2 rounded" data-en="OK" data-ta="சரி">சரி</button>
   </div>
 </div>
-<script>
-let loggedIn = false;
-let selectedCandidate = null;
-let generatedOtp = null;
 
-// ----------------------
-// 🟦 DISTRICT → CONSTITUENCY DATA
-// ----------------------
-const districtData = {
-  "Ariyalur": ["Ariyalur", "Jayankondam"],
-  "Chengalpattu": ["Tambaram", "Pallavaram", "Chengalpattu"],
-  "Chennai": ["Saidapet", "T. Nagar", "Egmore", "Royapuram", "Velachery","Kolathur"],
-  "Coimbatore": ["Coimbatore North", "Coimbatore South", "Pollachi"],
-  "Cuddalore": ["Cuddalore", "Panruti", "Kurinjipadi"],
-  "Dharmapuri": ["Dharmapuri", "Harur"],
-  "Dindigul": ["Dindigul", "Oddanchatram"],
-  "Erode": ["Erode East", "Erode West", "Perundurai"],
-  "Kallakurichi": ["Kallakurichi", "Chinnasalem"],
-  "Kanchipuram": ["Kanchipuram", "Sriperumbudur"],
-  "Kanyakumari": ["Nagercoil", "Colachel"],
-  "Karur": ["Karur", "Aravakurichi"],
-  "Krishnagiri": ["Krishnagiri", "Hosur"],
-  "Madurai": ["Madurai Central", "Madurai South", "Melur"],
-  "Mayiladuthurai": ["Mayiladuthurai", "Sirkazhi"],
-  "Nagapattinam": ["Nagapattinam", "Vedaranyam"],
-  "Namakkal": ["Namakkal", "Rasipuram"],
-  "Perambalur": ["Perambalur"],
-  "Pudukkottai": ["Pudukkottai", "Aranthangi"],
-  "Ramanathapuram": ["Ramanathapuram", "Paramakudi"],
-  "Ranipet": ["Ranipet", "Arakkonam"],
-  "Salem": ["Salem North", "Salem South", "Edappadi"],
-  "Sivagangai": ["Sivagangai", "Manamadurai"],
-  "Tenkasi": ["Tenkasi", "Sankarankovil"],
-  "Thanjavur": ["Thanjavur", "Papanasam"],
-  "Theni": ["Theni", "Bodinayakanur"],
-  "Thoothukudi": ["Thoothukudi", "Kovilpatti"],
-  "Tiruchirappalli": ["Trichy West", "Trichy East", "Lalgudi"],
-  "Tirunelveli": ["Tirunelveli", "Palayamkottai"],
-  "Tirupathur": ["Tirupathur", "Vaniyambadi"],
-  "Tiruppur": ["Tiruppur North", "Tiruppur South"],
-  "Tiruvallur": ["Avadi", "Tiruvallur", "Poonamallee"],
-  "Tiruvannamalai": ["Tiruvannamalai", "Cheyyar"],
-  "Tiruvarur": ["Tiruvarur", "Mannargudi"],
-  "Vellore": ["Vellore", "Katpadi"],
-  "Viluppuram": ["Viluppuram", "Tindivanam"],
-  "Virudhunagar": ["Virudhunagar", "Sivakasi"]
-};
 
-// ----------------------
-// 🟦 FILTER LOGIC
-// ----------------------
-const districtFilter = document.getElementById("districtFilter");
-const constituencyFilter = document.getElementById("constituencyFilter");
-const searchInput = document.getElementById("searchInput");
-const candidatesGrid = document.getElementById("candidatesGrid");
 
-// Candidate cards
-const allCandidates = [...document.querySelectorAll("#candidatesGrid .group")];
-
-// ✅ Populate districts dropdown
-function populateDistricts() {
-  districtFilter.innerHTML =
-    `<option value="all">District</option>` +
-    Object.keys(districtData)
-      .map(d => `<option value="${d}">${d}</option>`)
-      .join("");
-}
-populateDistricts();
-
-// ✅ Populate constituencies dynamically
-districtFilter.addEventListener("change", () => {
-  const selected = districtFilter.value;
-  if (selected === "all") {
-    constituencyFilter.innerHTML = `<option value="all">Constituency</option>`;
-  } else {
-    constituencyFilter.innerHTML =
-      `<option value="all">Constituency</option>` +
-      districtData[selected]
-        .map(c => `<option value="${c}">${c}</option>`)
-        .join("");
-  }
-  filterCandidates();
-});
-
-function filterCandidates() {
-  const district = districtFilter.value.toLowerCase();
-  const constituency = constituencyFilter.value.toLowerCase();
-  const search = searchInput.value.toLowerCase();
-
-  // Filter matching candidates
-  const visible = [];
-  const hidden = [];
-
-  allCandidates.forEach(card => {
-    const name = card.dataset.name.toLowerCase();
-    const party = card.dataset.party.toLowerCase();
-    const d = card.dataset.district.toLowerCase();
-    const c = card.dataset.constituency.toLowerCase();
-
-    const matches =
-      (district === "all" || d === district) &&
-      (constituency === "all" || c === constituency) &&
-      (name.includes(search) || party.includes(search));
-
-    if (matches) visible.push(card);
-    else hidden.push(card);
-  });
-
-  // Reorder — visible first
-  candidatesGrid.innerHTML = "";
-  visible.forEach(card => {
-    card.classList.remove("hidden");
-    candidatesGrid.appendChild(card);
-  });
-  hidden.forEach(card => {
-    card.classList.add("hidden");
-    candidatesGrid.appendChild(card);
-  });
-}
-
-// Reset filters on load
-window.addEventListener("load", () => {
-  districtFilter.value = "all";
-  constituencyFilter.innerHTML = `<option value="all">Constituency</option>`;
-  searchInput.value = "";
-  filterCandidates();
-});
-
-// Apply filtering
-[searchInput, constituencyFilter].forEach(el =>
-  el.addEventListener("input", filterCandidates)
-);
-
-// ----------------------
-// 🟩 LOGIN + OTP
-// ----------------------
-document.querySelectorAll(".group button").forEach(btn => {
-  btn.addEventListener("click", e => {
-    const candidate = e.target.closest(".group").dataset.name;
-    selectedCandidate = { name: candidate, button: e.target };
-    if (!loggedIn) openLoginModal();
-    else openConfirmModal(candidate);
-  });
-});
-
-function openLoginModal() {
-  const modal = document.getElementById("loginModal");
-  modal.style.display = "flex";
-  modal.addEventListener("click", e => {
-    if (e.target === modal) closeLoginModal();
-  });
-}
-function closeLoginModal() {
-  document.getElementById("loginModal").style.display = "none";
-}
-
-// ✅ Send OTP
-document.getElementById("sendOtpBtn").addEventListener("click", () => {
-  const phone = document.getElementById("phone").value.trim();
-  if (/^[6-9]\d{9}$/.test(phone)) {
-    generatedOtp = Math.floor(100000 + Math.random() * 900000);
-    alert(`Your OTP is ${generatedOtp}`); // Simulated OTP
-    document.getElementById("otpContainer").classList.remove("hidden");
-  } else {
-    alert("Enter a valid 10-digit Indian phone number.");
-  }
-});
-
-// ✅ Verify Login
-document.getElementById("loginSubmit").addEventListener("click", () => {
-  const name = document.getElementById("loginName").value.trim();
-  const phone = document.getElementById("phone").value.trim();
-  const otp = document.getElementById("otpInput").value.trim();
-  const age = parseInt(document.getElementById("loginAge").value.trim());
-
-  if (!name || !phone || !otp || !age) return alert("Please fill all fields.");
-  if (!/^[6-9]\d{9}$/.test(phone)) return alert("Invalid phone number.");
-  if (otp != generatedOtp) return alert("Incorrect OTP.");
-  if (age < 18) return alert("You must be 18 or older to vote.");
-
-  loggedIn = true;
-  closeLoginModal();
-  openConfirmModal(selectedCandidate.name);
-});
-
-// ----------------------
-// 🟧 CONFIRM VOTE
-// ----------------------
-function openConfirmModal(candidate) {
-  const modal = document.getElementById("voteConfirmModal");
-  modal.style.display = "flex";
-  document.getElementById("confirmText").textContent = `Confirm your vote for ${candidate}?`;
-  modal.addEventListener("click", e => {
-    if (e.target === modal) closeConfirmModal();
-  });
-}
-function closeConfirmModal() {
-  document.getElementById("voteConfirmModal").style.display = "none";
-}
-document.getElementById("confirmVoteBtn").addEventListener("click", () => {
-  closeConfirmModal();
-  submitVote(selectedCandidate);
-});
-
-// ----------------------
-// 🟦 SUCCESS MODAL
-// ----------------------
-function submitVote(candidate) {
-  const btn = candidate.button;
-  btn.textContent = "Voted";
-  btn.disabled = true;
-  btn.classList.add("bg-green-700", "cursor-not-allowed");
-  document.querySelectorAll(".group button").forEach(other => {
-    if (other !== btn) {
-      other.disabled = true;
-      other.classList.add("bg-gray-400", "cursor-not-allowed");
-    }
-  });
-  const modal = document.getElementById("successModal");
-  modal.style.display = "flex";
-  modal.addEventListener("click", e => {
-    if (e.target === modal) closeSuccessModal();
-  });
-}
-function closeSuccessModal() {
-  document.getElementById("successModal").style.display = "none";
-}
-</script>
 
 
 <style>
@@ -685,61 +357,91 @@ function closeSuccessModal() {
 
 <!-- Tamil Nadu Information Preview Section -->
 <section class="bg-[#06038D] py-16 px-6 md:px-20 text-white text-center rounded-2xl mx-4 md:mx-20 mt-12 shadow-xl relative overflow-hidden">
-  
+
   <!-- Decorative Gradient Overlay -->
   <div class="absolute inset-0 bg-gradient-to-r from-[#06038D]/90 via-[#0A0A0A]/30 to-[#FF671F]/80 opacity-80"></div>
-  
+
   <div class="relative z-10">
-    <h2 class="text-3xl md:text-4xl font-bold mb-4 uppercase">Know Tamil Nadu Better</h2>
-    <p class="text-white/90 mb-10 max-w-2xl mx-auto">
-      Explore the heart of Tamil Nadu - from its people and culture to political insights and voting essentials.
+    <h2 class="text-3xl md:text-4xl font-bold mb-4 uppercase"
+        data-ta="தமிழ்நாட்டை நன்கு அறிந்து கொள்ளுங்கள்"
+        data-en="Know Tamil Nadu Better">
+      தமிழ்நாட்டை நன்கு அறிந்து கொள்ளுங்கள்
+    </h2>
+
+    <p class="text-white/90 mb-10 max-w-2xl mx-auto"
+       data-ta="தமிழ்நாட்டின் மக்கள், கலாச்சாரம், அரசியல் மற்றும் வாக்கு பற்றிய முக்கிய தகவல்களை அறிந்து கொள்ளுங்கள்."
+       data-en="Explore the heart of Tamil Nadu - from its people and culture to political insights and voting essentials.">
+      தமிழ்நாட்டின் மக்கள், கலாச்சாரம், அரசியல் மற்றும் வாக்கு பற்றிய முக்கிய தகவல்களை அறிந்து கொள்ளுங்கள்.
     </p>
 
     <!-- Info Highlights -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-      
+
       <!-- Card 1 -->
       <div class="bg-white/10 backdrop-blur-lg p-8 rounded-xl border border-white/20 hover:scale-105 transition text-center">
-  <div class="flex justify-center mb-4">
-    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
-      <path fill="#fff" d="M14.35 20.775L9 18.9l-4.65 1.8q-.25.1-.488.063t-.437-.163t-.312-.337T3 19.775V5.75q0-.325.188-.575T3.7 4.8l4.65-1.575q.15-.05.313-.075T9 3.125t.338.025t.312.075L15 5.1l4.65-1.8q.25-.1.488-.062t.437.162t.313.338t.112.487V18.25q0 .325-.187.575t-.513.375l-4.65 1.575q-.15.05-.312.075t-.338.025t-.337-.025t-.313-.075M14 18.55V6.85l-4-1.4v11.7z"/>
-    </svg>
-  </div>
-  <h3 class="font-semibold text-xl mb-2">District Insights</h3>
-  <p class="text-white/80 text-sm">Learn about Tamil Nadu’s 38 districts – their population, geography and local leadership.</p>
-</div>
-
-
-     <!-- Card 2 -->
-<div class="bg-white/10 backdrop-blur-lg p-8 rounded-xl border border-white/20 hover:scale-105 transition text-center">
-  <div class="flex justify-center mb-4">
-    <img src="./static/images/parliament.png" alt="Parliament Icon" class="w-12 h-12 object-contain">
-  </div>
-  <h3 class="font-semibold text-xl mb-2">Political Overview</h3>
-  <p class="text-white/80 text-sm">
-    Know the major parties, leaders and movements shaping Tamil Nadu’s democracy.
-  </p>
-</div>
-
-      <!-- Card 3 -->
-      <div class="bg-white/10 backdrop-blur-lg p-8 rounded-xl border border-white/20 hover:scale-105 transition">
-<div class="flex justify-center mb-4">
-    <img src="./static/images/vote.png" alt="Parliament Icon" class="w-12 h-12 object-contain">
-  </div>        <h3 class="font-semibold text-xl mb-2">Voting Essentials</h3>
-        <p class="text-white/80 text-sm">Get voter info, learn about polling dates and understand how your vote counts.</p>
+        <div class="flex justify-center mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
+            <path fill="#fff" d="M14.35 20.775L9 18.9l-4.65 1.8q-.25.1-.488.063t-.437-.163t-.312-.337T3 19.775V5.75q0-.325.188-.575T3.7 4.8l4.65-1.575q.15-.05.313-.075T9 3.125t.338.025t.312.075L15 5.1l4.65-1.8q.25-.1.488-.062t.437.162t.313.338t.112.487V18.25q0 .325-.187.575t-.513.375l-4.65 1.575q-.15.05-.312.075t-.338.025t-.337-.025t-.313-.075M14 18.55V6.85l-4-1.4v11.7z"/>
+          </svg>
+        </div>
+        <h3 class="font-semibold text-xl mb-2"
+            data-ta="மாவட்டத் தகவல்கள்"
+            data-en="District Insights">
+          மாவட்டத் தகவல்கள்
+        </h3>
+        <p class="text-white/80 text-sm"
+           data-ta="தமிழ்நாட்டின் 38 மாவட்டங்கள் பற்றிய மக்கள் தொகை, புவியியல் மற்றும் உள்ளூர் நிர்வாகம் குறித்து அறிந்து கொள்ளுங்கள்."
+           data-en="Learn about Tamil Nadu’s 38 districts – their population, geography and local leadership.">
+          தமிழ்நாட்டின் 38 மாவட்டங்கள் பற்றிய மக்கள் தொகை, புவியியல் மற்றும் உள்ளூர் நிர்வாகம் குறித்து அறிந்து கொள்ளுங்கள்.
+        </p>
       </div>
 
+      <!-- Card 2 -->
+      <div class="bg-white/10 backdrop-blur-lg p-8 rounded-xl border border-white/20 hover:scale-105 transition text-center">
+        <div class="flex justify-center mb-4">
+          <img src="./static/images/parliament.png" alt="Parliament Icon" class="w-12 h-12 object-contain">
+        </div>
+        <h3 class="font-semibold text-xl mb-2"
+            data-ta="அரசியல் கண்ணோட்டம்"
+            data-en="Political Overview">
+          அரசியல் கண்ணோட்டம்
+        </h3>
+        <p class="text-white/80 text-sm"
+           data-ta="தமிழ்நாட்டின் முக்கிய அரசியல் கட்சிகள், தலைவர்கள் மற்றும் இயக்கங்களை பற்றி அறியுங்கள்."
+           data-en="Know the major parties, leaders and movements shaping Tamil Nadu’s democracy.">
+          தமிழ்நாட்டின் முக்கிய அரசியல் கட்சிகள், தலைவர்கள் மற்றும் இயக்கங்களை பற்றி அறியுங்கள்.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white/10 backdrop-blur-lg p-8 rounded-xl border border-white/20 hover:scale-105 transition text-center">
+        <div class="flex justify-center mb-4">
+          <img src="./static/images/vote.png" alt="Vote Icon" class="w-12 h-12 object-contain">
+        </div>
+        <h3 class="font-semibold text-xl mb-2"
+            data-ta="வாக்கு முக்கியத்துவம்"
+            data-en="Voting Essentials">
+          வாக்கு முக்கியத்துவம்
+        </h3>
+        <p class="text-white/80 text-sm"
+           data-ta="வாக்காளர் தகவல், வாக்குப்பதிவு தேதிகள் மற்றும் உங்கள் வாக்கின் முக்கியத்துவத்தை அறியுங்கள்."
+           data-en="Get voter info, learn about polling dates and understand how your vote counts.">
+          வாக்காளர் தகவல், வாக்குப்பதிவு தேதிகள் மற்றும் உங்கள் வாக்கின் முக்கியத்துவத்தை அறியுங்கள்.
+        </p>
+      </div>
     </div>
 
     <!-- Button -->
     <div class="mt-12">
-      <a href="information.html" class="bg-white text-[#06038D] font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-white/90 transition-all duration-300 hover:scale-105">
-        Visit Information Page →
+      <a href="information.html"
+         class="bg-white text-[#06038D] font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-white/90 transition-all duration-300 hover:scale-105"
+         data-ta="தகவல் பக்கத்துக்குச் செல்லவும் →"
+         data-en="Visit Information Page →">
+        தகவல் பக்கத்துக்குச் செல்லவும் →
       </a>
     </div>
   </div>
 </section>
-
 
 <section class="py-20 bg-gray-50 relative overflow-hidden">
   <div class="container mx-auto px-6 lg:px-20">
@@ -747,10 +449,10 @@ function closeSuccessModal() {
 
       <!-- Info Panel -->
       <div class="bg-[#06038D] text-white p-10 sm:p-12 rounded-xl shadow-2xl relative z-20 order-1 lg:order-2 text-center lg:text-left">
-        <h1 class="text-3xl sm:text-4xl font-bold mb-4">Public Opinion Form</h1>
-        <p class="text-base sm:text-lg text-gray-200 leading-relaxed">
-          We value your thoughts! Please share your opinion, feedback, or suggestions to help us improve services and make informed decisions. Your responses will remain confidential.
-        </p>
+        <h1 data-ta="பொது கருத்து படிவம்" data-en="Public Opinion Form" class="text-3xl sm:text-4xl font-bold mb-4"></h1>
+        <p data-ta="உங்கள் எண்ணங்களை மதிக்கிறோம்! எங்கள் சேவைகளை மேம்படுத்தவும், அறிவார்ந்த முடிவுகளை எடுக்கவும் உங்கள் கருத்து, பின்னூட்டம் அல்லது பரிந்துரைகளை பகிரவும். உங்கள் பதில்கள் ரகசியமாக வைக்கப்படும்."
+           data-en="We value your thoughts! Please share your opinion, feedback, or suggestions to help us improve services and make informed decisions. Your responses will remain confidential."
+           class="text-base sm:text-lg text-gray-200 leading-relaxed"></p>
       </div>
 
       <!-- Form Panel -->
@@ -760,40 +462,40 @@ function closeSuccessModal() {
           <!-- Name Fields -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
-              <label for="first-name" class="block text-sm font-bold text-gray-700 mb-1 uppercase">First Name</label>
+              <label data-ta="முதல் பெயர்" data-en="First Name" for="first-name" class="block text-sm font-bold text-gray-700 mb-1 uppercase"></label>
               <input type="text" id="first-name" name="first-name"
                      class="w-full rounded-md border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#06038D]"
-                     placeholder="First Name" required>
+                     placeholder="முதல் பெயர்" required>
             </div>
             <div>
-              <label for="last-name" class="block text-sm font-bold text-gray-700 mb-1 uppercase">Last Name</label>
+              <label data-ta="கடைசி பெயர்" data-en="Last Name" for="last-name" class="block text-sm font-bold text-gray-700 mb-1 uppercase"></label>
               <input type="text" id="last-name" name="last-name"
                      class="w-full rounded-md border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#06038D]"
-                     placeholder="Last Name" required>
+                     placeholder="கடைசி பெயர்" required>
             </div>
           </div>
 
           <!-- Email -->
           <div>
-            <label for="email" class="block text-sm font-bold text-gray-700 mb-1 uppercase">Email Address</label>
+            <label data-ta="மின்னஞ்சல் முகவரி" data-en="Email Address" for="email" class="block text-sm font-bold text-gray-700 mb-1 uppercase"></label>
             <input type="email" id="email" name="email"
                    class="w-full rounded-md border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#06038D]"
-                   placeholder="you@example.com" required>
+                   placeholder="உங்கள் மின்னஞ்சல்" required>
           </div>
 
           <!-- Opinion -->
           <div>
-            <label for="opinion" class="block text-sm font-bold text-gray-700 mb-1 uppercase">Your Opinion</label>
+            <label data-ta="உங்கள் கருத்து" data-en="Your Opinion" for="opinion" class="block text-sm font-bold text-gray-700 mb-1 uppercase"></label>
             <textarea id="opinion" name="opinion" rows="5"
                       class="w-full rounded-md border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#06038D]"
-                      placeholder="Share your opinion, feedback, or suggestions…" required></textarea>
+                      placeholder="உங்கள் கருத்து, பின்னூட்டம் அல்லது பரிந்துரைகளை பகிரவும்…" required></textarea>
           </div>
 
           <!-- Submit -->
           <div class="text-center lg:text-left">
             <button type="submit"
+                    data-ta="கருத்தை சமர்ப்பிக்கவும்" data-en="Submit Opinion"
                     class="bg-gradient-to-r from-[#06038D] to-[red] hover:bg-[#2C38C5] text-white font-semibold px-8 py-3 rounded-md transition-colors duration-300">
-              Submit Opinion
             </button>
           </div>
         </form>
@@ -817,8 +519,6 @@ function closeSuccessModal() {
 
 
 
-
-
 <div id="news">
 
 </div>
@@ -827,9 +527,10 @@ function closeSuccessModal() {
 
 
 
+<!-- 📰 LATEST UPDATES SECTION -->
 <section class="max-w-7xl mx-auto py-12 px-6 mt-10 text-black max-md:mt-0 max-md:py-2">
-  <h1 class="text-4xl font-bold text-left  mb-10 border-b pb-3 border-gray-300 inline-block uppercase text-black">
-    Latest Updates
+  <h1 data-ta="சமீபத்திய செய்திகள்" data-en="Latest Updates"
+      class="text-4xl font-bold text-left mb-10 border-b pb-3 border-gray-300 inline-block uppercase text-black">
   </h1>
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -837,81 +538,84 @@ function closeSuccessModal() {
     <!-- Left Column -->
     <div class="space-y-8">
       <div>
-        <h3 class="text-xl font-semibold leading-snug cursor-pointer underline">
-          TVK president Vijay to meet Karur stampede victims’ families in Mamallapuram on October 27
-        </h3>
-        <p class="text-gray-600 mt-3 text-sm cursor-pointer">
-          A top-level TVK leader confirmed to The Hindu that Mr. Vijay would meet the bereaved families on Monday morning. The event would be held in a closed-door format, where Mr. Vijay would interact with the family members and offer his condolences, the party leader said...
-        </p>
+        <h3 data-ta="TVK தலைவர் விஜய் அக்டோபர் 27 அன்று மாமல்லபுரத்தில் கரூர் விபத்து பாதிக்கப்பட்ட குடும்பங்களை சந்திக்கிறார்"
+            data-en="TVK president Vijay to meet Karur stampede victims’ families in Mamallapuram on October 27"
+            class="text-xl font-semibold leading-snug cursor-pointer underline"></h3>
+        <p data-ta="ஒரு உயர்மட்ட TVK தலைவர் கூறியதாவது, திரு. விஜய் திங்கட்கிழமை காலை மாமல்லபுரத்தில் பாதிக்கப்பட்ட குடும்பங்களை சந்திக்கவுள்ளார். இந்த நிகழ்ச்சி மூடப்பட்ட வடிவில் நடைபெறும், அங்கு திரு. விஜய் குடும்பத்தினருடன் கலந்துரையாடி ஆறுதல் தெரிவிப்பார் என தெரிவித்தார்."
+   data-en="A top-level TVK leader confirmed to The Hindu that Mr. Vijay would meet the bereaved families on Monday morning. The event would be held in a closed-door format, where Mr. Vijay would interact with the family members and offer his condolences, the party leader said..."
+   class="text-gray-600 mt-3 text-sm cursor-pointer">
+</p>
+
       </div>
 
       <div>
-        <h3 class="text-lg font-semibold leading-snug cursor-pointer underline">
-          DMK and AIADMK Gear Up for 2026 Tamil Nadu Elections with New Alliances
-        </h3>
-        <p class="text-sm text-gray-600 mt-3">
-          As the 2026 Tamil Nadu Assembly elections draw closer, major parties including DMK and AIADMK 
-          are reorganizing their alliances. Party leaders have begun statewide tours, focusing on youth engagement, 
-          women’s welfare and economic growth to strengthen their campaign narratives.
-        </p>
+        <h3 data-ta="2026 தேர்தலுக்காக திமுக மற்றும் அதிமுக புதிய கூட்டணிகளுடன் தயாராகின்றன"
+            data-en="DMK and AIADMK Gear Up for 2026 Tamil Nadu Elections with New Alliances"
+            class="text-lg font-semibold leading-snug cursor-pointer underline"></h3>
+        <p data-ta="2026 தமிழ்நாடு சட்டமன்றத் தேர்தல் நெருங்கியுள்ள நிலையில், திமுக மற்றும் அதிமுக உள்ளிட்ட முக்கிய கட்சிகள் தங்கள் கூட்டணிகளை மறுசீரமைத்து வருகின்றன. கட்சி தலைவர்கள் மாநிலம் முழுவதும் பயணங்களைத் தொடங்கி, இளைஞர்கள் பங்கேற்பு, பெண்கள் நலன் மற்றும் பொருளாதார வளர்ச்சியை மையப்படுத்தி தங்களது பிரச்சாரத் திட்டங்களை வலுப்படுத்தி வருகின்றனர்."
+   data-en="As the 2026 Tamil Nadu Assembly elections draw closer, major parties including DMK and AIADMK are reorganizing their alliances. Party leaders have begun statewide tours, focusing on youth engagement, women’s welfare and economic growth to strengthen their campaign narratives."
+   class="text-sm text-gray-600 mt-3">
+</p>
+
       </div>
     </div>
 
     <!-- Middle Column -->
     <div>
       <img src="./static/images/palaniswami2.png" alt="" class="rounded-lg mb-4">
-      <h3 class="text-xl font-bold mb-2 underline">
-        Palaniswami blames Tamil Nadu government’s ‘negligence’ for cough syrup deaths in M.P.
-      </h3>
-      <p class="text-sm text-gray-600 mb-4">
-        He alleges that the T.N. government did not carry out inspections at the Kancheepuram-based company in 2024 and 2025
-      </p>
+      <h3 data-ta="ம.பி.வில் இருமல் மருந்து மரணங்களுக்கு தமிழ்நாடு அரசின் அலட்சியம் காரணம் என பழனிசாமி குற்றச்சாட்டு"
+          data-en="Palaniswami blames Tamil Nadu government’s negligence for cough syrup deaths in M.P."
+          class="text-xl font-bold mb-2 underline"></h3>
+      <p data-ta="அவர் கூறுகையில், தமிழ்நாடு அரசு 2024 மற்றும் 2025 ஆம் ஆண்டுகளில் காஞ்சிபுரம் பகுதியில் உள்ள அந்த நிறுவனத்தில் ஆய்வுகளை நடத்தவில்லை என குற்றம் சாட்டினார்."
+   data-en="He alleges that the T.N. government did not carry out inspections at the Kancheepuram-based company in 2024 and 2025."
+   class="text-sm text-gray-600 mb-4">
+</p>
+
     </div>
 
     <!-- Right Column -->
     <div class="space-y-8">
       <div>
         <img src="./static/images/vijay.png" alt="" class="rounded-lg mb-3 h-54">
-        <h3 class="text-lg font-semibold leading-snug underline">
-          Traveller Visiting Ice Cave With Amazing Eye-catching Scenes
-        </h3>
-        <p class="text-sm text-gray-600 mt-2">
-          Slack has become indispensable for many businesses operating remotely during the pandemic.
-        </p>
+        <h3 data-ta="பனிக்குகையில் பயணம் – கண்கவர் காட்சிகளுடன் ஒரு சுற்றுலா"
+            data-en="Traveller Visiting Ice Cave With Amazing Eye-catching Scenes"
+            class="text-lg font-semibold leading-snug underline"></h3>
+        <p data-ta="பாண்டமிக் காலத்தில் தொலைதூரமாக செயல்படும் பல நிறுவனங்களுக்கு Slack தவிர்க்க முடியாத ஒன்றாக மாறியுள்ளது."
+   data-en="Slack has become indispensable for many businesses operating remotely during the pandemic."
+   class="text-sm text-gray-600 mt-2">
+</p>
+
       </div>
 
       <div>
-        <h4 class="font-bold text-sm mb-2">Politics / Podcast</h4>
-        <h3 class="text-lg font-semibold leading-snug underline">
-          Inside Tamil Nadu 2026: <span class="bg-[#fff59d] px-1">Election Strategies</span> of Major Parties
+        <h4 data-ta="அரசியல் / பாட்காஸ்ட்" data-en="Politics / Podcast"
+            class="font-bold text-sm mb-2"></h4>
+        <h3 data-ta="தமிழ்நாடு 2026: முக்கிய கட்சிகளின் தேர்தல் திட்டங்கள்"
+            data-en="Inside Tamil Nadu 2026: Election Strategies of Major Parties"
+            class="text-lg font-semibold leading-snug underline">
         </h3>
         <div class="mt-3 flex items-center gap-3">
-          <button class="bg-black text-white p-2 rounded-full flex items-center justify-center">
-            ▶
-          </button>
+          <button class="bg-black text-white p-2 rounded-full flex items-center justify-center">▶</button>
           <p class="text-xs text-gray-600">18:22</p>
         </div>
-        <p class="text-sm text-gray-600 mt-3">
-          A deep dive into the campaign strategies, voter outreach and alliance talks shaping 
-          Tamil Nadu’s 2026 political race. Analysts discuss key moves from both Dravidian majors.
-        </p>
+        <p data-ta="தமிழ்நாட்டின் 2026 அரசியல் போட்டியை வடிவமைக்கும் பிரச்சார உத்திகள், வாக்காளர் அணுகல் மற்றும் கூட்டணி பேச்சுவார்த்தைகளை ஆழமாக ஆராய்கிறது. பகுப்பாய்வாளர்கள் இரு திராவிட கட்சிகளின் முக்கியமான நடவடிக்கைகளை விவாதிக்கிறார்கள்."
+   data-en="A deep dive into the campaign strategies, voter outreach and alliance talks shaping Tamil Nadu’s 2026 political race. Analysts discuss key moves from both Dravidian majors."
+   class="text-sm text-gray-600 mt-3">
+</p>
+
       </div>
     </div>
   </div>
 
-  <!-- Large Centered Read More Button -->
+  <!-- Read More -->
   <div class="flex justify-center mt-12 max-md:mb-12">
     <a href="blogs.html">
-    <button class="bg-black text-white text-lg md:text-xl font-bold px-10 py-4 rounded-full shadow-lg hover:bg-gray-800 transition-all duration-300 flex items-center gap-3">
-      Read More
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path fill="currentColor" d="M4 12h12.25L11 6.75l.66-.75l6.5 6.5l-6.5 6.5l-.66-.75L16.25 13H4z"/>
-      </svg>
-    </button>
+      <button data-ta="மேலும் படிக்க" data-en="Read More"
+              class="bg-black text-white text-lg md:text-xl font-bold px-10 py-4 rounded-full shadow-lg hover:bg-gray-800 transition-all duration-300 flex items-center gap-3">
+      </button>
     </a>
   </div>
 </section>
-
 
 
 <section
@@ -924,10 +628,13 @@ function closeSuccessModal() {
   <!-- LEFT SIDE -->
   <div class="relative z-10 flex items-center justify-center w-full md:w-1/2 px-8 md:px-16 py-16">
     <div>
-      <h1 class="text-4xl md:text-5xl font-semibold mb-4 text-white uppercase">Let's Connect</h1>
-      <p class="text-gray-300 text-lg max-w-md">
-        Have a question or suggestion about Tamil Nadu’s upcoming legislative assembly elections?
-        Reach out to us - we’d love to hear from you.
+      <h1 data-ta="இணைவோம்" data-en="Let's Connect"
+          class="text-4xl md:text-5xl font-semibold mb-4 text-white uppercase">
+      </h1>
+
+      <p data-ta="தமிழ்நாட்டின் வரவிருக்கும் சட்டமன்றத் தேர்தல்கள் குறித்து கேள்வி அல்லது பரிந்துரை உள்ளதா? எங்களைத் தொடர்பு கொள்ளுங்கள் — உங்களிடமிருந்து கேட்க நாங்கள் ஆவலுடன் உள்ளோம்."
+         data-en="Have a question or suggestion about Tamil Nadu’s upcoming legislative assembly elections? Reach out to us — we’d love to hear from you."
+         class="text-gray-300 text-lg max-w-md">
       </p>
     </div>
   </div>
@@ -935,73 +642,480 @@ function closeSuccessModal() {
   <!-- RIGHT SIDE (Centered Form) -->
   <div class="relative z-10 flex items-center justify-center w-full md:w-1/2 bg-[#06038D]/50 backdrop-blur-sm rounded-tl-lg rounded-bl-lg px-8 md:px-16 py-16">
     <form class="space-y-6 w-full max-w-md">
+
       <div>
-        <label for="name" class="block text-sm mb-2 uppercase tracking-wide text-gray-300">Name</label>
+        <label for="name"
+               data-ta="பெயர்"
+               data-en="Name"
+               class="block text-sm mb-2 uppercase tracking-wide text-gray-300">
+        </label>
         <input type="text" id="name" name="name" required
+          placeholder="Enter your name"
           class="w-full px-4 py-2 bg-neutral-500 border border-neutral-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:border-amber-500" />
       </div>
 
       <div>
-        <label for="email" class="block text-sm mb-2 uppercase tracking-wide text-gray-300">Email</label>
+        <label for="email"
+               data-ta="மின்னஞ்சல்"
+               data-en="Email"
+               class="block text-sm mb-2 uppercase tracking-wide text-gray-300">
+        </label>
         <input type="email" id="email" name="email" required
+          placeholder="Enter your email"
           class="w-full px-4 py-2 bg-neutral-500 border border-neutral-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:border-amber-500" />
       </div>
 
       <div>
-        <label for="message" class="block text-sm mb-2 uppercase tracking-wide text-gray-300">Message</label>
+        <label for="message"
+               data-ta="செய்தி"
+               data-en="Message"
+               class="block text-sm mb-2 uppercase tracking-wide text-gray-300">
+        </label>
         <textarea id="message" name="message" rows="4" required
+          placeholder="Write your message"
           class="w-full px-4 py-2 bg-neutral-500 border border-neutral-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:border-amber-500"></textarea>
       </div>
 
       <button type="submit"
-        class="px-6 py-3 bg-[red] hover:bg-red-500 hover:text-black rounded-md text-white  transition">
-        Send Message
+        data-ta="செய்தியை அனுப்புங்கள்"
+        data-en="Send Message"
+        class="px-6 py-3 bg-[red] hover:bg-red-500 hover:text-black rounded-md text-white transition">
       </button>
+
     </form>
   </div>
 </section>
 
 
-  <footer class="bg-[#09121b] py-12 border-t border-neutral-800">
-    <div class="container mx-auto px-8 flex flex-col md:flex-row justify-between gap-8">
-      
-      <div>
-        <p class="font-mono uppercase tracking-wider text-gray-200">TN Polls 2026</p>
-        <p class="mt-4 text-sm text-gray-400 max-w-5xl">Stay informed with the latest updates from the Tamil Nadu Legislative Assembly Elections. 
-        Explore candidate profiles, polling information and news insights - all in one place.</p>
-      </div>
+<footer class="bg-[#09121b] py-12 border-t border-neutral-800">
+  <div class="container mx-auto px-8 flex flex-col md:flex-row justify-between gap-8">
 
-<div class="flex flex-col md:flex-row gap-8 md:gap-16 text-gray-400">
+    <!-- LEFT SECTION -->
+    <div>
+      <p data-ta="தமிழ்நாடு தேர்தல்கள் 2026"
+         data-en="TN Polls 2026"
+         class="font-mono uppercase tracking-wider text-gray-200"></p>
 
-  <div>
-    <p class="uppercase text-xs text-gray-500 mb-2">[Quick Links]</p>
-    <ul class="space-y-1">
-      <li><a href="index.html#polling" class="hover:text-white transition">Candidates </a></li>
-      <li><a href="information.html" class="hover:text-white transition"> Informations</a></li>
-      <li><a href="blogs.html" class="hover:text-white transition"> News</a></li>
-
-
-    </ul>
-  </div>
-
-  <div>
-    <p class="uppercase text-xs text-gray-500 mb-2">[Latest Updates]</p>
-    <ul class="space-y-1">
-      
-      <li><a href="blogs.html" class="hover:text-white transition">Insights</a></li>
-      <li><a href="blogs.html" class="hover:text-white transition"> Events</a></li>
-    </ul>
-  </div>
-</div>
-
+      <p data-ta="தமிழ்நாடு சட்டமன்றத் தேர்தல் குறித்த சமீபத்திய புதுப்பிப்புகளை அறிந்து கொள்ளுங்கள். வேட்பாளர் விவரங்கள், வாக்குப்பதிவு தகவல்கள் மற்றும் செய்தி பார்வைகள் — அனைத்தும் ஒரே இடத்தில்."
+         data-en="Stay informed with the latest updates from the Tamil Nadu Legislative Assembly Elections. Explore candidate profiles, polling information, and news insights — all in one place."
+         class="mt-4 text-sm text-gray-400 max-w-5xl"></p>
     </div>
 
-   <div class="text-center text-xs text-gray-500 mt-12">
-  Make Your Voice Count – Every Vote Shapes Tamil Nadu's Future!
-</div>
+    <!-- RIGHT SECTION -->
+    <div class="flex flex-col md:flex-row gap-8 md:gap-16 text-gray-400">
 
-  </footer>
+      <!-- Quick Links -->
+      <div>
+        <p data-ta="[விரைவு இணைப்புகள்]"
+           data-en="[Quick Links]"
+           class="uppercase text-xs text-gray-500 mb-2"></p>
+        <ul class="space-y-1">
+          <li><a href="index.html#polling"
+                 data-ta="வேட்பாளர்கள்"
+                 data-en="Candidates"
+                 class="hover:text-white transition"></a></li>
+          <li><a href="information.html"
+                 data-ta="தகவல்கள்"
+                 data-en="Informations"
+                 class="hover:text-white transition"></a></li>
+          <li><a href="blogs.html"
+                 data-ta="செய்திகள்"
+                 data-en="News"
+                 class="hover:text-white transition"></a></li>
+        </ul>
+      </div>
 
+      <!-- Latest Updates -->
+      <div>
+        <p data-ta="[சமீபத்திய புதுப்பிப்புகள்]"
+           data-en="[Latest Updates]"
+           class="uppercase text-xs text-gray-500 mb-2"></p>
+        <ul class="space-y-1">
+          <li><a href="blogs.html"
+                 data-ta="ஆழ்ந்த பார்வைகள்"
+                 data-en="Insights"
+                 class="hover:text-white transition"></a></li>
+          <li><a href="blogs.html"
+                 data-ta="நிகழ்வுகள்"
+                 data-en="Events"
+                 class="hover:text-white transition"></a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BOTTOM TEXT -->
+  <div class="text-center text-xs text-gray-500 mt-12"
+       data-ta="உங்கள் குரலை வெளிப்படுத்துங்கள் – ஒவ்வொரு வாக்கும் தமிழ்நாட்டின் எதிர்காலத்தை உருவாக்குகிறது!"
+       data-en="Make Your Voice Count – Every Vote Shapes Tamil Nadu's Future!">
+  </div>
+</footer>
+
+<script>
+// ======================================================
+// 🌐 LANGUAGE TOGGLE (Default: தமிழ்)
+// ======================================================
+const langToggle = document.getElementById("lang-toggle");
+const langLabel = document.getElementById("lang-label");
+
+// Default Tamil on first load
+let isEnglish = localStorage.getItem("isEnglish") === "true";
+
+// ======================================================
+// ✍️ Update placeholders in the opinion form (Tamil ↔ English)
+// ======================================================
+function updateFormPlaceholders() {
+  const placeholders = [
+    { id: "first-name", ta: "முதல் பெயர்", en: "First Name" },
+    { id: "last-name", ta: "கடைசி பெயர்", en: "Last Name" },
+    { id: "email", ta: "உங்கள் மின்னஞ்சல்", en: "you@example.com" },
+    { id: "opinion", ta: "உங்கள் கருத்தை பகிரவும்...", en: "Share your opinion..." }
+  ];
+
+  placeholders.forEach(field => {
+    const el = document.getElementById(field.id);
+    if (el) el.placeholder = isEnglish ? field.en : field.ta;
+  });
+}
+
+// ======================================================
+// 🔄 Update Language Across Page
+// ======================================================
+function updateLanguageUI() {
+  // Update label text on toggle
+  langLabel.textContent = isEnglish ? "ENG" : "தமிழ்";
+  langToggle.checked = isEnglish;
+  localStorage.setItem("isEnglish", isEnglish);
+
+  // Update all text elements with data-en and data-ta attributes
+  document.querySelectorAll("[data-en][data-ta]").forEach(el => {
+    el.textContent = isEnglish ? el.dataset.en : el.dataset.ta;
+  });
+
+  // Update form placeholders dynamically
+  updateFormPlaceholders();
+
+  // Refresh dropdowns, filters (if available)
+  if (typeof populateDistricts === "function") populateDistricts();
+  if (typeof populateConstituencies === "function") populateConstituencies();
+  if (typeof filterCandidates === "function") filterCandidates();
+}
+
+// ======================================================
+// 🧩 Toggle Event Listener
+// ======================================================
+langToggle.addEventListener("change", () => {
+  isEnglish = langToggle.checked;
+  updateLanguageUI();
+});
+
+// ======================================================
+// 🚀 Initialize on page load (Tamil default)
+// ======================================================
+document.addEventListener("DOMContentLoaded", () => {
+  updateLanguageUI();
+});
+
+
+
+// ======================================================
+// 🖼️ SLIDER (Fix disappearing slide-box)
+// ======================================================
+const slides = document.querySelectorAll('.slide');
+const boxes = document.querySelectorAll('.slide-box');
+const prevBtn = document.getElementById('prev-slide');
+const nextBtn = document.getElementById('next-slide');
+
+let current = 0;
+let autoSlide;
+
+// Show slide function
+function showSlide(i) {
+  slides.forEach((slide, idx) => {
+    slide.style.opacity = idx === i ? '1' : '0';
+    slide.style.transition = 'opacity 1s ease-in-out';
+  });
+
+  boxes.forEach(box => box.classList.toggle('hidden', box.dataset.slide != i));
+}
+
+// Next slide
+function nextSlide() {
+  current = (current + 1) % slides.length;
+  showSlide(current);
+}
+
+// Previous slide
+function prevSlideFunc() {
+  current = (current - 1 + slides.length) % slides.length;
+  showSlide(current);
+}
+
+// Auto slide
+function startAutoSlide() {
+  autoSlide = setInterval(nextSlide, 4000);
+}
+
+// Stop auto slide
+function stopAutoSlide() {
+  clearInterval(autoSlide);
+}
+
+// Initial display
+showSlide(current);
+startAutoSlide();
+
+// Arrow navigation
+nextBtn.addEventListener('click', () => {
+  stopAutoSlide();
+  nextSlide();
+  startAutoSlide();
+});
+
+prevBtn.addEventListener('click', () => {
+  stopAutoSlide();
+  prevSlideFunc();
+  startAutoSlide();
+});
+
+// Mouse wheel navigation
+let isScrolling = false;
+window.addEventListener('wheel', (e) => {
+  if (isScrolling) return;
+  isScrolling = true;
+
+  stopAutoSlide();
+
+  if (e.deltaY > 0) nextSlide();
+  else prevSlideFunc();
+
+  startAutoSlide();
+
+  setTimeout(() => isScrolling = false, 800);
+});
+
+// Touch swipe for mobile
+let startX = 0;
+let endX = 0;
+
+window.addEventListener('touchstart', (e) => {
+  startX = e.touches[0].clientX;
+  stopAutoSlide();
+});
+
+window.addEventListener('touchmove', (e) => {
+  endX = e.touches[0].clientX;
+});
+
+window.addEventListener('touchend', () => {
+  const deltaX = endX - startX;
+  if (Math.abs(deltaX) > 50) {
+    if (deltaX < 0) nextSlide(); // swipe left → next
+    else prevSlideFunc();         // swipe right → prev
+  }
+  startAutoSlide();
+});
+
+
+// ======================================================
+// 🟦 DISTRICT DATA (தமிழ் + English)
+// ======================================================
+const districtData = {
+  "Ariyalur": { ta: "அரியலூர்", en: "Ariyalur", constituencies: [{ ta: "அரியலூர்", en: "Ariyalur" }, { ta: "ஜெயங்கொண்டம்", en: "Jayankondam" }] },
+  "Chengalpattu": { ta: "செங்கல்பட்டு", en: "Chengalpattu", constituencies: [{ ta: "தாம்பரம்", en: "Tambaram" }, { ta: "பல்லவரம்", en: "Pallavaram" }, { ta: "செங்கல்பட்டு", en: "Chengalpattu" }] },
+  "Chennai": { ta: "சென்னை", en: "Chennai", constituencies: [{ ta: "சைதாப்பேட்டை", en: "Saidapet" }, { ta: "டி. நகர்", en: "T. Nagar" }, { ta: "எக்மோர்", en: "Egmore" }, { ta: "ராயபுரம்", en: "Royapuram" }, { ta: "வேளச்சேரி", en: "Velachery" }, { ta: "கோளத்தூர்", en: "Kolathur" }] },
+  "Coimbatore": { ta: "கோயம்புத்தூர்", en: "Coimbatore", constituencies: [{ ta: "கோயம்புத்தூர் வடக்கு", en: "Coimbatore North" }, { ta: "கோயம்புத்தூர் தெற்கு", en: "Coimbatore South" }, { ta: "பொள்ளாச்சி", en: "Pollachi" }] },
+  "Cuddalore": { ta: "கடலூர்", en: "Cuddalore", constituencies: [{ ta: "கடலூர்", en: "Cuddalore" }, { ta: "பாண்ருட்டி", en: "Panruti" }, { ta: "குறிஞ்சிபாடி", en: "Kurinjipadi" }] },
+  "Dharmapuri": { ta: "தர்மபுரி", en: "Dharmapuri", constituencies: [{ ta: "தர்மபுரி", en: "Dharmapuri" }, { ta: "பாப்பிரெட்டிப்பட்டி", en: "Pappireddipatti" }] },
+  "Dindigul": { ta: "திண்டுக்கல்", en: "Dindigul", constituencies: [{ ta: "திண்டுக்கல்", en: "Dindigul" }, { ta: "ஒட்டன்சத்திரம்", en: "Oddanchatram" }, { ta: "நத்தம்", en: "Natham" }] },
+  "Erode": { ta: "ஈரோடு", en: "Erode", constituencies: [{ ta: "ஈரோடு மேற்கு", en: "Erode West" }, { ta: "ஈரோடு கிழக்கு", en: "Erode East" }, { ta: "பவானி", en: "Bhavani" }] },
+  "Kallakurichi": { ta: "கள்ளக்குறிச்சி", en: "Kallakurichi", constituencies: [{ ta: "கள்ளக்குறிச்சி", en: "Kallakurichi" }, { ta: "சங்காரபுரம்", en: "Sankarapuram" }] },
+  "Kanchipuram": { ta: "காஞ்சிபுரம்", en: "Kanchipuram", constituencies: [{ ta: "காஞ்சிபுரம்", en: "Kanchipuram" }, { ta: "உத்திரமேரூர்", en: "Uthiramerur" }] },
+  "Kanyakumari": { ta: "கன்னியாகுமரி", en: "Kanyakumari", constituencies: [{ ta: "நாகர்கோவில்", en: "Nagercoil" }, { ta: "கொளச்சல்", en: "Colachel" }, { ta: "பத்மநாபபுரம்", en: "Padmanabhapuram" }] },
+  "Karur": { ta: "கரூர்", en: "Karur", constituencies: [{ ta: "கரூர்", en: "Karur" }, { ta: "அரவக்குறிச்சி", en: "Aravakurichi" }] },
+  "Krishnagiri": { ta: "கிருஷ்ணகிரி", en: "Krishnagiri", constituencies: [{ ta: "கிருஷ்ணகிரி", en: "Krishnagiri" }, { ta: "ஹொசூர்", en: "Hosur" }] },
+  "Madurai": { ta: "மதுரை", en: "Madurai", constituencies: [{ ta: "மதுரை வடக்கு", en: "Madurai North" }, { ta: "மதுரை தெற்கு", en: "Madurai South" }, { ta: "திருப்பரங்குன்றம்", en: "Thirupparankundram" }] },
+  "Mayiladuthurai": { ta: "மயிலாடுதுறை", en: "Mayiladuthurai", constituencies: [{ ta: "மயிலாடுதுறை", en: "Mayiladuthurai" }, { ta: "சீர்காழி", en: "Sirkazhi" }] },
+  "Nagapattinam": { ta: "நாகப்பட்டினம்", en: "Nagapattinam", constituencies: [{ ta: "நாகப்பட்டினம்", en: "Nagapattinam" }, { ta: "வேளாங்கண்ணி", en: "Velankanni" }] },
+  "Namakkal": { ta: "நாமக்கல்", en: "Namakkal", constituencies: [{ ta: "நாமக்கல்", en: "Namakkal" }, { ta: "ராசிபுரம்", en: "Rasipuram" }] },
+  "Nilgiris": { ta: "நீலகிரி", en: "Nilgiris", constituencies: [{ ta: "உதகை", en: "Udhagamandalam" }, { ta: "கூனூர்", en: "Coonoor" }] },
+  "Perambalur": { ta: "பெரம்பலூர்", en: "Perambalur", constituencies: [{ ta: "பெரம்பலூர்", en: "Perambalur" }] },
+  "Pudukkottai": { ta: "புதுக்கோட்டை", en: "Pudukkottai", constituencies: [{ ta: "புதுக்கோட்டை", en: "Pudukkottai" }, { ta: "அரந்தாங்கி", en: "Aranthangi" }] },
+  "Ramanathapuram": { ta: "இராமநாதபுரம்", en: "Ramanathapuram", constituencies: [{ ta: "இராமநாதபுரம்", en: "Ramanathapuram" }, { ta: "பரமக்குடி", en: "Paramakudi" }] },
+  "Ranipet": { ta: "ராணிப்பேட்டை", en: "Ranipet", constituencies: [{ ta: "ராணிப்பேட்டை", en: "Ranipet" }, { ta: "அரக்கோணம்", en: "Arakkonam" }] },
+  "Salem": { ta: "சேலம்", en: "Salem", constituencies: [{ ta: "சேலம் வடக்கு", en: "Salem North" }, { ta: "சேலம் தெற்கு", en: "Salem South" }, { ta: "மெட்டூர்", en: "Mettur" }] },
+  "Sivaganga": { ta: "சிவகங்கை", en: "Sivaganga", constituencies: [{ ta: "சிவகங்கை", en: "Sivaganga" }, { ta: "மணமேல்குடி", en: "Manamadurai" }] },
+  "Tenkasi": { ta: "தென்காசி", en: "Tenkasi", constituencies: [{ ta: "தென்காசி", en: "Tenkasi" }, { ta: "செங்கோட்டை", en: "Sengottai" }] },
+  "Thanjavur": { ta: "தஞ்சாவூர்", en: "Thanjavur", constituencies: [{ ta: "தஞ்சாவூர்", en: "Thanjavur" }, { ta: "கும்பகோணம்", en: "Kumbakonam" }] },
+  "Theni": { ta: "தேனி", en: "Theni", constituencies: [{ ta: "தேனி", en: "Theni" }, { ta: "போடிநாயக்கனூர்", en: "Bodinayakkanur" }] },
+  "Thoothukudi": { ta: "தூத்துக்குடி", en: "Thoothukudi", constituencies: [{ ta: "தூத்துக்குடி", en: "Thoothukudi" }, { ta: "கோவில்பட்டி", en: "Kovilpatti" }] },
+  "Tiruchirappalli": { ta: "திருச்சிராப்பள்ளி", en: "Tiruchirappalli", constituencies: [{ ta: "திருச்சி கிழக்கு", en: "Trichy East" }, { ta: "திருச்சி மேற்கே", en: "Trichy West" }] },
+  "Tirunelveli": { ta: "திருநெல்வேலி", en: "Tirunelveli", constituencies: [{ ta: "திருநெல்வேலி", en: "Tirunelveli" }, { ta: "அம்பாசமுத்திரம்", en: "Ambasamudram" }] },
+  "Tirupathur": { ta: "திருப்பத்தூர்", en: "Tirupathur", constituencies: [{ ta: "திருப்பத்தூர்", en: "Tirupathur" }, { ta: "வாணியம்பாடி", en: "Vaniyambadi" }] },
+  "Tiruppur": { ta: "திருப்பூர்", en: "Tiruppur", constituencies: [{ ta: "திருப்பூர் வடக்கு", en: "Tiruppur North" }, { ta: "திருப்பூர் தெற்கு", en: "Tiruppur South" }] },
+  "Tiruvallur": { ta: "திருவள்ளூர்", en: "Tiruvallur", constituencies: [{ ta: "திருவள்ளூர்", en: "Tiruvallur" }, { ta: "அவடி", en: "Avadi" }] },
+  "Tiruvannamalai": { ta: "திருவண்ணாமலை", en: "Tiruvannamalai", constituencies: [{ ta: "திருவண்ணாமலை", en: "Tiruvannamalai" }, { ta: "செங்கம்", en: "Chengam" }] },
+  "Tiruvarur": { ta: "திருவாரூர்", en: "Tiruvarur", constituencies: [{ ta: "திருவாரூர்", en: "Tiruvarur" }, { ta: "மன்னார்குடி", en: "Mannargudi" }] },
+  "Vellore": { ta: "வேலூர்", en: "Vellore", constituencies: [{ ta: "வேலூர்", en: "Vellore" }, { ta: "காட்பாடி", en: "Katpadi" }] },
+  "Viluppuram": { ta: "விழுப்புரம்", en: "Viluppuram", constituencies: [{ ta: "விழுப்புரம்", en: "Viluppuram" }, { ta: "திண்டிவனம்", en: "Tindivanam" }] },
+  "Virudhunagar": { ta: "விருதுநகர்", en: "Virudhunagar", constituencies: [{ ta: "விருதுநகர்", en: "Virudhunagar" }, { ta: "சாத்தூர்", en: "Sattur" }] }
+};
+
+
+// ======================================================
+// 🟨 FILTER LOGIC (District + Constituency + Search)
+// ======================================================
+const districtFilter = document.getElementById("districtFilter");
+const constituencyFilter = document.getElementById("constituencyFilter");
+const searchInput = document.getElementById("searchInput");
+const candidatesGrid = document.getElementById("candidatesGrid");
+const allCandidates = [...document.querySelectorAll("#candidatesGrid .group")];
+
+function populateDistricts() {
+  if (!districtFilter) return;
+  districtFilter.innerHTML =
+    `<option value="all">${isEnglish ? "District" : "மாவட்டம்"}</option>` +
+    Object.entries(districtData)
+      .map(([key, val]) => `<option value="${key}">${isEnglish ? val.en : val.ta}</option>`)
+      .join("");
+}
+
+function populateConstituencies() {
+  if (!constituencyFilter) return;
+  const selected = districtFilter.value;
+  if (selected === "all") {
+    constituencyFilter.innerHTML = `<option value="all">${isEnglish ? "Constituency" : "தொகுதி"}</option>`;
+  } else {
+    const cons = districtData[selected].constituencies;
+    constituencyFilter.innerHTML =
+      `<option value="all">${isEnglish ? "Constituency" : "தொகுதி"}</option>` +
+      cons.map(c => `<option value="${c.en}">${isEnglish ? c.en : c.ta}</option>`).join("");
+  }
+}
+
+function filterCandidates() {
+  const district = districtFilter.value.toLowerCase();
+  const constituency = constituencyFilter.value.toLowerCase();
+  const search = searchInput.value.toLowerCase();
+
+  const visible = [];
+  const hidden = [];
+
+  allCandidates.forEach(card => {
+    const name = card.dataset.name.toLowerCase();
+    const party = card.dataset.party.toLowerCase();
+    const d = card.dataset.district.toLowerCase();
+    const c = card.dataset.constituency.toLowerCase();
+
+    const matches =
+      (district === "all" || d === district) &&
+      (constituency === "all" || c === constituency) &&
+      (name.includes(search) || party.includes(search));
+
+    if (matches) visible.push(card);
+    else hidden.push(card);
+  });
+
+  candidatesGrid.innerHTML = "";
+  visible.forEach(card => { card.classList.remove("hidden"); candidatesGrid.appendChild(card); });
+  hidden.forEach(card => { card.classList.add("hidden"); candidatesGrid.appendChild(card); });
+}
+
+districtFilter?.addEventListener("change", () => { populateConstituencies(); filterCandidates(); });
+searchInput?.addEventListener("input", filterCandidates);
+
+
+// ======================================================
+// 🟩 LOGIN + OTP + VOTE
+// ======================================================
+let loggedIn = false;
+let generatedOtp = null;
+let selectedCandidate = null;
+
+document.querySelectorAll(".group button").forEach(btn => {
+  btn.addEventListener("click", e => {
+    const candidate = e.target.closest(".group").dataset.name;
+    selectedCandidate = { name: candidate, button: e.target };
+    if (!loggedIn) openLoginModal();
+    else openConfirmModal(candidate);
+  });
+});
+
+function openLoginModal() {
+  const modal = document.getElementById("loginModal");
+  modal.style.display = "flex";
+  modal.addEventListener("click", e => { if (e.target === modal) closeLoginModal(); });
+}
+function closeLoginModal() { document.getElementById("loginModal").style.display = "none"; }
+
+document.getElementById("sendOtpBtn")?.addEventListener("click", () => {
+  const phone = document.getElementById("phone").value.trim();
+  if (/^[6-9]\d{9}$/.test(phone)) {
+    generatedOtp = Math.floor(100000 + Math.random() * 900000);
+    alert(`Your OTP is ${generatedOtp}`); // Simulated OTP
+    document.getElementById("otpContainer").classList.remove("hidden");
+  } else alert("Enter a valid 10-digit Indian phone number.");
+});
+
+document.getElementById("loginSubmit")?.addEventListener("click", () => {
+  const name = document.getElementById("loginName").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const otp = document.getElementById("otpInput").value.trim();
+  const age = parseInt(document.getElementById("loginAge").value.trim());
+
+  if (!name || !phone || !otp || !age) return alert("Please fill all fields.");
+  if (!/^[6-9]\d{9}$/.test(phone)) return alert("Invalid phone number.");
+  if (otp != generatedOtp) return alert("Incorrect OTP.");
+  if (age < 18) return alert("You must be 18 or older to vote.");
+
+  loggedIn = true;
+  closeLoginModal();
+  openConfirmModal(selectedCandidate.name);
+});
+
+function openConfirmModal(candidate) {
+  const modal = document.getElementById("voteConfirmModal");
+  modal.style.display = "flex";
+  document.getElementById("confirmText").textContent = `Confirm your vote for ${candidate}?`;
+  modal.addEventListener("click", e => { if (e.target === modal) closeConfirmModal(); });
+}
+function closeConfirmModal() { document.getElementById("voteConfirmModal").style.display = "none"; }
+
+document.getElementById("confirmVoteBtn")?.addEventListener("click", () => {
+  closeConfirmModal();
+  submitVote(selectedCandidate);
+});
+
+function submitVote(candidate) {
+  const btn = candidate.button;
+  btn.textContent = "Voted";
+  btn.disabled = true;
+  btn.classList.add("bg-green-700", "cursor-not-allowed");
+
+  document.querySelectorAll(".group button").forEach(other => {
+    if (other !== btn) {
+      other.disabled = true;
+      other.classList.add("bg-gray-400", "cursor-not-allowed");
+    }
+  });
+
+  const modal = document.getElementById("successModal");
+  modal.style.display = "flex";
+  modal.addEventListener("click", e => { if (e.target === modal) closeSuccessModal(); });
+}
+function closeSuccessModal() { document.getElementById("successModal").style.display = "none"; }
+
+// ======================================================
+// 🏁 INITIALIZE ON LOAD
+// ======================================================
+window.addEventListener("load", () => {
+  updateLanguageUI();
+  populateDistricts();
+  populateConstituencies();
+  filterCandidates();
+});
+</script>
 
 
 

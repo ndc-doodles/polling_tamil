@@ -45,7 +45,50 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  // ==============================
+  // 🌐 LANGUAGE TOGGLE SCRIPT
+  // ==============================
+  const desktopToggle = document.getElementById("lang-toggle");
+  const desktopLabel  = document.getElementById("lang-label");
+  const mobileToggle  = document.getElementById("mobile-lang-toggle");
+  const mobileLabel   = document.getElementById("mobile-lang-label");
 
+  // ✅ Load preference or default to Tamil
+  let currentLang = localStorage.getItem("lang") || "ta";
+  if (desktopToggle && mobileToggle) {
+    if (currentLang === "en") {
+      desktopToggle.checked = true;
+      mobileToggle.checked = true;
+    }
+
+    updateLanguage(currentLang);
+
+    function updateLanguage(lang) {
+      document.querySelectorAll("[data-en]").forEach(el => {
+        el.textContent = lang === "en" ? el.dataset.en : el.dataset.ta;
+      });
+      if (desktopLabel) desktopLabel.textContent = lang === "en" ? "ENG" : "தமிழ்";
+      if (mobileLabel) mobileLabel.textContent = lang === "en" ? "ENG" : "தமிழ்";
+      localStorage.setItem("lang", lang);
+    }
+
+    // 🔄 Sync both toggles
+    desktopToggle.addEventListener("change", e => {
+      const lang = e.target.checked ? "en" : "ta";
+      mobileToggle.checked = e.target.checked;
+      updateLanguage(lang);
+    });
+
+    mobileToggle.addEventListener("change", e => {
+      const lang = e.target.checked ? "en" : "ta";
+      desktopToggle.checked = e.target.checked;
+      updateLanguage(lang);
+    });
+  }
+
+
+});
 
 
 
@@ -165,7 +208,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
 (function () {
   // === Toggle share popup visibility ===
   document.querySelectorAll('.share-btn').forEach(btn => {
@@ -187,25 +229,24 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.share-popup').forEach(p => p.classList.add('hidden'));
   });
 
-  // === Platform-specific sharing (with bold heading, paragraph, and read more link) ===
+  // === Platform-specific sharing (bold title, short desc, and link) ===
   document.querySelectorAll('.share-popup button[data-platform]').forEach(opt => {
     opt.addEventListener('click', e => {
       e.stopPropagation();
 
-      const container = opt.closest('.news-card');
-      const title = container?.dataset.title || 'Latest News';
-      const description = container?.dataset.description?.slice(0, 120) || '';
+      const slide = opt.closest('[data-title]');
+      const title = slide?.dataset.title || 'Latest News';
+      const description = slide?.dataset.description?.slice(0, 120) || '';
       const detailPage = `${window.location.origin}/polling/blog_detail.html`;
-
-      // Message structure for sharing — bold title + description + link
       const message = `**${title}**\n\n${description}...\n\nRead more: ${detailPage}`;
       const encodedMessage = encodeURIComponent(message);
+      const encodedUrl = encodeURIComponent(detailPage);
 
       let shareUrl = '';
 
       switch (opt.dataset.platform) {
         case 'facebook':
-          shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(detailPage)}&quote=${encodedMessage}`;
+          shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
           break;
         case 'twitter':
           shareUrl = `https://twitter.com/intent/tweet?text=${encodedMessage}`;
@@ -214,39 +255,16 @@ document.addEventListener('DOMContentLoaded', () => {
           shareUrl = `https://api.whatsapp.com/send?text=${encodedMessage}`;
           break;
         case 'linkedin':
-          shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(detailPage)}`;
+          shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodeURIComponent(title)}&summary=${encodeURIComponent(description)}`;
           break;
         default:
-          navigator.clipboard.writeText(message)
-            .then(() => alert('✅ Share message copied to clipboard'))
-            .catch(() => console.warn('Clipboard unavailable'));
+          alert('Unsupported platform');
           return;
       }
 
-      window.open(shareUrl, '_blank', 'noopener,noreferrer,width=600,height=500');
-      opt.closest('.share-popup')?.classList.add('hidden');
+      window.open(shareUrl, '_blank', 'width=600,height=500');
     });
   });
-// === News card click to open detail page ===
-document.querySelectorAll('.news-card, article[data-title]').forEach(card => {
-  card.addEventListener('click', e => {
-    if (e.target.closest('.share-btn') || e.target.closest('.share-popup')) return; // Prevent conflict
-
-    const title = card.dataset.title || 'Untitled';
-    const date = card.dataset.date || '';
-    const image = card.dataset.image || '';
-    const description = card.dataset.description || '';
-
-    const content = `
-      <p>${description}</p>
-      <p class="mt-4">Stay tuned for more in-depth analysis and updates on this topic.</p>
-    `;
-
-    localStorage.setItem('selectedNews', JSON.stringify({ title, date, image, description, content }));
-    window.location.href = 'blog_detail.html';
-  });
-});
-
 })();
 
 document.addEventListener("DOMContentLoaded", function () {

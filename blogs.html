@@ -6,6 +6,8 @@
 <title>Tamil Nadu Polling 2026</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 </head>
 
 <body class="bg-gray-50 text-white">
@@ -14,23 +16,23 @@
 <!-- Navbar -->
 <nav id="navbar" class="fixed w-full top-0 z-50 bg-[#06038D] transition-colors duration-300">
   <div class="px-5 sm:px-10 md:px-20 flex justify-between items-center h-16">
-    <a href="index.html" class="text-2xl font-bold text-white">TN Polls 2026</a>
+    <a href="index.html" class="text-2xl font-bold text-white" data-en="TN Polls 2026" data-ta="டி.என். தேர்தல் 2026">டி.என். தேர்தல் 2026</a>
 
     <!-- Desktop Menu -->
     <div class="hidden md:flex items-center space-x-6">
-      <a href="index.html" class="hover:text-gray-200 transition">Home</a>
-      <a href="information.html" class="hover:text-gray-200 transition">Overview</a>
-      <a href="blogs.html" class="px-4 py-2 border border-white rounded bg-white/10 text-white hover:bg-white/20 transition">Blogs</a>
+      <a href="index.html" class="hover:text-gray-200 transition" data-en="Home" data-ta="முகப்பு">முகப்பு</a>
+      <a href="information.html" class="hover:text-gray-200 transition" data-en="Overview" data-ta="மேலோட்டம்">மேலோட்டம்</a>
+      <a href="blogs.html" class="px-4 py-2 border border-white rounded bg-white/10 text-white hover:bg-white/20 transition"
+         data-en="Blogs" data-ta="வலைப்பதிவுகள்">வலைப்பதிவுகள்</a>
+
       <div class="flex items-center space-x-2">
-  <span id="lang-label" class="text-white font-semibold text-sm">ENG</span>
-  <label class="relative inline-flex items-center cursor-pointer">
-    <input type="checkbox" class="sr-only peer" id="lang-toggle">
-    <!-- Track -->
-    <div class="w-10 h-6 bg-gray-300 rounded-full peer-checked:bg-blue-500 transition-colors"></div>
-    <!-- Slider -->
-    <div class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow-md peer-checked:translate-x-6 transition-transform"></div>
-  </label>
-</div>
+        <span id="lang-label" class="text-white font-semibold text-sm">தமிழ்</span>
+        <label class="relative inline-flex items-center cursor-pointer">
+          <input type="checkbox" class="sr-only peer" id="lang-toggle">
+          <div class="w-10 h-6 bg-gray-300 rounded-full peer-checked:bg-blue-500 transition-colors"></div>
+          <div class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow-md peer-checked:translate-x-6 transition-transform"></div>
+        </label>
+      </div>
     </div>
 
     <!-- Mobile Menu Button -->
@@ -46,22 +48,24 @@
   <div id="overlay" class="fixed inset-0 bg-black/50 hidden z-40"></div>
 
   <!-- Mobile Sidebar Menu -->
-  <div id="mobile-menu" class="fixed top-0 right-[-70%] h-full w-[70%]  bg-[#06038D]/95  text-white shadow-lg transition-all duration-500 z-50 flex flex-col px-6 py-8 space-y-4">
-    <a href="index.html" class="hover:text-red-500 transition">Home</a>
-    <a href="information.html" class="hover:text-red-500 transition">Overview</a>
-    <a href="blogs.html" class="px-4 py-2 border border-white rounded bg-white/10 text-white hover:bg-white/20 transition">Blogs</a>
-   <div class="flex items-center space-x-2 mt-6">
-  <span id="mobile-lang-label" class="text-white font-semibold text-sm">ENG</span>
-  <label class="relative inline-flex items-center cursor-pointer">
-    <input type="checkbox" class="sr-only peer" id="mobile-lang-toggle">
-    <!-- Track -->
-    <div class="w-10 h-6 bg-gray-300 rounded-full peer-checked:bg-blue-500 transition-colors"></div>
-    <!-- Slider -->
-    <div class="absolute left-[2px] top-[2px] w-5 h-5 bg-white rounded-full shadow-md peer-checked:translate-x-[18px] transition-transform duration-300"></div>
-  </label>
-</div>
+  <div id="mobile-menu" class="fixed top-0 right-[-70%] h-full w-[70%] bg-[#06038D]/95 text-white shadow-lg transition-all duration-500 z-50 flex flex-col px-6 py-8 space-y-4">
+    <a href="index.html" class="hover:text-red-500 transition" data-en="Home" data-ta="முகப்பு">முகப்பு</a>
+    <a href="information.html" class="hover:text-red-500 transition" data-en="Overview" data-ta="மேலோட்டம்">மேலோட்டம்</a>
+    <a href="blogs.html" class="px-4 py-2 border border-white rounded bg-white/10 text-white hover:bg-white/20 transition"
+       data-en="Blogs" data-ta="வலைப்பதிவுகள்">வலைப்பதிவுகள்</a>
+
+    <div class="flex items-center space-x-2 mt-6">
+      <span id="mobile-lang-label" class="text-white font-semibold text-sm">தமிழ்</span>
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" class="sr-only peer" id="mobile-lang-toggle">
+        <div class="w-10 h-6 bg-gray-300 rounded-full peer-checked:bg-blue-500 transition-colors"></div>
+        <div class="absolute left-[2px] top-[2px] w-5 h-5 bg-white rounded-full shadow-md peer-checked:translate-x-[18px] transition-transform duration-300"></div>
+      </label>
+    </div>
   </div>
 </nav>
+
+<!-- Language Toggle Script -->
 
 
 
@@ -69,1014 +73,1373 @@
 
  <div class="w-full  mx-auto px-4 sm:px-6 md:px-20  py-8 text-black mt-20">
 
-    <!-- Featured Story -->
-<section class="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full py-8">
-  <!-- Main Slider -->
- <div class="lg:col-span-2 relative rounded-lg overflow-hidden w-full mx-auto">
-  <!-- Progress bars -->
-  <div class="absolute top-4 left-4 right-4 flex gap-1 z-10 cursor-pointer">
-    <div class="h-1 bg-gray-400 rounded-full flex-1 overflow-hidden" data-index="0">
-      <div class="bg-white h-full w-0 transition-all duration-300" id="progress1"></div>
+<!-- 📰 Featured Story Section -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full " id="featured-news">
+
+  <!-- 🖼️ Main Slider -->
+  <div class="lg:col-span-2 relative rounded-lg overflow-hidden w-full mx-auto">
+    <div class="relative h-full">
+
+      <!-- Slide 1 -->
+      <div class="absolute inset-0 transition-opacity duration-700 opacity-100" id="slide1"
+            data-title="At least 40 killed in rally stampede in Karur district" data-category="Tamil Nadu Politics"
+            data-date="Sep 28, 2025" data-image="./static/images/n1.jpg"
+            data-description="At least 40 people were killed and dozens injured during a political rally in Karur district after a sudden stampede occurred when the crowd surged toward the stage.">
+          <div class="absolute top-2 right-2 z-[9999]">
+
+              <button
+                class="share-btn bg-black/50 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">
+                ⋮
+              </button>
+
+
+              <div
+                class="share-popup hidden absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg border border-gray-200 z-50 w-64 px-5 py-4">
+                <h3 class="text-sm font-semibold text-gray-700 mb-3 border-b pb-2 text-center">Share this news</h3>
+
+
+                <div class="grid grid-cols-2 gap-3 place-items-center">
+
+                  <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                    data-platform="facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1877F2]" fill="currentColor"
+                      viewBox="0 0 24 24">
+                      <path
+                        d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.591l-.467 3.622h-3.124V24h6.126C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z" />
+                    </svg>
+                    <span class="text-xs">Facebook</span>
+                  </button>
+
+
+                  <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                    data-platform="twitter">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black" fill="currentColor"
+                      viewBox="0 0 24 24">
+                      <path
+                        d="M18.36 1.64 12.95 9.27 18.81 22h-3.98l-3.79-8.75L6.54 22H2.5l6.26-9.59L3.55 2h4.03l3.47 7.96L14.44 2h3.92z" />
+                    </svg>
+                    <span class="text-xs">Twitter</span>
+                  </button>
+
+
+                  <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                    data-platform="whatsapp">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366]" fill="currentColor"
+                      viewBox="0 0 24 24">
+                      <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.67-.51-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.464 1.066 2.875 1.214 3.074.149.198 2.099 3.204 5.086 4.49.711.306 1.266.489 1.698.626.713.227 1.362.195 1.874.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 01-5.031-1.378l-.36-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.239c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437 9.884-9.887 9.884" />
+                    </svg>
+                    <span class="text-xs">WhatsApp</span>
+                  </button>
+
+
+                  <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                    data-platform="linkedin">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0077B5]" fill="currentColor"
+                      viewBox="0 0 24 24">
+                      <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.371 4.268 5.455v6.288zM5.337 7.433a2.063 2.063 0 11.002-4.126 2.063 2.063 0 01-.002 4.126zM6.867 20.452H3.802V9h3.065v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.228.792 24 1.771 24h20.451C23.2 24 24 23.228 24 22.277V1.723C24 .771 23.2 0 22.222 0h.003z" />
+                    </svg>
+                    <span class="text-xs">LinkedIn</span>
+                  </button>
+                </div>
+              </div>
+
+
+            </div>
+
+
+
+
+
+        <img src="./static/images/n1.jpg" class="w-full h-full object-cover rounded-lg" alt="">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+        <div class="absolute bottom-6 left-6 text-white">
+          <span class="bg-red-600 px-3 py-1 rounded text-sm font-semibold"
+                data-en="Breaking News" data-ta="அதிர்ச்சி செய்தி">அதிர்ச்சி செய்தி</span>
+          <h2 class="text-2xl font-bold mt-3 leading-snug"
+                data-en="40 Dead in Karur Political Rally Stampede"
+                data-ta="கரூர் கூட்டத்தில் 40 பேர் உயிரிழப்பு">கரூர் கூட்டத்தில் 40 பேர் உயிரிழப்பு</h2>
+          <p class="text-gray-300 text-sm mt-2"
+                data-en="Sep 28, 2025" data-ta="செப் 28, 2025">செப் 28, 2025</p>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="absolute inset-0 transition-opacity duration-700 opacity-0" id="slide2" data-title="Tamil Nadu signs ₹24,000 cr MoUs at Hosur, creates 49,000 jobs"
+            data-category="Business & Industry" data-date="Sep 12, 2025" data-image="./static/images/n2.avif"
+            data-description="Tamil Nadu has signed Memorandums of Understanding (MoUs) worth ₹24,000 crore at Hosur, attracting major investments across multiple sectors and generating over 49,000 new employment opportunities in the state.">
+        <img src="./static/images/n2.avif" class="w-full h-full object-cover rounded-lg" alt="">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+
+          <div class="absolute top-2 right-2 z-[9999]">
+
+              <button
+                class="share-btn bg-black/50 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">
+                ⋮
+              </button>
+
+
+              <div
+                class="share-popup hidden absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg border border-gray-200 z-50 w-64 px-5 py-4">
+                <h3 class="text-sm font-semibold text-gray-700 mb-3 border-b pb-2 text-center">Share this news</h3>
+
+
+                <div class="grid grid-cols-2 gap-3 place-items-center">
+
+                  <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                    data-platform="facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1877F2]" fill="currentColor"
+                      viewBox="0 0 24 24">
+                      <path
+                        d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.591l-.467 3.622h-3.124V24h6.126C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z" />
+                    </svg>
+                    <span class="text-xs">Facebook</span>
+                  </button>
+
+
+                  <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                    data-platform="twitter">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black" fill="currentColor"
+                      viewBox="0 0 24 24">
+                      <path
+                        d="M18.36 1.64 12.95 9.27 18.81 22h-3.98l-3.79-8.75L6.54 22H2.5l6.26-9.59L3.55 2h4.03l3.47 7.96L14.44 2h3.92z" />
+                    </svg>
+                    <span class="text-xs">Twitter</span>
+                  </button>
+
+
+                  <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                    data-platform="whatsapp">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366]" fill="currentColor"
+                      viewBox="0 0 24 24">
+                      <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.67-.51-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.464 1.066 2.875 1.214 3.074.149.198 2.099 3.204 5.086 4.49.711.306 1.266.489 1.698.626.713.227 1.362.195 1.874.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 01-5.031-1.378l-.36-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.239c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437 9.884-9.887 9.884" />
+                    </svg>
+                    <span class="text-xs">WhatsApp</span>
+                  </button>
+
+
+                  <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                    data-platform="linkedin">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0077B5]" fill="currentColor"
+                      viewBox="0 0 24 24">
+                      <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.371 4.268 5.455v6.288zM5.337 7.433a2.063 2.063 0 11.002-4.126 2.063 2.063 0 01-.002 4.126zM6.867 20.452H3.802V9h3.065v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.228.792 24 1.771 24h20.451C23.2 24 24 23.228 24 22.277V1.723C24 .771 23.2 0 22.222 0h.003z" />
+                    </svg>
+                    <span class="text-xs">LinkedIn</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+
+        <div class="absolute bottom-6 left-6 text-white">
+          <span class="bg-red-600 px-3 py-1 rounded text-sm font-semibold"
+                data-en="Economic Update" data-ta="பொருளாதார அப்டேட்">பொருளாதார அப்டேட்</span>
+          <h2 class="text-2xl font-bold mt-3 leading-snug"
+                data-en="Tamil Nadu Signs ₹24,000 Cr MoUs – 49,000 Jobs"
+                data-ta="தமிழ்நாடு ₹24,000 கோடி ஒப்பந்தம் – 49,000 வேலை வாய்ப்புகள்">தமிழ்நாடு ₹24,000 கோடி ஒப்பந்தம் – 49,000 வேலை வாய்ப்புகள்</h2>
+          <p class="text-gray-300 text-sm mt-2"
+                data-en="Sep 12, 2025" data-ta="செப் 12, 2025">செப் 12, 2025</p>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="absolute inset-0 transition-opacity duration-700 opacity-0" id="slide3" data-title="Actor Vijay named CM candidate of TVK; rules out BJP-DMK tie-ups" data-category="Political News"
+            data-date="Jul 04, 2025" data-image="./static/images/n3.jpg"
+            data-description="Actor Vijay has been announced as the Chief Ministerial candidate for Tamil Nadu Vetri Kazhagam (TVK) for the 2026 Assembly elections. He ruled out any alliance with BJP or DMK, emphasizing that TVK will contest independently to bring a new era in Tamil Nadu politics." >
+        <img src="./static/images/n3.jpg" class="w-full h-full object-cover rounded-lg" alt="">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+
+          <div class="absolute top-2 right-2 z-[9999]">
+
+              <button
+                class="share-btn bg-black/50 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">
+                ⋮
+              </button>
+
+
+              <div
+                class="share-popup hidden absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg border border-gray-200 z-50 w-64 px-5 py-4">
+                <h3 class="text-sm font-semibold text-gray-700 mb-3 border-b pb-2 text-center">Share this news</h3>
+
+
+                <div class="grid grid-cols-2 gap-3 place-items-center">
+
+                  <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                    data-platform="facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1877F2]" fill="currentColor"
+                      viewBox="0 0 24 24">
+                      <path
+                        d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.591l-.467 3.622h-3.124V24h6.126C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z" />
+                    </svg>
+                    <span class="text-xs">Facebook</span>
+                  </button>
+
+
+                  <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                    data-platform="twitter">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black" fill="currentColor"
+                      viewBox="0 0 24 24">
+                      <path
+                        d="M18.36 1.64 12.95 9.27 18.81 22h-3.98l-3.79-8.75L6.54 22H2.5l6.26-9.59L3.55 2h4.03l3.47 7.96L14.44 2h3.92z" />
+                    </svg>
+                    <span class="text-xs">Twitter</span>
+                  </button>
+
+
+                  <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                    data-platform="whatsapp">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366]" fill="currentColor"
+                      viewBox="0 0 24 24">
+                      <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.67-.51-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.464 1.066 2.875 1.214 3.074.149.198 2.099 3.204 5.086 4.49.711.306 1.266.489 1.698.626.713.227 1.362.195 1.874.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 01-5.031-1.378l-.36-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.239c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437 9.884-9.887 9.884" />
+                    </svg>
+                    <span class="text-xs">WhatsApp</span>
+                  </button>
+
+
+                  <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                    data-platform="linkedin">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0077B5]" fill="currentColor"
+                      viewBox="0 0 24 24">
+                      <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.371 4.268 5.455v6.288zM5.337 7.433a2.063 2.063 0 11.002-4.126 2.063 2.063 0 01-.002 4.126zM6.867 20.452H3.802V9h3.065v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.228.792 24 1.771 24h20.451C23.2 24 24 23.228 24 22.277V1.723C24 .771 23.2 0 22.222 0h.003z" />
+                    </svg>
+                    <span class="text-xs">LinkedIn</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+        <div class="absolute bottom-6 left-6 text-white">
+          <span class="bg-red-600 px-3 py-1 rounded text-sm font-semibold"
+                data-en="Elections 2026" data-ta="தேர்தல் 2026">தேர்தல் 2026</span>
+          <h2 class="text-2xl font-bold mt-3 leading-snug"
+                data-en="Vijay Named Chief Minister Candidate of TVK"
+                data-ta="விஜய் TVK கட்சியின் முதலமைச்சர் வேட்பாளர்">விஜய் TVK கட்சியின் முதலமைச்சர் வேட்பாளர்</h2>
+          <p class="text-gray-300 text-sm mt-2"
+                data-en="Jul 04, 2025" data-ta="ஜூலை 04, 2025">ஜூலை 04, 2025</p>
+        </div>
+      </div>
+
     </div>
-    <div class="h-1 bg-gray-400 rounded-full flex-1 overflow-hidden" data-index="1">
-      <div class="bg-white h-full w-0 transition-all duration-300" id="progress2"></div>
-    </div>
-    <div class="h-1 bg-gray-400 rounded-full flex-1 overflow-hidden" data-index="2">
-      <div class="bg-white h-full w-0 transition-all duration-300" id="progress3"></div>
+
+    <!-- 🟥 Progress Bars (TOP position) -->
+    <div class="absolute top-0 left-0 w-full flex gap-2 justify-center mt-4 px-4">
+      <div class="h-1 flex-1 bg-white/20 rounded overflow-hidden cursor-pointer" data-index="0">
+        <div id="progress1" class="h-full bg-white transition-all duration-500" style="width:0%"></div>
+      </div>
+      <div class="h-1 flex-1 bg-white/20 rounded overflow-hidden cursor-pointer" data-index="1">
+        <div id="progress2" class="h-full bg-white transition-all duration-500" style="width:0%"></div>
+      </div>
+      <div class="h-1 flex-1 bg-white/20 rounded overflow-hidden cursor-pointer" data-index="2">
+        <div id="progress3" class="h-full bg-white transition-all duration-500" style="width:0%"></div>
+      </div>
     </div>
   </div>
 
-  <!-- News slides -->
-  <div class="relative h-full">
+  <!-- 🗞️ Side Cards (All in One Column) -->
+  <div class="flex flex-col gap-4 relative z-10">
 
-    <!-- Slide 1 -->
-<div class="absolute inset-0 transition-opacity duration-700 opacity-100 cursor-pointer news-card"
-  id="slide1"
-  data-title="At least 40 killed in rally stampede in Karur district"
-  data-category="Tamil Nadu Politics"
-  data-date="Sep 28, 2025"
-  data-image="./static/images/n1.jpg"
-  data-description="At least 40 people were killed and dozens injured during a political rally in Karur district after a sudden stampede occurred when the crowd surged toward the stage.">
-      <img src="./static/images/n1.jpg" alt="Karur Rally Stampede" class="w-full h-full object-cover">
-      <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+    <!-- Card 1 -->
+    <div class="relative flex items-center gap-4 bg-white rounded-lg shadow-sm hover:shadow-md transition" data-title="Heavy monsoon rains lash Chennai; red & orange alerts in multiple districts"
+          data-date="Oct 22, 2025" data-image="./static/images/n4.avif"
+          data-description="Heavy monsoon rains lashed Chennai leading to severe waterlogging in several areas. The Meteorological Department issued red and orange alerts for multiple districts warning of continued rainfall and thunderstorms over the next few days. Authorities have deployed disaster response teams to mitigate the impact.">
 
-      <div class="absolute top-2 right-2 z-[9999]">
-  <!-- Share Button -->
-  <button class="share-btn bg-black/50 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">
-    ⋮
-  </button>
+        <!-- Share Button -->
+          <div class="absolute top-2 right-2 z-9999">
 
-  <!-- Share Popup -->
-  <div class="share-popup hidden absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg border border-gray-200 z-50 w-64 px-5 py-4">
-    <h3 class="text-sm font-semibold text-gray-700 mb-3 border-b pb-2 text-center">Share this news</h3>
+            <button
+              class="share-btn bg-black/50 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">
+              ⋮
+            </button>
 
-    <!-- 2x2 grid layout -->
-    <div class="grid grid-cols-2 gap-3 place-items-center">
-      <!-- Facebook -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="facebook">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1877F2]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.591l-.467 3.622h-3.124V24h6.126C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z"/>
-        </svg>
-        <span class="text-xs">Facebook</span>
-      </button>
 
-      <!-- Twitter -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="twitter">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M18.36 1.64 12.95 9.27 18.81 22h-3.98l-3.79-8.75L6.54 22H2.5l6.26-9.59L3.55 2h4.03l3.47 7.96L14.44 2h3.92z"/>
-        </svg>
-        <span class="text-xs">Twitter</span>
-      </button>
+            <div
+              class="share-popup hidden absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg border border-gray-200 z-50 w-64 px-5 py-4">
+              <h3 class="text-sm font-semibold text-gray-700 mb-3 border-b pb-2 text-center">Share this news</h3>
 
-      <!-- WhatsApp -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="whatsapp">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.67-.51-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.464 1.066 2.875 1.214 3.074.149.198 2.099 3.204 5.086 4.49.711.306 1.266.489 1.698.626.713.227 1.362.195 1.874.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 01-5.031-1.378l-.36-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.239c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437 9.884-9.887 9.884"/>
-        </svg>
-        <span class="text-xs">WhatsApp</span>
-      </button>
 
-      <!-- LinkedIn -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="linkedin">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0077B5]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.371 4.268 5.455v6.288zM5.337 7.433a2.063 2.063 0 11.002-4.126 2.063 2.063 0 01-.002 4.126zM6.867 20.452H3.802V9h3.065v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.228.792 24 1.771 24h20.451C23.2 24 24 23.228 24 22.277V1.723C24 .771 23.2 0 22.222 0h.003z"/>
-        </svg>
-        <span class="text-xs">LinkedIn</span>
-      </button>
-    </div>
-  </div>
-</div>
+              <div class="grid grid-cols-2 gap-3 place-items-center">
 
-      <div class="absolute bottom-6 left-6 text-white">
-        <span class="bg-red-600 px-3 py-1 rounded text-sm font-semibold">Breaking News</span>
-        <h2 class="text-2xl font-bold mt-3 leading-snug">At least 40 killed in rally stampede in Karur district</h2>
-        <p class="text-gray-300 text-sm mt-2">Sep 28, 2025 | Tamil Nadu Politics</p>
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="facebook">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1877F2]" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.591l-.467 3.622h-3.124V24h6.126C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z" />
+                  </svg>
+                  <span class="text-xs">Facebook</span>
+                </button>
+
+
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="twitter">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M18.36 1.64 12.95 9.27 18.81 22h-3.98l-3.79-8.75L6.54 22H2.5l6.26-9.59L3.55 2h4.03l3.47 7.96L14.44 2h3.92z" />
+                  </svg>
+                  <span class="text-xs">Twitter</span>
+                </button>
+
+
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="whatsapp">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366]" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.67-.51-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.464 1.066 2.875 1.214 3.074.149.198 2.099 3.204 5.086 4.49.711.306 1.266.489 1.698.626.713.227 1.362.195 1.874.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 01-5.031-1.378l-.36-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.239c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437 9.884-9.887 9.884" />
+                  </svg>
+                  <span class="text-xs">WhatsApp</span>
+                </button>
+
+
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="linkedin">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0077B5]" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.371 4.268 5.455v6.288zM5.337 7.433a2.063 2.063 0 11.002-4.126 2.063 2.063 0 01-.002 4.126zM6.867 20.452H3.802V9h3.065v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.228.792 24 1.771 24h20.451C23.2 24 24 23.228 24 22.277V1.723C24 .771 23.2 0 22.222 0h.003z" />
+                  </svg>
+                  <span class="text-xs">LinkedIn</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        <img src="./static/images/n4.avif" class="w-24 h-24 object-cover rounded-md" alt="">
+      <div>
+        <h3 class="font-semibold text-gray-800"
+            data-en="Heavy Rain in Chennai – Red Alert for Many Districts"
+            data-ta="சென்னையில் கனமழை – பல மாவட்டங்களில் எச்சரிக்கை">சென்னையில் கனமழை – பல மாவட்டங்களில் எச்சரிக்கை</h3>
+        <p class="text-xs text-gray-400 mt-1"
+            data-en="Oct 22, 2025" data-ta="அக் 22, 2025">அக் 22, 2025</p>
       </div>
     </div>
 
-    <!-- Slide 2 -->
-<div class="absolute inset-0 transition-opacity duration-700 opacity-0 cursor-pointer news-card"
-  id="slide2"
-  data-title="Tamil Nadu signs ₹24,000 cr MoUs at Hosur, creates 49,000 jobs"
-  data-category="Business & Industry"
-  data-date="Sep 12, 2025"
-  data-image="./static/images/n2.avif"
-  data-description="Tamil Nadu has signed Memorandums of Understanding (MoUs) worth ₹24,000 crore at Hosur, attracting major investments across multiple sectors and generating over 49,000 new employment opportunities in the state.">
-      <img src="./static/images/n2.avif" alt="24k-crore investment Tamil Nadu" class="w-full h-full object-cover">
-      <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
 
-      <div class="absolute top-2 right-2 z-[9999]">
-  <!-- Share Button -->
-  <button class="share-btn bg-black/50 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">
-    ⋮
-  </button>
+    <!-- Card 2 -->
+    <div class="relative flex items-center gap-4 bg-white rounded-lg shadow-sm hover:shadow-md transition" data-title="TN govt set to introduce bill banning Hindi: CM Stalin to present legislation"
+          data-date="Oct 15, 2025" data-image="./static/images/n5.jpg"
+          data-description="Tamil Nadu Chief Minister M.K. Stalin is set to table a bill in the Assembly seeking to ban the mandatory imposition of Hindi in state government institutions. The legislation is part of the state's ongoing opposition to the Union government’s 'One Nation One Language' policy. The move has sparked national debate, with strong support from regional parties.">
 
-  <!-- Share Popup -->
-  <div class="share-popup hidden absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg border border-gray-200 z-50 w-64 px-5 py-4">
-    <h3 class="text-sm font-semibold text-gray-700 mb-3 border-b pb-2 text-center">Share this news</h3>
+        <div class="absolute top-2 right-2 z-9999">
 
-    <!-- 2x2 grid layout -->
-    <div class="grid grid-cols-2 gap-3 place-items-center">
-      <!-- Facebook -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="facebook">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1877F2]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.591l-.467 3.622h-3.124V24h6.126C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z"/>
-        </svg>
-        <span class="text-xs">Facebook</span>
-      </button>
+            <button
+              class="share-btn bg-black/50 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">
+              ⋮
+            </button>
 
-      <!-- Twitter -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="twitter">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M18.36 1.64 12.95 9.27 18.81 22h-3.98l-3.79-8.75L6.54 22H2.5l6.26-9.59L3.55 2h4.03l3.47 7.96L14.44 2h3.92z"/>
-        </svg>
-        <span class="text-xs">Twitter</span>
-      </button>
 
-      <!-- WhatsApp -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="whatsapp">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.67-.51-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.464 1.066 2.875 1.214 3.074.149.198 2.099 3.204 5.086 4.49.711.306 1.266.489 1.698.626.713.227 1.362.195 1.874.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 01-5.031-1.378l-.36-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.239c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437 9.884-9.887 9.884"/>
-        </svg>
-        <span class="text-xs">WhatsApp</span>
-      </button>
+            <div
+              class="share-popup hidden absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg border border-gray-200 z-50 w-64 px-5 py-4">
+              <h3 class="text-sm font-semibold text-gray-700 mb-3 border-b pb-2 text-center">Share this news</h3>
 
-      <!-- LinkedIn -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="linkedin">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0077B5]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.371 4.268 5.455v6.288zM5.337 7.433a2.063 2.063 0 11.002-4.126 2.063 2.063 0 01-.002 4.126zM6.867 20.452H3.802V9h3.065v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.228.792 24 1.771 24h20.451C23.2 24 24 23.228 24 22.277V1.723C24 .771 23.2 0 22.222 0h.003z"/>
-        </svg>
-        <span class="text-xs">LinkedIn</span>
-      </button>
-    </div>
-  </div>
-</div>
 
-      <div class="absolute bottom-6 left-6 text-white">
-        <span class="bg-red-600 px-3 py-1 rounded text-sm font-semibold">Economic Update</span>
-        <h2 class="text-2xl font-bold mt-3 leading-snug">Tamil Nadu signs ₹24,000 cr MoUs at Hosur, creates 49,000 jobs</h2>
-        <p class="text-gray-300 text-sm mt-2">Sep 12, 2025 | Business & Industry</p>
+              <div class="grid grid-cols-2 gap-3 place-items-center">
+
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="facebook">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1877F2]" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.591l-.467 3.622h-3.124V24h6.126C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z" />
+                  </svg>
+                  <span class="text-xs">Facebook</span>
+                </button>
+
+
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="twitter">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M18.36 1.64 12.95 9.27 18.81 22h-3.98l-3.79-8.75L6.54 22H2.5l6.26-9.59L3.55 2h4.03l3.47 7.96L14.44 2h3.92z" />
+                  </svg>
+                  <span class="text-xs">Twitter</span>
+                </button>
+
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="whatsapp">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366]" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.67-.51-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.464 1.066 2.875 1.214 3.074.149.198 2.099 3.204 5.086 4.49.711.306 1.266.489 1.698.626.713.227 1.362.195 1.874.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 01-5.031-1.378l-.36-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.239c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437 9.884-9.887 9.884" />
+                  </svg>
+                  <span class="text-xs">WhatsApp</span>
+                </button>
+
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="linkedin">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0077B5]" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.371 4.268 5.455v6.288zM5.337 7.433a2.063 2.063 0 11.002-4.126 2.063 2.063 0 01-.002 4.126zM6.867 20.452H3.802V9h3.065v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.228.792 24 1.771 24h20.451C23.2 24 24 23.228 24 22.277V1.723C24 .771 23.2 0 22.222 0h.003z" />
+                  </svg>
+                  <span class="text-xs">LinkedIn</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        <img src="./static/images/n5.jpg" class="w-24 h-24 object-cover rounded-md" alt="">
+      <div>
+        <h3 class="font-semibold text-gray-800"
+            data-en="Electric Buses Launching Soon Across Tamil Nadu"
+            data-ta="தமிழ்நாடு முழுவதும் மின்சார பேருந்துகள் அறிமுகம்">தமிழ்நாடு முழுவதும் மின்சார பேருந்துகள் அறிமுகம்</h3>
+        <p class="text-xs text-gray-400 mt-1"
+            data-en="Oct 30, 2025" data-ta="அக் 30, 2025">அக் 30, 2025</p>
       </div>
     </div>
 
-    <!-- Slide 3 -->
-<div class="absolute inset-0 transition-opacity duration-700 opacity-0 cursor-pointer news-card"
-  id="slide3"
-  data-title="Actor Vijay named CM candidate of TVK; rules out BJP-DMK tie-ups"
-  data-category="Political News"
-  data-date="Jul 04, 2025"
-  data-image="./static/images/n3.jpg"
-  data-description="Actor Vijay has been announced as the Chief Ministerial candidate for Tamil Nadu Vetri Kazhagam (TVK) for the 2026 Assembly elections. He ruled out any alliance with BJP or DMK, emphasizing that TVK will contest independently to bring a new era in Tamil Nadu politics.">
-      <img src="./static/images/n3.jpg" alt="Vijay CM candidate Tamil Nadu" class="w-full h-full object-cover">
-      <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+    <!-- Card 3 -->
+    <div class="relative flex items-center gap-4 bg-white rounded-lg shadow-sm hover:shadow-md transition" data-title="Tamil Nadu cancels licence of cough-syrup maker linked to child deaths" data-date="Oct 14, 2025"
+          data-image="./static/images/n6.jpg"
+          data-description="The Tamil Nadu government has revoked the manufacturing license of a pharmaceutical company after its cough syrup was linked to multiple child deaths. A detailed investigation revealed serious lapses in quality control and manufacturing standards. The Health Department has warned all manufacturers to adhere strictly to safety norms.">
 
-      <!-- SHARE MENU BUTTON -->
-      <div class="absolute top-2 right-2 z-[9999]">
-  <!-- Share Button -->
-  <button class="share-btn bg-black/50 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">
-    ⋮
-  </button>
+        <div class="absolute top-2 right-2 z-9999">
+            <button
+              class="share-btn bg-black/50 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">
+              ⋮
+            </button>
 
-  <!-- Share Popup -->
-  <div class="share-popup hidden absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg border border-gray-200 z-50 w-64 px-5 py-4">
-    <h3 class="text-sm font-semibold text-gray-700 mb-3 border-b pb-2 text-center">Share this news</h3>
+            <div
+              class="share-popup hidden absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg border border-gray-200 z-50 w-64 px-5 py-4">
+              <h3 class="text-sm font-semibold text-gray-700 mb-3 border-b pb-2 text-center">Share this news</h3>
 
-    <!-- 2x2 grid layout -->
-    <div class="grid grid-cols-2 gap-3 place-items-center">
-      <!-- Facebook -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="facebook">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1877F2]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.591l-.467 3.622h-3.124V24h6.126C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z"/>
-        </svg>
-        <span class="text-xs">Facebook</span>
-      </button>
+              <div class="grid grid-cols-2 gap-3 place-items-center">
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="facebook">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1877F2]" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.591l-.467 3.622h-3.124V24h6.126C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z" />
+                  </svg>
+                  <span class="text-xs">Facebook</span>
+                </button>
 
-      <!-- Twitter -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="twitter">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M18.36 1.64 12.95 9.27 18.81 22h-3.98l-3.79-8.75L6.54 22H2.5l6.26-9.59L3.55 2h4.03l3.47 7.96L14.44 2h3.92z"/>
-        </svg>
-        <span class="text-xs">Twitter</span>
-      </button>
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="twitter">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M18.36 1.64 12.95 9.27 18.81 22h-3.98l-3.79-8.75L6.54 22H2.5l6.26-9.59L3.55 2h4.03l3.47 7.96L14.44 2h3.92z" />
+                  </svg>
+                  <span class="text-xs">Twitter</span>
+                </button>
 
-      <!-- WhatsApp -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="whatsapp">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.67-.51-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.464 1.066 2.875 1.214 3.074.149.198 2.099 3.204 5.086 4.49.711.306 1.266.489 1.698.626.713.227 1.362.195 1.874.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 01-5.031-1.378l-.36-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.239c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437 9.884-9.887 9.884"/>
-        </svg>
-        <span class="text-xs">WhatsApp</span>
-      </button>
 
-      <!-- LinkedIn -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="linkedin">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0077B5]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.371 4.268 5.455v6.288zM5.337 7.433a2.063 2.063 0 11.002-4.126 2.063 2.063 0 01-.002 4.126zM6.867 20.452H3.802V9h3.065v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.228.792 24 1.771 24h20.451C23.2 24 24 23.228 24 22.277V1.723C24 .771 23.2 0 22.222 0h.003z"/>
-        </svg>
-        <span class="text-xs">LinkedIn</span>
-      </button>
-    </div>
-  </div>
-</div>
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="whatsapp">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366]" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.67-.51-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.464 1.066 2.875 1.214 3.074.149.198 2.099 3.204 5.086 4.49.711.306 1.266.489 1.698.626.713.227 1.362.195 1.874.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 01-5.031-1.378l-.36-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.239c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437 9.884-9.887 9.884" />
+                  </svg>
+                  <span class="text-xs">WhatsApp</span>
+                </button>
 
-      <div class="absolute bottom-6 left-6 text-white">
-        <span class="bg-red-600 px-3 py-1 rounded text-sm font-semibold">Election 2026</span>
-        <h2 class="text-2xl font-bold mt-3 leading-snug">Actor Vijay named CM candidate of TVK; rules out BJP-DMK tie-ups</h2>
-        <p class="text-gray-300 text-sm mt-2">Jul 04, 2025 | Political News</p>
+
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="linkedin">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0077B5]" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.371 4.268 5.455v6.288zM5.337 7.433a2.063 2.063 0 11.002-4.126 2.063 2.063 0 01-.002 4.126zM6.867 20.452H3.802V9h3.065v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.228.792 24 1.771 24h20.451C23.2 24 24 23.228 24 22.277V1.723C24 .771 23.2 0 22.222 0h.003z" />
+                  </svg>
+                  <span class="text-xs">LinkedIn</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        <img src="./static/images/n6.jpg" class="w-24 h-24 object-cover rounded-md" alt="">
+      <div>
+        <h3 class="font-semibold text-gray-800"
+            data-en="Metro Phase 2 Construction Reaches Milestone"
+            data-ta="மெட்ரோ 2வது கட்டம் முக்கிய கட்டத்தை எட்டியது">மெட்ரோ 2வது கட்டம் முக்கிய கட்டத்தை எட்டியது</h3>
+        <p class="text-xs text-gray-400 mt-1"
+            data-en="Nov 01, 2025" data-ta="நவ 01, 2025">நவ 01, 2025</p>
       </div>
     </div>
 
   </div>
-</div>
+</section>
+
+<!-- 🌐 Language Sync + Share Script -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // ==============================
+  // 📱 MOBILE SIDEBAR TOGGLE
+  // ==============================
+  const mobileBtn = document.getElementById("mobile-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const overlay = document.getElementById("overlay");
+  let menuOpen = false;
+
+  if (mobileBtn && mobileMenu && overlay) {
+    mobileBtn.addEventListener("click", () => {
+      menuOpen = !menuOpen;
+      mobileMenu.style.right = menuOpen ? "0" : "-70%";
+      overlay.classList.toggle("hidden", !menuOpen);
+    });
+
+    overlay.addEventListener("click", () => {
+      menuOpen = false;
+      mobileMenu.style.right = "-70%";
+      overlay.classList.add("hidden");
+    });
+  }
+
+  // ==============================
+  // 🌐 LANGUAGE TOGGLE SYSTEM
+  // ==============================
+  const desktopToggle = document.getElementById("lang-toggle");
+  const desktopLabel  = document.getElementById("lang-label");
+  const mobileToggle  = document.getElementById("mobile-lang-toggle");
+  const mobileLabel   = document.getElementById("mobile-lang-label");
+
+  // ✅ Load saved language or default to Tamil
+  let currentLang = localStorage.getItem("lang") || "ta";
+  if (currentLang === "en") {
+    desktopToggle.checked = true;
+    mobileToggle.checked = true;
+  }
+
+  // Function to update all texts
+  function updateLanguage(lang) {
+    document.querySelectorAll("[data-en]").forEach(el => {
+      el.textContent = lang === "en" ? el.dataset.en : el.dataset.ta;
+    });
+    if (desktopLabel) desktopLabel.textContent = lang === "en" ? "ENG" : "தமிழ்";
+    if (mobileLabel) mobileLabel.textContent = lang === "en" ? "ENG" : "தமிழ்";
+    localStorage.setItem("lang", lang);
+  }
+
+  // Initial language load
+  updateLanguage(currentLang);
+
+  // 🔄 Sync toggles
+  function setLangFromToggle(isEnglish) {
+    const lang = isEnglish ? "en" : "ta";
+    desktopToggle.checked = isEnglish;
+    mobileToggle.checked = isEnglish;
+    updateLanguage(lang);
+  }
+
+  desktopToggle.addEventListener("change", e => setLangFromToggle(e.target.checked));
+  mobileToggle.addEventListener("change", e => setLangFromToggle(e.target.checked));
+
+  // ==============================
+  // 🔗 LANGUAGE DETECTION (for share buttons)
+  // ==============================
+  window.isEnglishMode = function() {
+    return localStorage.getItem("lang") === "en";
+  };
+});
+</script>
 
 
-<div class="flex flex-col gap-4 relative z-10">
-  <!-- Card 1 -->
-<div class="relative flex items-center gap-4 bg-white rounded-lg shadow-sm hover:shadow-md transition cursor-pointer news-card"
-    data-title="Heavy monsoon rains lash Chennai; red & orange alerts in multiple districts"
-    data-date="Oct 22, 2025"
-    data-image="./static/images/n4.avif"
-    data-description="Heavy monsoon rains lashed Chennai leading to severe waterlogging in several areas. The Meteorological Department issued red and orange alerts for multiple districts warning of continued rainfall and thunderstorms over the next few days. Authorities have deployed disaster response teams to mitigate the impact.">    <!-- Share Button -->
-    <div class="absolute top-2 right-2 z-9999">
-  <!-- Share Button -->
-  <button class="share-btn bg-black/50 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">
-    ⋮
-  </button>
 
-  <!-- Share Popup -->
-  <div class="share-popup hidden absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg border border-gray-200 z-50 w-64 px-5 py-4">
-    <h3 class="text-sm font-semibold text-gray-700 mb-3 border-b pb-2 text-center">Share this news</h3>
 
-    <!-- 2x2 grid layout -->
-    <div class="grid grid-cols-2 gap-3 place-items-center">
-      <!-- Facebook -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="facebook">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1877F2]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.591l-.467 3.622h-3.124V24h6.126C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z"/>
-        </svg>
-        <span class="text-xs">Facebook</span>
-      </button>
+<!-- 📰 முக்கியச் செய்திகள் / Top Stories -->
+<section class="mt-10">
+  <h3 class="text-xl font-bold mb-4 border-l-4 border-red-600 pl-2"
+      data-en="Top Stories" data-ta="முக்கியச் செய்திகள்">முக்கியச் செய்திகள்</h3>
 
-      <!-- Twitter -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="twitter">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M18.36 1.64 12.95 9.27 18.81 22h-3.98l-3.79-8.75L6.54 22H2.5l6.26-9.59L3.55 2h4.03l3.47 7.96L14.44 2h3.92z"/>
-        </svg>
-        <span class="text-xs">Twitter</span>
-      </button>
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
 
-      <!-- WhatsApp -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="whatsapp">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.67-.51-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.464 1.066 2.875 1.214 3.074.149.198 2.099 3.204 5.086 4.49.711.306 1.266.489 1.698.626.713.227 1.362.195 1.874.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 01-5.031-1.378l-.36-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.239c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437 9.884-9.887 9.884"/>
-        </svg>
-        <span class="text-xs">WhatsApp</span>
-      </button>
+    <!-- 🗞️ செய்தி 1 -->
+    <div class="relative bg-white rounded-lg overflow-visible shadow-sm hover:shadow-md transition cursor-pointer news-card"
+      data-title="Former Chief Minister O. Panneerselvam stated that since opposition parties"
+          data-description="Former CM O. Panneerselvam criticized opposition parties for their recent comments, emphasizing unity and public welfare dsfjsdfjsgdskj ajsdgjasgdjga agdagjg"
+          data-image="./static/images/n7.jpg" data-date="2 Days ago" data-category="Politics">
+          <div class="absolute top-2 right-2 z-9999">
 
-      <!-- LinkedIn -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="linkedin">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0077B5]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.371 4.268 5.455v6.288zM5.337 7.433a2.063 2.063 0 11.002-4.126 2.063 2.063 0 01-.002 4.126zM6.867 20.452H3.802V9h3.065v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.228.792 24 1.771 24h20.451C23.2 24 24 23.228 24 22.277V1.723C24 .771 23.2 0 22.222 0h.003z"/>
-        </svg>
-        <span class="text-xs">LinkedIn</span>
-      </button>
+            <button
+              class="share-btn bg-black/50 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">
+              ⋮
+            </button>
+
+
+            <div
+              class="share-popup hidden absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg border border-gray-200 z-50 w-64 px-5 py-4">
+              <h3 class="text-sm font-semibold text-gray-700 mb-3 border-b pb-2 text-center">Share this news</h3>
+
+
+              <div class="grid grid-cols-2 gap-3 place-items-center">
+
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="facebook">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1877F2]" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.591l-.467 3.622h-3.124V24h6.126C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z" />
+                  </svg>
+                  <span class="text-xs">Facebook</span>
+                </button>
+
+
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="twitter">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M18.36 1.64 12.95 9.27 18.81 22h-3.98l-3.79-8.75L6.54 22H2.5l6.26-9.59L3.55 2h4.03l3.47 7.96L14.44 2h3.92z" />
+                  </svg>
+                  <span class="text-xs">Twitter</span>
+                </button>
+
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="whatsapp">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366]" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.67-.51-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.464 1.066 2.875 1.214 3.074.149.198 2.099 3.204 5.086 4.49.711.306 1.266.489 1.698.626.713.227 1.362.195 1.874.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 01-5.031-1.378l-.36-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.239c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437 9.884-9.887 9.884" />
+                  </svg>
+                  <span class="text-xs">WhatsApp</span>
+                </button>
+
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="linkedin">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0077B5]" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.371 4.268 5.455v6.288zM5.337 7.433a2.063 2.063 0 11.002-4.126 2.063 2.063 0 01-.002 4.126zM6.867 20.452H3.802V9h3.065v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.228.792 24 1.771 24h20.451C23.2 24 24 23.228 24 22.277V1.723C24 .771 23.2 0 22.222 0h.003z" />
+                  </svg>
+                  <span class="text-xs">LinkedIn</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+      <img src="./static/images/n7.jpg" alt="" class="h-32 w-full object-cover">
+      <div class="p-3">
+        <h4 class="text-sm font-semibold"
+            data-en="Former CM O. Panneerselvam criticizes opposition actions"
+            data-ta="முன்னாள் முதல்வர் ஓ. பன்னீர்செல்வம் எதிர்க்கட்சிகளின் செயல்களை விமர்சித்தார்">
+            முன்னாள் முதல்வர் ஓ. பன்னீர்செல்வம் எதிர்க்கட்சிகளின் செயல்களை விமர்சித்தார்
+        </h4>
+        <p class="text-xs text-gray-500 mt-1"
+           data-en="2k views • 2 days ago"
+           data-ta="2k பார்வைகள் • 2 நாட்களுக்கு முன்">
+           2k பார்வைகள் • 2 நாட்களுக்கு முன்
+        </p>
+      </div>
+    </div>
+
+    <!-- 🗞️ செய்தி 2 -->
+    <div class="relative bg-white rounded-lg overflow-visible shadow-sm hover:shadow-md transition cursor-pointer news-card"data-title="Vijay meets families affected by the Karur incident — offers condolences and makes a heartfelt promise."
+          data-date="2 Days ago" data-image="./static/images/n1.jpg" data-category="Social"
+          data-description="Actor Vijay visited the families affected by the Karur tragedy, offering condolences and promising assistance through his welfare organization. His compassionate gesture has moved many, earning praise from across Tamil Nadu.">
+          <!-- Share Button -->
+          <div class="absolute top-2 right-2 z-9999">
+            <button
+              class="share-btn bg-black/50 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">
+              ⋮
+            </button>
+
+            <div
+              class="share-popup hidden absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg border border-gray-200 z-50 w-64 px-5 py-4">
+              <h3 class="text-sm font-semibold text-gray-700 mb-3 border-b pb-2 text-center">Share this news</h3>
+
+              <div class="grid grid-cols-2 gap-3 place-items-center">
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="facebook">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1877F2]" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.591l-.467 3.622h-3.124V24h6.126C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z" />
+                  </svg>
+                  <span class="text-xs">Facebook</span>
+                </button>
+
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="twitter">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M18.36 1.64 12.95 9.27 18.81 22h-3.98l-3.79-8.75L6.54 22H2.5l6.26-9.59L3.55 2h4.03l3.47 7.96L14.44 2h3.92z" />
+                  </svg>
+                  <span class="text-xs">Twitter</span>
+                </button>
+
+
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="whatsapp">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366]" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.67-.51-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.464 1.066 2.875 1.214 3.074.149.198 2.099 3.204 5.086 4.49.711.306 1.266.489 1.698.626.713.227 1.362.195 1.874.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 01-5.031-1.378l-.36-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.239c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437 9.884-9.887 9.884" />
+                  </svg>
+                  <span class="text-xs">WhatsApp</span>
+                </button>
+
+
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="linkedin">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0077B5]" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.371 4.268 5.455v6.288zM5.337 7.433a2.063 2.063 0 11.002-4.126 2.063 2.063 0 01-.002 4.126zM6.867 20.452H3.802V9h3.065v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.228.792 24 1.771 24h20.451C23.2 24 24 23.228 24 22.277V1.723C24 .771 23.2 0 22.222 0h.003z" />
+                  </svg>
+                  <span class="text-xs">LinkedIn</span>
+                </button>
+              </div>
+            </div>
+          </div>
+      <img src="./static/images/n1.jpg" alt="" class="h-32 w-full object-cover">
+      <div class="p-3">
+        <h4 class="text-sm font-semibold"
+            data-en="Vijay visits families affected by Karur accident"
+            data-ta="விஜய் கரூர் விபத்தில் பாதிக்கப்பட்ட குடும்பங்களை சந்தித்து ஆறுதல் கூறினார்">
+            விஜய் கரூர் விபத்தில் பாதிக்கப்பட்ட குடும்பங்களை சந்தித்து ஆறுதல் கூறினார்
+        </h4>
+        <p class="text-xs text-gray-500 mt-1"
+           data-en="2k views • 2 days ago"
+           data-ta="2k பார்வைகள் • 2 நாட்களுக்கு முன்">
+           2k பார்வைகள் • 2 நாட்களுக்கு முன்
+        </p>
+      </div>
+    </div>
+
+    <!-- 🗞️ செய்தி 3 -->
+    <div class="relative bg-white rounded-lg overflow-visible shadow-sm hover:shadow-md transition cursor-pointer news-card"data-title="Tamil Nadu signs ₹24,000 cr MoUs at Hosur, creates 49,000 jobs" data-date="2 Days ago"
+          data-image="./static/images/n2.avif" data-category="Economy"
+          data-description="Tamil Nadu has signed MoUs worth ₹24,000 crore in Hosur, paving the way for around 49,000 new job opportunities. The agreements cover sectors including electronics, EV manufacturing, and aerospace, reinforcing the state’s position as a key industrial hub.">
+
+          <div class="absolute top-2 right-2 z-9999">
+
+            <button
+              class="share-btn bg-black/50 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">
+              ⋮
+            </button>
+
+
+            <div
+              class="share-popup hidden absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg border border-gray-200 z-50 w-64 px-5 py-4">
+              <h3 class="text-sm font-semibold text-gray-700 mb-3 border-b pb-2 text-center">Share this news</h3>
+
+
+              <div class="grid grid-cols-2 gap-3 place-items-center">
+
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="facebook">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1877F2]" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.591l-.467 3.622h-3.124V24h6.126C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z" />
+                  </svg>
+                  <span class="text-xs">Facebook</span>
+                </button>
+
+
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="twitter">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M18.36 1.64 12.95 9.27 18.81 22h-3.98l-3.79-8.75L6.54 22H2.5l6.26-9.59L3.55 2h4.03l3.47 7.96L14.44 2h3.92z" />
+                  </svg>
+                  <span class="text-xs">Twitter</span>
+                </button>
+
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="whatsapp">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366]" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.67-.51-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.464 1.066 2.875 1.214 3.074.149.198 2.099 3.204 5.086 4.49.711.306 1.266.489 1.698.626.713.227 1.362.195 1.874.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 01-5.031-1.378l-.36-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.239c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437 9.884-9.887 9.884" />
+                  </svg>
+                  <span class="text-xs">WhatsApp</span>
+                </button>
+
+
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="linkedin">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0077B5]" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.371 4.268 5.455v6.288zM5.337 7.433a2.063 2.063 0 11.002-4.126 2.063 2.063 0 01-.002 4.126zM6.867 20.452H3.802V9h3.065v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.228.792 24 1.771 24h20.451C23.2 24 24 23.228 24 22.277V1.723C24 .771 23.2 0 22.222 0h.003z" />
+                  </svg>
+                  <span class="text-xs">LinkedIn</span>
+                </button>
+              </div>
+            </div>
+          </div>
+      <img src="./static/images/n2.avif" alt="" class="h-32 w-full object-cover">
+      <div class="p-3">
+        <h4 class="text-sm font-semibold"
+            data-en="Tamil Nadu signs ₹24,000 crore worth of MoUs in Hosur"
+            data-ta="தமிழ்நாடு ஹோசூரில் ரூ.24,000 கோடி மதிப்பிலான ஒப்பந்தங்கள் கையெழுத்து">
+            தமிழ்நாடு ஹோசூரில் ரூ.24,000 கோடி மதிப்பிலான ஒப்பந்தங்கள் கையெழுத்து
+        </h4>
+        <p class="text-xs text-gray-500 mt-1"
+           data-en="2k views • 2 days ago"
+           data-ta="2k பார்வைகள் • 2 நாட்களுக்கு முன்">
+           2k பார்வைகள் • 2 நாட்களுக்கு முன்
+        </p>
+      </div>
+    </div>
+
+    <!-- 🗞️ செய்தி 4 -->
+    <div class="relative bg-white rounded-lg overflow-visible shadow-sm hover:shadow-md transition cursor-pointer news-card"
+         data-title="Heavy monsoon rains lash Chennai; red & orange alerts in multiple districts"
+          data-category="Weather" data-date="Nov 15, 2024" data-image="./static/images/n4.avif"
+          data-description="Heavy rains continue to lash Chennai causing waterlogging and transport disruptions across the city. Officials have issued red and orange alerts for multiple districts to ensure preparedness.">
+          <div class="absolute top-2 right-2 z-9999">
+
+            <button
+              class="share-btn bg-black/50 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">
+              ⋮
+            </button>
+
+
+            <div
+              class="share-popup hidden absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg border border-gray-200 z-50 w-64 px-5 py-4">
+              <h3 class="text-sm font-semibold text-gray-700 mb-3 border-b pb-2 text-center">Share this news</h3>
+
+
+              <div class="grid grid-cols-2 gap-3 place-items-center">
+
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="facebook">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1877F2]" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.591l-.467 3.622h-3.124V24h6.126C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z" />
+                  </svg>
+                  <span class="text-xs">Facebook</span>
+                </button>
+
+
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="twitter">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M18.36 1.64 12.95 9.27 18.81 22h-3.98l-3.79-8.75L6.54 22H2.5l6.26-9.59L3.55 2h4.03l3.47 7.96L14.44 2h3.92z" />
+                  </svg>
+                  <span class="text-xs">Twitter</span>
+                </button>
+
+
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="whatsapp">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366]" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.67-.51-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.464 1.066 2.875 1.214 3.074.149.198 2.099 3.204 5.086 4.49.711.306 1.266.489 1.698.626.713.227 1.362.195 1.874.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 01-5.031-1.378l-.36-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.239c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437 9.884-9.887 9.884" />
+                  </svg>
+                  <span class="text-xs">WhatsApp</span>
+                </button>
+
+
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="linkedin">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0077B5]" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.371 4.268 5.455v6.288zM5.337 7.433a2.063 2.063 0 11.002-4.126 2.063 2.063 0 01-.002 4.126zM6.867 20.452H3.802V9h3.065v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.228.792 24 1.771 24h20.451C23.2 24 24 23.228 24 22.277V1.723C24 .771 23.2 0 22.222 0h.003z" />
+                  </svg>
+                  <span class="text-xs">LinkedIn</span>
+                </button>
+              </div>
+            </div>
+          </div>
+      <img src="./static/images/n4.avif" alt="" class="h-32 w-full object-cover">
+      <div class="p-3">
+        <h4 class="text-sm font-semibold"
+            data-en="Heavy rain in Chennai; alert for several districts"
+            data-ta="சென்னையில் கனமழை; பல மாவட்டங்களுக்கு எச்சரிக்கை">
+            சென்னையில் கனமழை; பல மாவட்டங்களுக்கு எச்சரிக்கை
+        </h4>
+        <p class="text-xs text-gray-500 mt-1"
+           data-en="2k views • 2 days ago"
+           data-ta="2k பார்வைகள் • 2 நாட்களுக்கு முன்">
+           2k பார்வைகள் • 2 நாட்களுக்கு முன்
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+   <!-- 📰 சமீபத்திய செய்திகள் மற்றும் வரவிருக்கும் ஒளிபரப்புகள் -->
+<section class="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+  <!-- 🗞️ Latest News -->
+  <div class="lg:col-span-2">
+    <h3 class="text-xl font-bold mb-4 border-l-4 border-blue-600 pl-2"
+        data-ta="சமீபத்திய செய்திகள்"
+        data-en="Latest News">சமீபத்திய செய்திகள்</h3>
+
+    <!-- === ARTICLE CARD 1 === -->
+    <article class="relative bg-white rounded-lg shadow-sm p-6 mb-6 hover:shadow-md transition cursor-pointer overflow-visible"
+      data-title="I enjoy hard work! I love setting goals and achieving them."
+          data-description="Stay focused and remember we design the best WordPress themes around the world."
+          data-date="Nov 15, 2024" data-image="./static/images/story1.jpg">
+
+
+          <div class="absolute top-2 right-2 z-[9999]">
+            <button
+              class="share-btn bg-black/50 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">⋮</button>
+
+
+            <div
+              class="share-popup hidden absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg border border-gray-200 z-50 w-64 px-5 py-4">
+              <h3 class="text-sm font-semibold text-gray-700 mb-3 border-b pb-2 text-center">Share this news</h3>
+
+              <div class="grid grid-cols-2 gap-3 place-items-center">
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="facebook">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1877F2]" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.591l-.467 3.622h-3.124V24h6.126C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z" />
+                  </svg>
+                  <span class="text-xs">Facebook</span>
+                </button>
+
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="twitter">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M18.36 1.64 12.95 9.27 18.81 22h-3.98l-3.79-8.75L6.54 22H2.5l6.26-9.59L3.55 2h4.03l3.47 7.96L14.44 2h3.92z" />
+                  </svg>
+                  <span class="text-xs">Twitter</span>
+                </button>
+
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="whatsapp">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366]" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.67-.51-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.464 1.066 2.875 1.214 3.074.149.198 2.099 3.204 5.086 4.49.711.306 1.266.489 1.698.626.713.227 1.362.195 1.874.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 01-5.031-1.378l-.36-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.239c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437 9.884-9.887 9.884" />
+                  </svg>
+                  <span class="text-xs">WhatsApp</span>
+                </button>
+
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="linkedin">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0077B5]" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.371 4.268 5.455v6.288z" />
+                  </svg>
+                  <span class="text-xs">LinkedIn</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+      <h4 class="text-lg font-semibold mb-2"
+          data-ta="நான் கடின உழைப்பை விரும்புகிறேன்! இலக்குகளை நிர்ணயித்து அதை அடைவதில் மகிழ்ச்சி அடைகிறேன்."
+          data-en="I love hard work! I enjoy setting goals and achieving them.">
+          நான் கடின உழைப்பை விரும்புகிறேன்! இலக்குகளை நிர்ணயித்து அதை அடைவதில் மகிழ்ச்சி அடைகிறேன்.
+      </h4>
+      <p class="text-sm text-gray-500 mb-3"
+         data-ta="கவனம் செலுத்துங்கள், நாங்கள் உலகம் முழுவதும் சிறந்த வலைத்தளங்களை வடிவமைக்கிறோம் என்பதை நினைவில் கொள்ளுங்கள்."
+         data-en="Stay focused, remember that we design the best websites worldwide.">
+         கவனம் செலுத்துங்கள், நாங்கள் உலகம் முழுவதும் சிறந்த வலைத்தளங்களை வடிவமைக்கிறோம் என்பதை நினைவில் கொள்ளுங்கள்.
+      </p>
+      <p class="text-xs text-gray-400"
+         data-ta="நவம்பர் 15, 2024"
+         data-en="November 15, 2024">
+         நவம்பர் 15, 2024
+      </p>
+    </article>
+
+    <!-- === ARTICLE CARD 2 === -->
+    <article class="relative bg-white rounded-lg shadow-sm p-6 mb-6 hover:shadow-md transition cursor-pointer overflow-visible"
+      data-title="The company behind Vespa built a flying car prototype."
+          data-description="Focused on creating the most iconic vehicles ever designed, the company expands its innovation."
+          data-date="Nov 15, 2024" data-image="./static/images/story2.jpg">
+
+          <div class="absolute top-2 right-2 z-[9999]">
+            <button
+              class="share-btn bg-black/50 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">⋮</button>
+            <div
+              class="share-popup hidden absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg border border-gray-200 z-50 w-64 px-5 py-4">
+              <h3 class="text-sm font-semibold text-gray-700 mb-3 border-b pb-2 text-center">Share this news</h3>
+              <div class="grid grid-cols-2 gap-3 place-items-center">
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="facebook">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1877F2]" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.591l-.467 3.622h-3.124V24h6.126C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z" />
+                  </svg>
+                  <span class="text-xs">Facebook</span>
+                </button>
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="twitter">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M18.36 1.64 12.95 9.27 18.81 22h-3.98l-3.79-8.75L6.54 22H2.5l6.26-9.59L3.55 2h4.03l3.47 7.96L14.44 2h3.92z" />
+                  </svg>
+                  <span class="text-xs">Twitter</span>
+                </button>
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="whatsapp">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366]" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.67-.51-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.464 1.066 2.875 1.214 3.074.149.198 2.099 3.204 5.086 4.49.711.306 1.266.489 1.698.626.713.227 1.362.195 1.874.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 01-5.031-1.378l-.36-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.239c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437 9.884-9.887 9.884" />
+                  </svg>
+                  <span class="text-xs">WhatsApp</span>
+                </button>
+                <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                  data-platform="linkedin">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0077B5]" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.371 4.268 5.455v6.288z" />
+                  </svg>
+                  <span class="text-xs">LinkedIn</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+      <h4 class="text-lg font-semibold mb-2"
+          data-ta="வெஸ்பா தயாரிப்பு நிறுவனம் பறக்கும் கார் மாதிரியை உருவாக்கியது."
+          data-en="Vespa’s manufacturing company builds flying car prototype.">
+          வெஸ்பா தயாரிப்பு நிறுவனம் பறக்கும் கார் மாதிரியை உருவாக்கியது.
+      </h4>
+      <p class="text-sm text-gray-500 mb-3"
+         data-ta="உலகின் மிகச் சிறந்த வாகனங்களை உருவாக்கும் நிறுவனம் தனது புதுமையை விரிவுபடுத்தியுள்ளது."
+         data-en="The world-renowned automaker expands its innovation with a flying car model.">
+         உலகின் மிகச் சிறந்த வாகனங்களை உருவாக்கும் நிறுவனம் தனது புதுமையை விரிவுபடுத்தியுள்ளது.
+      </p>
+      <p class="text-xs text-gray-400"
+         data-ta="நவம்பர் 15, 2024"
+         data-en="November 15, 2024">
+         நவம்பர் 15, 2024
+      </p>
+    </article>
+  </div>
+
+  <!-- 🎥 Upcoming Streams -->
+  <div>
+    <h3 class="text-xl font-bold mb-4 border-l-4 border-green-600 pl-2"
+        data-ta="வரவிருக்கும் ஒளிபரப்புகள்"
+        data-en="Upcoming Streams">வரவிருக்கும் ஒளிபரப்புகள்</h3>
+
+    <div class="flex flex-col gap-4">
+
+      <!-- Card 1 -->
+      <div class="relative bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition cursor-pointer news-card"
+         data-title="Chennai hit by heavy monsoon rains; red & orange alerts issued in multiple districts"
+            data-date="Nov 15, 2024" data-image="./static/images/n10.webp"
+            data-description="Heavy monsoon rains lashed Chennai, leading to severe waterlogging across several neighborhoods. Authorities have issued red and orange alerts in multiple districts, urging residents to stay indoors as rescue operations intensify.">
+
+        <!-- Share Button -->
+        <div class="absolute top-2 right-2 ">
+              <button
+                class="share-btn bg-black/50 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">
+                ⋮
+              </button>
+
+
+              <div
+                class="share-popup hidden absolute right-0 mt-2 z-[9999] bg-white text-black rounded-lg shadow-lg border border-gray-200  w-64 px-5 py-4">
+                <h3 class="text-sm font-semibold text-gray-700 mb-3 border-b pb-2 text-center">Share this news</h3>
+
+                <div class="grid grid-cols-2 gap-3 place-items-center">
+
+                  <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                    data-platform="facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1877F2]" fill="currentColor"
+                      viewBox="0 0 24 24">
+                      <path
+                        d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.591l-.467 3.622h-3.124V24h6.126C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z" />
+                    </svg>
+                    <span class="text-xs">Facebook</span>
+                  </button>
+
+
+                  <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                    data-platform="twitter">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black" fill="currentColor"
+                      viewBox="0 0 24 24">
+                      <path
+                        d="M18.36 1.64 12.95 9.27 18.81 22h-3.98l-3.79-8.75L6.54 22H2.5l6.26-9.59L3.55 2h4.03l3.47 7.96L14.44 2h3.92z" />
+                    </svg>
+                    <span class="text-xs">Twitter</span>
+                  </button>
+
+
+                  <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                    data-platform="whatsapp">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366]" fill="currentColor"
+                      viewBox="0 0 24 24">
+                      <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.67-.51-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.464 1.066 2.875 1.214 3.074.149.198 2.099 3.204 5.086 4.49.711.306 1.266.489 1.698.626.713.227 1.362.195 1.874.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 01-5.031-1.378l-.36-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.239c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437 9.884-9.887 9.884" />
+                    </svg>
+                    <span class="text-xs">WhatsApp</span>
+                  </button>
+
+
+                  <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                    data-platform="linkedin">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0077B5]" fill="currentColor"
+                      viewBox="0 0 24 24">
+                      <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.371 4.268 5.455v6.288zM5.337 7.433a2.063 2.063 0 11.002-4.126 2.063 2.063 0 01-.002 4.126zM6.867 20.452H3.802V9h3.065v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.228.792 24 1.771 24h20.451C23.2 24 24 23.228 24 22.277V1.723C24 .771 23.2 0 22.222 0h.003z" />
+                    </svg>
+                    <span class="text-xs">LinkedIn</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+        <div class="flex gap-4">
+          <img src="./static/images/n10.webp" alt="சென்னை மழை" class="w-20 h-20 rounded object-cover">
+          <div>
+            <p class="text-sm text-gray-500"
+               data-ta="நவம்பர் 15, 2024"
+               data-en="November 15, 2024">நவம்பர் 15, 2024</p>
+            <h4 class="text-base font-semibold"
+                data-ta="சென்னையில் கனமழை; பல மாவட்டங்களுக்கு எச்சரிக்கை விடுப்பு"
+                data-en="Heavy rain in Chennai; warnings issued for several districts.">
+                சென்னையில் கனமழை; பல மாவட்டங்களுக்கு எச்சரிக்கை விடுப்பு
+            </h4>
+            <p class="text-gray-500 text-sm mt-1 line-clamp-2"
+               data-ta="சென்னையில் கனமழை காரணமாக பல பகுதிகளில் நீர் தேங்கியுள்ளது..."
+               data-en="Heavy rain has caused waterlogging in several parts of Chennai...">
+               சென்னையில் கனமழை காரணமாக பல பகுதிகளில் நீர் தேங்கியுள்ளது...
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="relative bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition cursor-pointer news-card"
+         data-title="Environmental protests as oil & gas exploratory wells authorised in Ramanathapuram"
+            data-date="Nov 15, 2024" data-image="./static/images/n11.jpg"
+            data-description="Environmental protests erupted across Ramanathapuram as authorities approved exploratory oil and gas wells in ecologically sensitive zones. Residents and activists fear irreversible damage to local ecosystems and livelihoods, calling for immediate revocation of drilling permissions.">
+
+        <!-- Share Button -->
+        <div class="absolute top-2 right-2 ">
+              <button
+                class="share-btn bg-black/50 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">
+                ⋮
+              </button>
+
+
+              <div
+                class="share-popup hidden absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg border border-gray-200 z-[9999] w-64 px-5 py-4">
+                <h3 class="text-sm font-semibold text-gray-700 mb-3 border-b pb-2 text-center">Share this news</h3>
+
+                <div class="grid grid-cols-2 gap-3 place-items-center">
+
+                  <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                    data-platform="facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1877F2]" fill="currentColor"
+                      viewBox="0 0 24 24">
+                      <path
+                        d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.591l-.467 3.622h-3.124V24h6.126C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z" />
+                    </svg>
+                    <span class="text-xs">Facebook</span>
+                  </button>
+
+
+                  <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                    data-platform="twitter">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black" fill="currentColor"
+                      viewBox="0 0 24 24">
+                      <path
+                        d="M18.36 1.64 12.95 9.27 18.81 22h-3.98l-3.79-8.75L6.54 22H2.5l6.26-9.59L3.55 2h4.03l3.47 7.96L14.44 2h3.92z" />
+                    </svg>
+                    <span class="text-xs">Twitter</span>
+                  </button>
+
+
+                  <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                    data-platform="whatsapp">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366]" fill="currentColor"
+                      viewBox="0 0 24 24">
+                      <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.67-.51-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.464 1.066 2.875 1.214 3.074.149.198 2.099 3.204 5.086 4.49.711.306 1.266.489 1.698.626.713.227 1.362.195 1.874.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 01-5.031-1.378l-.36-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.239c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437 9.884-9.887 9.884" />
+                    </svg>
+                    <span class="text-xs">WhatsApp</span>
+                  </button>
+
+
+                  <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full"
+                    data-platform="linkedin">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0077B5]" fill="currentColor"
+                      viewBox="0 0 24 24">
+                      <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.371 4.268 5.455v6.288zM5.337 7.433a2.063 2.063 0 11.002-4.126 2.063 2.063 0 01-.002 4.126zM6.867 20.452H3.802V9h3.065v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.228.792 24 1.771 24h20.451C23.2 24 24 23.228 24 22.277V1.723C24 .771 23.2 0 22.222 0h.003z" />
+                    </svg>
+                    <span class="text-xs">LinkedIn</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+        <div class="flex gap-4">
+          <img src="./static/images/n11.jpg" alt="ராமநாதபுரம் போராட்டம்" class="w-20 h-20 rounded object-cover">
+          <div>
+            <p class="text-sm text-gray-500"
+               data-ta="நவம்பர் 15, 2024"
+               data-en="November 15, 2024">நவம்பர் 15, 2024</p>
+            <h4 class="text-base font-semibold"
+                data-ta="ராமநாதபுரத்தில் எண்ணெய் மற்றும் எரிவாயு துரப்பணத்துக்கு எதிராக சுற்றுச்சூழல் போராட்டம்"
+                data-en="Environmental protest in Ramanathapuram against oil and gas drilling.">
+                ராமநாதபுரத்தில் எண்ணெய் மற்றும் எரிவாயு துரப்பணத்துக்கு எதிராக சுற்றுச்சூழல் போராட்டம்
+            </h4>
+            <p class="text-gray-500 text-sm mt-1 line-clamp-2"
+               data-ta="எண்ணெய் மற்றும் எரிவாயு ஆய்வு கிணறுகள் அனுமதிக்கப்பட்டதை எதிர்த்து போராட்டம்..."
+               data-en="Protest held against permission for oil and gas exploration wells...">
+               எண்ணெய் மற்றும் எரிவாயு ஆய்வு கிணறுகள் அனுமதிக்கப்பட்டதை எதிர்த்து போராட்டம்...
+            </p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
-</div>
-
-    <img src="./static/images/n4.avif" class="w-24 h-24 object-cover" alt="News image 1">
-    <div class="p-2">
-      <p class="text-sm text-gray-500">Oct 22, 2025</p>
-      <h4 class="text-base font-semibold">Heavy monsoon rains lash Chennai; red & orange alerts in multiple districts</h4>
-    </div>
-  </div>
-
-  <!-- Card 2 -->
-<div class="relative flex items-center gap-4 bg-white rounded-lg shadow-sm hover:shadow-md transition cursor-pointer news-card"
-    data-title="TN govt set to introduce bill banning Hindi: CM Stalin to present legislation"
-    data-date="Oct 15, 2025"
-    data-image="./static/images/n5.jpg"
-    data-description="Tamil Nadu Chief Minister M.K. Stalin is set to table a bill in the Assembly seeking to ban the mandatory imposition of Hindi in state government institutions. The legislation is part of the state's ongoing opposition to the Union government’s 'One Nation One Language' policy. The move has sparked national debate, with strong support from regional parties.">    <div class="absolute top-2 right-2 z-9999">
-  <!-- Share Button -->
-  <button class="share-btn bg-black/50 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">
-    ⋮
-  </button>
-
-  <!-- Share Popup -->
-  <div class="share-popup hidden absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg border border-gray-200 z-50 w-64 px-5 py-4">
-    <h3 class="text-sm font-semibold text-gray-700 mb-3 border-b pb-2 text-center">Share this news</h3>
-
-    <!-- 2x2 grid layout -->
-    <div class="grid grid-cols-2 gap-3 place-items-center">
-      <!-- Facebook -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="facebook">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1877F2]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.591l-.467 3.622h-3.124V24h6.126C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z"/>
-        </svg>
-        <span class="text-xs">Facebook</span>
-      </button>
-
-      <!-- Twitter -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="twitter">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M18.36 1.64 12.95 9.27 18.81 22h-3.98l-3.79-8.75L6.54 22H2.5l6.26-9.59L3.55 2h4.03l3.47 7.96L14.44 2h3.92z"/>
-        </svg>
-        <span class="text-xs">Twitter</span>
-      </button>
-
-      <!-- WhatsApp -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="whatsapp">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.67-.51-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.464 1.066 2.875 1.214 3.074.149.198 2.099 3.204 5.086 4.49.711.306 1.266.489 1.698.626.713.227 1.362.195 1.874.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 01-5.031-1.378l-.36-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.239c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437 9.884-9.887 9.884"/>
-        </svg>
-        <span class="text-xs">WhatsApp</span>
-      </button>
-
-      <!-- LinkedIn -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="linkedin">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0077B5]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.371 4.268 5.455v6.288zM5.337 7.433a2.063 2.063 0 11.002-4.126 2.063 2.063 0 01-.002 4.126zM6.867 20.452H3.802V9h3.065v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.228.792 24 1.771 24h20.451C23.2 24 24 23.228 24 22.277V1.723C24 .771 23.2 0 22.222 0h.003z"/>
-        </svg>
-        <span class="text-xs">LinkedIn</span>
-      </button>
-    </div>
-  </div>
-</div>
-
-    <img src="./static/images/n5.jpg" class="w-24 h-24 object-cover" alt="News image 2">
-    <div class="p-2">
-      <p class="text-sm text-gray-500">Oct 15, 2025</p>
-      <h4 class="text-base font-semibold">TN govt set to introduce bill banning Hindi: CM Stalin to present legislation</h4>
-    </div>
-  </div>
-
-  <!-- Card 3 -->
-<div class="relative flex items-center gap-4 bg-white rounded-lg shadow-sm hover:shadow-md transition cursor-pointer news-card"
-    data-title="Tamil Nadu cancels licence of cough-syrup maker linked to child deaths"
-    data-date="Oct 14, 2025"
-    data-image="./static/images/n6.jpg"
-    data-description="The Tamil Nadu government has revoked the manufacturing license of a pharmaceutical company after its cough syrup was linked to multiple child deaths. A detailed investigation revealed serious lapses in quality control and manufacturing standards. The Health Department has warned all manufacturers to adhere strictly to safety norms."><div class="absolute top-2 right-2 z-9999">
-  <!-- Share Button -->
-  <button class="share-btn bg-black/50 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">
-    ⋮
-  </button>
-
-  <!-- Share Popup -->
-  <div class="share-popup hidden absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg border border-gray-200 z-50 w-64 px-5 py-4">
-    <h3 class="text-sm font-semibold text-gray-700 mb-3 border-b pb-2 text-center">Share this news</h3>
-
-    <!-- 2x2 grid layout -->
-    <div class="grid grid-cols-2 gap-3 place-items-center">
-      <!-- Facebook -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="facebook">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1877F2]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.591l-.467 3.622h-3.124V24h6.126C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z"/>
-        </svg>
-        <span class="text-xs">Facebook</span>
-      </button>
-
-      <!-- Twitter -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="twitter">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M18.36 1.64 12.95 9.27 18.81 22h-3.98l-3.79-8.75L6.54 22H2.5l6.26-9.59L3.55 2h4.03l3.47 7.96L14.44 2h3.92z"/>
-        </svg>
-        <span class="text-xs">Twitter</span>
-      </button>
-
-      <!-- WhatsApp -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="whatsapp">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.67-.51-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.464 1.066 2.875 1.214 3.074.149.198 2.099 3.204 5.086 4.49.711.306 1.266.489 1.698.626.713.227 1.362.195 1.874.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 01-5.031-1.378l-.36-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.239c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437 9.884-9.887 9.884"/>
-        </svg>
-        <span class="text-xs">WhatsApp</span>
-      </button>
-
-      <!-- LinkedIn -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="linkedin">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0077B5]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.371 4.268 5.455v6.288zM5.337 7.433a2.063 2.063 0 11.002-4.126 2.063 2.063 0 01-.002 4.126zM6.867 20.452H3.802V9h3.065v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.228.792 24 1.771 24h20.451C23.2 24 24 23.228 24 22.277V1.723C24 .771 23.2 0 22.222 0h.003z"/>
-        </svg>
-        <span class="text-xs">LinkedIn</span>
-      </button>
-    </div>
-  </div>
-</div>
-
-    <img src="./static/images/n6.jpg" class="w-24 h-24 object-cover" alt="News image 3">
-    <div class="p-2">
-      <p class="text-sm text-gray-500">Oct 14, 2025</p>
-      <h4 class="text-base font-semibold">Tamil Nadu cancels licence of cough-syrup maker linked to child deaths</h4>
-    </div>
-  </div>
-</div>
-
-
 </section>
 
 
 
+ </div>
 
 
 
-    <!-- Top Stories -->
-    <section class="mt-10">
-      <h3 class="text-xl font-bold mb-4 border-l-4 border-red-600 pl-2">Top Stories</h3>
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-<div class="relative bg-white rounded-lg overflow-visible shadow-sm hover:shadow-md transition cursor-pointer news-card"
-  data-title="Former Chief Minister O. Panneerselvam stated that since opposition parties"
-  data-description="Former CM O. Panneerselvam criticized opposition parties for their recent comments, emphasizing unity and public welfare dsfjsdfjsgdskj ajsdgjasgdjga agdagjg"
-  data-image="./static/images/n7.jpg"
-  data-date="2 Days ago"
-  data-category="Politics"
->      <!-- Share Button -->
-      <div class="absolute top-2 right-2 z-9999">
-  <!-- Share Button -->
-  <button class="share-btn bg-black/50 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">
-    ⋮
-  </button>
 
-  <!-- Share Popup -->
-  <div class="share-popup hidden absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg border border-gray-200 z-50 w-64 px-5 py-4">
-    <h3 class="text-sm font-semibold text-gray-700 mb-3 border-b pb-2 text-center">Share this news</h3>
 
-    <!-- 2x2 grid layout -->
-    <div class="grid grid-cols-2 gap-3 place-items-center">
-      <!-- Facebook -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="facebook">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1877F2]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.591l-.467 3.622h-3.124V24h6.126C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z"/>
-        </svg>
-        <span class="text-xs">Facebook</span>
-      </button>
 
-      <!-- Twitter -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="twitter">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M18.36 1.64 12.95 9.27 18.81 22h-3.98l-3.79-8.75L6.54 22H2.5l6.26-9.59L3.55 2h4.03l3.47 7.96L14.44 2h3.92z"/>
-        </svg>
-        <span class="text-xs">Twitter</span>
-      </button>
 
-      <!-- WhatsApp -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="whatsapp">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.67-.51-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.464 1.066 2.875 1.214 3.074.149.198 2.099 3.204 5.086 4.49.711.306 1.266.489 1.698.626.713.227 1.362.195 1.874.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 01-5.031-1.378l-.36-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.239c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437 9.884-9.887 9.884"/>
-        </svg>
-        <span class="text-xs">WhatsApp</span>
-      </button>
+<footer class="bg-[#09121b] py-12 border-t border-neutral-800">
+  <div class="container mx-auto px-8 flex flex-col md:flex-row justify-between gap-8">
 
-      <!-- LinkedIn -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="linkedin">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0077B5]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.371 4.268 5.455v6.288zM5.337 7.433a2.063 2.063 0 11.002-4.126 2.063 2.063 0 01-.002 4.126zM6.867 20.452H3.802V9h3.065v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.228.792 24 1.771 24h20.451C23.2 24 24 23.228 24 22.277V1.723C24 .771 23.2 0 22.222 0h.003z"/>
-        </svg>
-        <span class="text-xs">LinkedIn</span>
-      </button>
-    </div>
-  </div>
-</div>
-      <img src="./static/images/n7.jpg" alt="" class="h-32 w-full object-cover">
-      <div class="p-3">
-        <h4 class="text-sm font-semibold">Former Chief Minister O. Panneerselvam stated that since opposition parties</h4>
-        <p class="text-xs text-gray-500 mt-1">2k Views • 2 Days ago</p>
-      </div>
-    </div>
-
-<div class="relative bg-white rounded-lg overflow-visible shadow-sm hover:shadow-md transition cursor-pointer news-card"
-  data-title="Vijay meets families affected by the Karur incident — offers condolences and makes a heartfelt promise."
-  data-date="2 Days ago"
-  data-image="./static/images/n1.jpg"
-  data-category="Social"
-  data-description="Actor Vijay visited the families affected by the Karur tragedy, offering condolences and promising assistance through his welfare organization. His compassionate gesture has moved many, earning praise from across Tamil Nadu.">      <!-- Share Button -->
-      <div class="absolute top-2 right-2 z-9999">
-  <!-- Share Button -->
-  <button class="share-btn bg-black/50 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">
-    ⋮
-  </button>
-
-  <!-- Share Popup -->
-  <div class="share-popup hidden absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg border border-gray-200 z-50 w-64 px-5 py-4">
-    <h3 class="text-sm font-semibold text-gray-700 mb-3 border-b pb-2 text-center">Share this news</h3>
-
-    <!-- 2x2 grid layout -->
-    <div class="grid grid-cols-2 gap-3 place-items-center">
-      <!-- Facebook -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="facebook">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1877F2]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.591l-.467 3.622h-3.124V24h6.126C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z"/>
-        </svg>
-        <span class="text-xs">Facebook</span>
-      </button>
-
-      <!-- Twitter -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="twitter">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M18.36 1.64 12.95 9.27 18.81 22h-3.98l-3.79-8.75L6.54 22H2.5l6.26-9.59L3.55 2h4.03l3.47 7.96L14.44 2h3.92z"/>
-        </svg>
-        <span class="text-xs">Twitter</span>
-      </button>
-
-      <!-- WhatsApp -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="whatsapp">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.67-.51-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.464 1.066 2.875 1.214 3.074.149.198 2.099 3.204 5.086 4.49.711.306 1.266.489 1.698.626.713.227 1.362.195 1.874.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 01-5.031-1.378l-.36-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.239c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437 9.884-9.887 9.884"/>
-        </svg>
-        <span class="text-xs">WhatsApp</span>
-      </button>
-
-      <!-- LinkedIn -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="linkedin">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0077B5]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.371 4.268 5.455v6.288zM5.337 7.433a2.063 2.063 0 11.002-4.126 2.063 2.063 0 01-.002 4.126zM6.867 20.452H3.802V9h3.065v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.228.792 24 1.771 24h20.451C23.2 24 24 23.228 24 22.277V1.723C24 .771 23.2 0 22.222 0h.003z"/>
-        </svg>
-        <span class="text-xs">LinkedIn</span>
-      </button>
-    </div>
-  </div>
-</div>  
-              <img src="./static/images/n1.jpg" alt="" class="h-32 w-full object-cover">
-          <div class="p-3">
-            <h4 class="text-sm font-semibold">Vijay meets families affected by the Karur incident — offers condolences and makes a heartfelt promise.
-</h4>
-            <p class="text-xs text-gray-500 mt-1">2k Views • 2 Days ago</p>
-          </div>
-        </div>
-
-<div class="relative bg-white rounded-lg overflow-visible shadow-sm hover:shadow-md transition cursor-pointer news-card"
-  data-title="Tamil Nadu signs ₹24,000 cr MoUs at Hosur, creates 49,000 jobs"
-  data-date="2 Days ago"
-  data-image="./static/images/n2.avif"
-  data-category="Economy"
-  data-description="Tamil Nadu has signed MoUs worth ₹24,000 crore in Hosur, paving the way for around 49,000 new job opportunities. The agreements cover sectors including electronics, EV manufacturing, and aerospace, reinforcing the state’s position as a key industrial hub.">
-      <!-- Share Button -->
-      <div class="absolute top-2 right-2 z-9999">
-  <!-- Share Button -->
-  <button class="share-btn bg-black/50 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">
-    ⋮
-  </button>
-
-  <!-- Share Popup -->
-  <div class="share-popup hidden absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg border border-gray-200 z-50 w-64 px-5 py-4">
-    <h3 class="text-sm font-semibold text-gray-700 mb-3 border-b pb-2 text-center">Share this news</h3>
-
-    <!-- 2x2 grid layout -->
-    <div class="grid grid-cols-2 gap-3 place-items-center">
-      <!-- Facebook -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="facebook">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1877F2]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.591l-.467 3.622h-3.124V24h6.126C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z"/>
-        </svg>
-        <span class="text-xs">Facebook</span>
-      </button>
-
-      <!-- Twitter -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="twitter">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M18.36 1.64 12.95 9.27 18.81 22h-3.98l-3.79-8.75L6.54 22H2.5l6.26-9.59L3.55 2h4.03l3.47 7.96L14.44 2h3.92z"/>
-        </svg>
-        <span class="text-xs">Twitter</span>
-      </button>
-
-      <!-- WhatsApp -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="whatsapp">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.67-.51-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.464 1.066 2.875 1.214 3.074.149.198 2.099 3.204 5.086 4.49.711.306 1.266.489 1.698.626.713.227 1.362.195 1.874.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 01-5.031-1.378l-.36-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.239c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437 9.884-9.887 9.884"/>
-        </svg>
-        <span class="text-xs">WhatsApp</span>
-      </button>
-
-      <!-- LinkedIn -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="linkedin">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0077B5]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.371 4.268 5.455v6.288zM5.337 7.433a2.063 2.063 0 11.002-4.126 2.063 2.063 0 01-.002 4.126zM6.867 20.452H3.802V9h3.065v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.228.792 24 1.771 24h20.451C23.2 24 24 23.228 24 22.277V1.723C24 .771 23.2 0 22.222 0h.003z"/>
-        </svg>
-        <span class="text-xs">LinkedIn</span>
-      </button>
-    </div>
-  </div>
-</div>        
-       <img src="./static/images/n2.avif" alt="" class="h-32 w-full object-cover">
-          <div class="p-3">
-            <h4 class="text-sm font-semibold">Tamil Nadu signs ₹24,000 cr MoUs at Hosur, creates 49,000 jobs</h4>
-            <p class="text-xs text-gray-500 mt-1">2k Views • 2 Days ago</p>
-          </div>
-        </div>
-
-<div class="relative bg-white rounded-lg overflow-visible shadow-sm hover:shadow-md transition cursor-pointer news-card"
-  data-title="Heavy monsoon rains lash Chennai; red & orange alerts in multiple districts"
-  data-category="Weather"
-  data-date="Nov 15, 2024"
-  data-image="./static/images/n4.avif"
-  data-description="Heavy rains continue to lash Chennai causing waterlogging and transport disruptions across the city. Officials have issued red and orange alerts for multiple districts to ensure preparedness."
->      <!-- Share Button -->
-      <div class="absolute top-2 right-2 z-9999">
-  <!-- Share Button -->
-  <button class="share-btn bg-black/50 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">
-    ⋮
-  </button>
-
-  <!-- Share Popup -->
-  <div class="share-popup hidden absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg border border-gray-200 z-50 w-64 px-5 py-4">
-    <h3 class="text-sm font-semibold text-gray-700 mb-3 border-b pb-2 text-center">Share this news</h3>
-
-    <!-- 2x2 grid layout -->
-    <div class="grid grid-cols-2 gap-3 place-items-center">
-      <!-- Facebook -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="facebook">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1877F2]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.591l-.467 3.622h-3.124V24h6.126C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z"/>
-        </svg>
-        <span class="text-xs">Facebook</span>
-      </button>
-
-      <!-- Twitter -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="twitter">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M18.36 1.64 12.95 9.27 18.81 22h-3.98l-3.79-8.75L6.54 22H2.5l6.26-9.59L3.55 2h4.03l3.47 7.96L14.44 2h3.92z"/>
-        </svg>
-        <span class="text-xs">Twitter</span>
-      </button>
-
-      <!-- WhatsApp -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="whatsapp">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.67-.51-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.464 1.066 2.875 1.214 3.074.149.198 2.099 3.204 5.086 4.49.711.306 1.266.489 1.698.626.713.227 1.362.195 1.874.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 01-5.031-1.378l-.36-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.239c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437 9.884-9.887 9.884"/>
-        </svg>
-        <span class="text-xs">WhatsApp</span>
-      </button>
-
-      <!-- LinkedIn -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="linkedin">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0077B5]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.371 4.268 5.455v6.288zM5.337 7.433a2.063 2.063 0 11.002-4.126 2.063 2.063 0 01-.002 4.126zM6.867 20.452H3.802V9h3.065v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.228.792 24 1.771 24h20.451C23.2 24 24 23.228 24 22.277V1.723C24 .771 23.2 0 22.222 0h.003z"/>
-        </svg>
-        <span class="text-xs">LinkedIn</span>
-      </button>
-    </div>
-  </div>
-</div>
-       <img src="./static/images/n4.avif" alt="" class="h-32 w-full object-cover">
-          <div class="p-3">
-            <h4 class="text-sm font-semibold">Heavy monsoon rains lash Chennai; red & orange alerts in multiple districts</h4>
-            <p class="text-xs text-gray-500 mt-1">2k Views • 2 Days ago</p>
-          </div>
-        </div>
-
-<!-- === News Card 2 === -->
-<div class="relative bg-white rounded-lg overflow-visible shadow-sm hover:shadow-md transition cursor-pointer news-card"
-  data-title="Tamil Nadu cancels licence of cough-syrup maker linked to child deaths"
-  data-category="Health"
-  data-date="Nov 18, 2024"
-  data-image="./static/images/n6.jpg"
-  data-description="The Tamil Nadu government has cancelled the licence of a cough-syrup manufacturer after its products were linked to multiple child deaths overseas. An investigation is underway."
->      <!-- Share Button -->
-      <div class="absolute top-2 right-2 z-9999">
-  <!-- Share Button -->
-  <button class="share-btn bg-black/50 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">
-    ⋮
-  </button>
-
-  <!-- Share Popup -->
-  <div class="share-popup hidden absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg border border-gray-200 z-50 w-64 px-5 py-4">
-    <h3 class="text-sm font-semibold text-gray-700 mb-3 border-b pb-2 text-center">Share this news</h3>
-
-    <!-- 2x2 grid layout -->
-    <div class="grid grid-cols-2 gap-3 place-items-center">
-      <!-- Facebook -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="facebook">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1877F2]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.591l-.467 3.622h-3.124V24h6.126C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z"/>
-        </svg>
-        <span class="text-xs">Facebook</span>
-      </button>
-
-      <!-- Twitter -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="twitter">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M18.36 1.64 12.95 9.27 18.81 22h-3.98l-3.79-8.75L6.54 22H2.5l6.26-9.59L3.55 2h4.03l3.47 7.96L14.44 2h3.92z"/>
-        </svg>
-        <span class="text-xs">Twitter</span>
-      </button>
-
-      <!-- WhatsApp -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="whatsapp">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.67-.51-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.464 1.066 2.875 1.214 3.074.149.198 2.099 3.204 5.086 4.49.711.306 1.266.489 1.698.626.713.227 1.362.195 1.874.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 01-5.031-1.378l-.36-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.239c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437 9.884-9.887 9.884"/>
-        </svg>
-        <span class="text-xs">WhatsApp</span>
-      </button>
-
-      <!-- LinkedIn -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="linkedin">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0077B5]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.371 4.268 5.455v6.288zM5.337 7.433a2.063 2.063 0 11.002-4.126 2.063 2.063 0 01-.002 4.126zM6.867 20.452H3.802V9h3.065v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.228.792 24 1.771 24h20.451C23.2 24 24 23.228 24 22.277V1.723C24 .771 23.2 0 22.222 0h.003z"/>
-        </svg>
-        <span class="text-xs">LinkedIn</span>
-      </button>
-    </div>
-  </div>
-</div>
-        <img src="./static/images/n6.jpg" alt="" class="h-32 w-full object-cover">
-          <div class="p-3">
-            <h4 class="text-sm font-semibold">Tamil Nadu cancels licence of cough-syrup maker linked to child deaths</h4>
-            <p class="text-xs text-gray-500 mt-1">2k Views • 2 Days ago</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Latest Stories & Upcoming Streaming -->
-    <section class="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
-      <!-- Latest Stories -->
-     <div class="lg:col-span-2">
-  <h3 class="text-xl font-bold mb-4 border-l-4 border-blue-600 pl-2">Latest Stories</h3>
-
-  <!-- === ARTICLE CARD 1 === -->
-  <article class="relative bg-white rounded-lg shadow-sm p-6 mb-6 hover:shadow-md transition cursor-pointer overflow-visible"
-    data-title="I enjoy hard work! I love setting goals and achieving them."
-    data-description="Stay focused and remember we design the best WordPress themes around the world."
-    data-date="Nov 15, 2024"
-    data-image="./static/images/story1.jpg">
-
-    <!-- Share Button -->
-    <div class="absolute top-2 right-2 z-[9999]">
-      <button class="share-btn bg-black/50 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">⋮</button>
-
-      <!-- Share Popup -->
-      <div class="share-popup hidden absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg border border-gray-200 z-50 w-64 px-5 py-4">
-        <h3 class="text-sm font-semibold text-gray-700 mb-3 border-b pb-2 text-center">Share this news</h3>
-
-        <div class="grid grid-cols-2 gap-3 place-items-center">
-          <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="facebook">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1877F2]" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.591l-.467 3.622h-3.124V24h6.126C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z"/>
-            </svg>
-            <span class="text-xs">Facebook</span>
-          </button>
-
-          <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="twitter">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M18.36 1.64 12.95 9.27 18.81 22h-3.98l-3.79-8.75L6.54 22H2.5l6.26-9.59L3.55 2h4.03l3.47 7.96L14.44 2h3.92z"/>
-            </svg>
-            <span class="text-xs">Twitter</span>
-          </button>
-
-          <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="whatsapp">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.67-.51-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.464 1.066 2.875 1.214 3.074.149.198 2.099 3.204 5.086 4.49.711.306 1.266.489 1.698.626.713.227 1.362.195 1.874.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 01-5.031-1.378l-.36-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.239c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437 9.884-9.887 9.884"/>
-            </svg>
-            <span class="text-xs">WhatsApp</span>
-          </button>
-
-          <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="linkedin">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0077B5]" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.371 4.268 5.455v6.288z"/>
-            </svg>
-            <span class="text-xs">LinkedIn</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <h4 class="text-lg font-semibold mb-2">I enjoy hard work! I love setting goals and achieving them.</h4>
-    <p class="text-sm text-gray-500 mb-3">Stay focused and remember we design the best WordPress themes around the world.</p>
-    <p class="text-xs text-gray-400">Nov 15, 2024</p>
-  </article>
-
-  <!-- === ARTICLE CARD 2 === -->
-  <article class="relative bg-white rounded-lg shadow-sm p-6 mb-6 hover:shadow-md transition cursor-pointer overflow-visible"
-    data-title="The company behind Vespa built a flying car prototype."
-    data-description="Focused on creating the most iconic vehicles ever designed, the company expands its innovation."
-    data-date="Nov 15, 2024"
-    data-image="./static/images/story2.jpg">
-
-    <div class="absolute top-2 right-2 z-[9999]">
-      <button class="share-btn bg-black/50 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">⋮</button>
-      <div class="share-popup hidden absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg border border-gray-200 z-50 w-64 px-5 py-4">
-        <h3 class="text-sm font-semibold text-gray-700 mb-3 border-b pb-2 text-center">Share this news</h3>
-        <div class="grid grid-cols-2 gap-3 place-items-center">
-          <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="facebook">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1877F2]" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.591l-.467 3.622h-3.124V24h6.126C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z"/>
-            </svg>
-            <span class="text-xs">Facebook</span>
-          </button>
-          <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="twitter">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M18.36 1.64 12.95 9.27 18.81 22h-3.98l-3.79-8.75L6.54 22H2.5l6.26-9.59L3.55 2h4.03l3.47 7.96L14.44 2h3.92z"/>
-            </svg>
-            <span class="text-xs">Twitter</span>
-          </button>
-          <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="whatsapp">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.67-.51-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.464 1.066 2.875 1.214 3.074.149.198 2.099 3.204 5.086 4.49.711.306 1.266.489 1.698.626.713.227 1.362.195 1.874.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 01-5.031-1.378l-.36-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.239c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437 9.884-9.887 9.884"/>
-            </svg>
-            <span class="text-xs">WhatsApp</span>
-          </button>
-          <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="linkedin">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0077B5]" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.371 4.268 5.455v6.288z"/>
-            </svg>
-            <span class="text-xs">LinkedIn</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <h4 class="text-lg font-semibold mb-2">The company behind Vespa built a flying car prototype.</h4>
-    <p class="text-sm text-gray-500 mb-3">Focused on creating the most iconic vehicles ever designed, the company expands its innovation.</p>
-    <p class="text-xs text-gray-400">Nov 15, 2024</p>
-  </article>
-</div>
-
- <div>
-  <h3 class="text-xl font-bold mb-4 border-l-4 border-green-600 pl-2">Upcoming Streaming</h3>
-  <div class="flex flex-col gap-4">
-
-    <!-- Card 1 -->
-   <div class="relative bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition cursor-pointer news-card"
-  data-title="Chennai hit by heavy monsoon rains; red & orange alerts issued in multiple districts"
-  data-date="Nov 15, 2024"
-  data-image="./static/images/n10.webp"
-  data-description="Heavy monsoon rains lashed Chennai, leading to severe waterlogging across several neighborhoods. Authorities have issued red and orange alerts in multiple districts, urging residents to stay indoors as rescue operations intensify.">
-
-  <!-- Share Button -->
-  <div class="absolute top-2 right-2 ">
-    <button class="share-btn bg-black/50 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">
-      ⋮
-    </button>
-
-    <!-- Share Popup -->
-    <div class="share-popup hidden absolute right-0 mt-2 z-[9999] bg-white text-black rounded-lg shadow-lg border border-gray-200  w-64 px-5 py-4">
-      <h3 class="text-sm font-semibold text-gray-700 mb-3 border-b pb-2 text-center">Share this news</h3>
-
-      <div class="grid grid-cols-2 gap-3 place-items-center">
-        <!-- Facebook -->
-        <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="facebook">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1877F2]" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.591l-.467 3.622h-3.124V24h6.126C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z"/>
-          </svg>
-          <span class="text-xs">Facebook</span>
-        </button>
-
-        <!-- Twitter -->
-        <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="twitter">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M18.36 1.64 12.95 9.27 18.81 22h-3.98l-3.79-8.75L6.54 22H2.5l6.26-9.59L3.55 2h4.03l3.47 7.96L14.44 2h3.92z"/>
-          </svg>
-          <span class="text-xs">Twitter</span>
-        </button>
-
-        <!-- WhatsApp -->
-        <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="whatsapp">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.67-.51-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.464 1.066 2.875 1.214 3.074.149.198 2.099 3.204 5.086 4.49.711.306 1.266.489 1.698.626.713.227 1.362.195 1.874.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 01-5.031-1.378l-.36-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.239c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437 9.884-9.887 9.884"/>
-          </svg>
-          <span class="text-xs">WhatsApp</span>
-        </button>
-
-        <!-- LinkedIn -->
-        <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="linkedin">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0077B5]" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.371 4.268 5.455v6.288zM5.337 7.433a2.063 2.063 0 11.002-4.126 2.063 2.063 0 01-.002 4.126zM6.867 20.452H3.802V9h3.065v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.228.792 24 1.771 24h20.451C23.2 24 24 23.228 24 22.277V1.723C24 .771 23.2 0 22.222 0h.003z"/>
-          </svg>
-          <span class="text-xs">LinkedIn</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Card Content -->
-  <div class="flex gap-4">
-    <img src="./static/images/n10.webp" alt="Chennai floods" class="w-20 h-20 rounded object-cover">
     <div>
-      <p class="text-sm text-gray-500">Nov 15, 2024</p>
-      <h4 class="text-base font-semibold">Chennai hit by heavy monsoon rains; red & orange alerts issued in multiple districts</h4>
-      <p class="text-gray-500 text-sm mt-1 line-clamp-2">
-        Heavy monsoon rains lashed Chennai, leading to severe waterlogging and alerts in multiple districts...
+      <p class="font-mono uppercase tracking-wider text-gray-200" data-en="TN Polls 2026" data-ta="தமிழ்நாடு தேர்தல் 2026">தமிழ்நாடு தேர்தல் 2026</p>
+      <p class="mt-4 text-sm text-gray-400 max-w-5xl"
+         data-en="Stay informed with the latest updates from the Tamil Nadu Legislative Assembly Elections. Explore candidate profiles, polling information and news insights - all in one place."
+         data-ta="தமிழ்நாடு சட்டமன்றத் தேர்தலின் புதிய செய்திகளை உடனுக்குடன் அறிந்து கொள்ளுங்கள். வேட்பாளர் விவரங்கள், வாக்கு தகவல்கள் மற்றும் செய்திகள் — அனைத்தும் ஒரே இடத்தில்.">
+         தமிழ்நாடு சட்டமன்றத் தேர்தலின் புதிய செய்திகளை உடனுக்குடன் அறிந்து கொள்ளுங்கள். வேட்பாளர் விவரங்கள், வாக்கு தகவல்கள் மற்றும் செய்திகள் — அனைத்தும் ஒரே இடத்தில்.
       </p>
     </div>
-  </div>
-</div>
 
+    <div class="flex flex-col md:flex-row gap-8 md:gap-16 text-gray-400">
 
-    <!-- Card 2 -->
-    <!-- CARD -->
-<div class="relative bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition cursor-pointer news-card"
-  data-title="Environmental protests as oil & gas exploratory wells authorised in Ramanathapuram"
-  data-date="Nov 15, 2024"
-  data-image="./static/images/n11.jpg"
-  data-description="Environmental protests erupted across Ramanathapuram as authorities approved exploratory oil and gas wells in ecologically sensitive zones. Residents and activists fear irreversible damage to local ecosystems and livelihoods, calling for immediate revocation of drilling permissions.">
-
-  <!-- Share Button -->
-  <div class="absolute top-2 right-2 ">
-    <button class="share-btn bg-black/50 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">
-      ⋮
-    </button>
-
-    <!-- Share Popup -->
-    <div class="share-popup hidden absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg border border-gray-200 z-[9999] w-64 px-5 py-4">
-      <h3 class="text-sm font-semibold text-gray-700 mb-3 border-b pb-2 text-center">Share this news</h3>
-
-      <div class="grid grid-cols-2 gap-3 place-items-center">
-      <!-- Facebook -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="facebook">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1877F2]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.591l-.467 3.622h-3.124V24h6.126C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z"/>
-        </svg>
-        <span class="text-xs">Facebook</span>
-      </button>
-
-      <!-- Twitter -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="twitter">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M18.36 1.64 12.95 9.27 18.81 22h-3.98l-3.79-8.75L6.54 22H2.5l6.26-9.59L3.55 2h4.03l3.47 7.96L14.44 2h3.92z"/>
-        </svg>
-        <span class="text-xs">Twitter</span>
-      </button>
-
-      <!-- WhatsApp -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="whatsapp">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.67-.51-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.464 1.066 2.875 1.214 3.074.149.198 2.099 3.204 5.086 4.49.711.306 1.266.489 1.698.626.713.227 1.362.195 1.874.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.868 9.868 0 01-5.031-1.378l-.36-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.239c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437 9.884-9.887 9.884"/>
-        </svg>
-        <span class="text-xs">WhatsApp</span>
-      </button>
-
-      <!-- LinkedIn -->
-      <button class="flex flex-col items-center gap-1 hover:bg-gray-100 rounded-lg p-2 w-full" data-platform="linkedin">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0077B5]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.371 4.268 5.455v6.288zM5.337 7.433a2.063 2.063 0 11.002-4.126 2.063 2.063 0 01-.002 4.126zM6.867 20.452H3.802V9h3.065v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.228.792 24 1.771 24h20.451C23.2 24 24 23.228 24 22.277V1.723C24 .771 23.2 0 22.222 0h.003z"/>
-        </svg>
-        <span class="text-xs">LinkedIn</span>
-      </button>
-    </div>
-    </div>
-  </div>
-
-  <!-- Card Content -->
-  <div class="flex gap-4">
-    <img src="./static/images/n11.jpg" alt="" class="w-20 h-20 rounded object-cover">
-    <div>
-      <p class="text-sm text-gray-500">Nov 15, 2024</p>
-      <h4 class="text-base font-semibold">Environmental protests as oil & gas exploratory wells authorised in Ramanathapuram</h4>
-      <p class="text-gray-500 text-sm mt-1 line-clamp-2">
-        Environmental protests erupted across Ramanathapuram as authorities approved exploratory oil and gas wells in ecologically sensitive zones...
-      </p>
-    </div>
-  </div>
-</div>
-
-  </div>
-</div>
-
-    </section>
-  </div>
-
-
-
-
-
-
-
-  <footer class="bg-[#09121b] py-12 border-t border-neutral-800">
-    <div class="container mx-auto px-8 flex flex-col md:flex-row justify-between gap-8">
-      
       <div>
-        <p class="font-mono uppercase tracking-wider text-gray-200">TN Polls 2026</p>
-        <p class="mt-4 text-sm text-gray-400 max-w-5xl">Stay informed with the latest updates from the Tamil Nadu Legislative Assembly Elections. 
-        Explore candidate profiles, polling information and news insights - all in one place.</p>
+        <p class="uppercase text-xs text-gray-500 mb-2" data-en="[Quick Links]" data-ta="[விரைவு இணைப்புகள்]">[விரைவு இணைப்புகள்]</p>
+        <ul class="space-y-1">
+          <li><a href="index.html#polling" class="hover:text-white transition" data-en="Candidates" data-ta="வேட்பாளர்கள்">வேட்பாளர்கள்</a></li>
+          <li><a href="information.html" class="hover:text-white transition" data-en="Informations" data-ta="தகவல்கள்">தகவல்கள்</a></li>
+          <li><a href="blogs.html" class="hover:text-white transition" data-en="News" data-ta="செய்திகள்">செய்திகள்</a></li>
+        </ul>
       </div>
 
-<div class="flex flex-col md:flex-row gap-8 md:gap-16 text-gray-400">
-
-  <div>
-    <p class="uppercase text-xs text-gray-500 mb-2">[Quick Links]</p>
-    <ul class="space-y-1">
-      <li><a href="index.html#polling" class="hover:text-white transition">Candidates </a></li>
-      <li><a href="information.html" class="hover:text-white transition"> Informations</a></li>
-      <li><a href="blogs.html" class="hover:text-white transition"> News</a></li>
-
-
-    </ul>
-  </div>
-
-  <div>
-    <p class="uppercase text-xs text-gray-500 mb-2">[Latest Updates]</p>
-    <ul class="space-y-1">
-      
-      <li><a href="blogs.html" class="hover:text-white transition">Insights</a></li>
-      <li><a href="blogs.html" class="hover:text-white transition"> Events</a></li>
-    </ul>
-  </div>
-</div>
-
+      <div>
+        <p class="uppercase text-xs text-gray-500 mb-2" data-en="[Latest Updates]" data-ta="[சமீபத்திய செய்திகள்]">[சமீபத்திய செய்திகள்]</p>
+        <ul class="space-y-1">
+          <li><a href="blogs.html" class="hover:text-white transition" data-en="Insights" data-ta="ஆழமான பார்வைகள்">ஆழமான பார்வைகள்</a></li>
+          <li><a href="blogs.html" class="hover:text-white transition" data-en="Events" data-ta="நிகழ்வுகள்">நிகழ்வுகள்</a></li>
+        </ul>
+      </div>
     </div>
 
-   <div class="text-center text-xs text-gray-500 mt-12">
-  Make Your Voice Count – Every Vote Shapes Tamil Nadu's Future!
-</div>
+  </div>
 
-  </footer>
+  <div class="text-center text-xs text-gray-500 mt-12"
+       data-en="Make Your Voice Count – Every Vote Shapes Tamil Nadu's Future!"
+       data-ta="உங்கள் குரல் முக்கியம் — ஒவ்வொரு வாக்கும் தமிழ்நாட்டின் எதிர்காலத்தை உருவாக்குகிறது!">
+       உங்கள் குரல் முக்கியம் — ஒவ்வொரு வாக்கும் தமிழ்நாட்டின் எதிர்காலத்தை உருவாக்குகிறது!
+  </div>
+</footer>
+
+
+<!-- 🌐 Language Sync + Share Script -->
+<!-- 🌐 Language Sync + Share Script -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // ==============================
+  // 📱 MOBILE SIDEBAR TOGGLE
+  // ==============================
+  const mobileBtn = document.getElementById("mobile-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const overlay = document.getElementById("overlay");
+  let menuOpen = false;
+
+  if (mobileBtn && mobileMenu && overlay) {
+    mobileBtn.addEventListener("click", () => {
+      menuOpen = !menuOpen;
+      mobileMenu.style.right = menuOpen ? "0" : "-70%";
+      overlay.classList.toggle("hidden", !menuOpen);
+    });
+
+    overlay.addEventListener("click", () => {
+      menuOpen = false;
+      mobileMenu.style.right = "-70%";
+      overlay.classList.add("hidden");
+    });
+  }
+
+  // ==============================
+  // 🌐 LANGUAGE TOGGLE SYSTEM
+  // ==============================
+  const desktopToggle = document.getElementById("lang-toggle");
+  const desktopLabel  = document.getElementById("lang-label");
+  const mobileToggle  = document.getElementById("mobile-lang-toggle");
+  const mobileLabel   = document.getElementById("mobile-lang-label");
+
+  // ✅ Load saved language or default to Tamil
+  let currentLang = localStorage.getItem("lang") || "ta";
+  if (currentLang === "en") {
+    if (desktopToggle) desktopToggle.checked = true;
+    if (mobileToggle) mobileToggle.checked = true;
+  }
+
+  // 🔤 Function to update all translatable texts
+  function updateLanguage(lang) {
+    document.querySelectorAll("[data-en]").forEach(el => {
+      el.textContent = lang === "en" ? el.dataset.en : el.dataset.ta;
+    });
+
+    if (desktopLabel) desktopLabel.textContent = lang === "en" ? "ENG" : "தமிழ்";
+    if (mobileLabel) mobileLabel.textContent = lang === "en" ? "ENG" : "தமிழ்";
+
+    localStorage.setItem("lang", lang);
+  }
+
+  // ✅ Initialize language on load
+  updateLanguage(currentLang);
+
+  // 🔄 Sync desktop + mobile toggles
+  function setLangFromToggle(isEnglish) {
+    const lang = isEnglish ? "en" : "ta";
+    if (desktopToggle) desktopToggle.checked = isEnglish;
+    if (mobileToggle) mobileToggle.checked = isEnglish;
+    updateLanguage(lang);
+  }
+
+  if (desktopToggle) {
+    desktopToggle.addEventListener("change", e => setLangFromToggle(e.target.checked));
+  }
+
+  if (mobileToggle) {
+    mobileToggle.addEventListener("change", e => setLangFromToggle(e.target.checked));
+  }
+
+  // ==============================
+  // 🌍 LANGUAGE CHECK (for share modal)
+  // ==============================
+  window.isEnglishMode = function() {
+    return localStorage.getItem("lang") === "en";
+  };
+});
+</script>
 
 
 
