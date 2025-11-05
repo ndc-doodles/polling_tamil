@@ -13,7 +13,7 @@
 
 
 <!-- Navbar -->
-<nav id="navbar" class="fixed w-full top-0 z-50 bg-[#06038D] transition-colors duration-300">
+<nav id="navbar" class="fixed w-full top-0 z-9999 bg-[#06038D] transition-colors duration-300">
   <div class="px-5 sm:px-10 md:px-20 flex justify-between items-center h-16">
     <a href="index.html" class="text-2xl font-bold text-white">TN Polls 2026</a>
 
@@ -23,15 +23,13 @@
       <a href="information.html" class="hover:text-gray-200 transition">Overview</a>
       <a href="blogs.html" class="px-4 py-2 border border-white rounded bg-white/10 text-white hover:bg-white/20 transition">Blogs</a>
       <div class="flex items-center space-x-2">
-  <span id="lang-label" class="text-white font-semibold text-sm">ENG</span>
-  <label class="relative inline-flex items-center cursor-pointer">
-    <input type="checkbox" class="sr-only peer" id="lang-toggle">
-    <!-- Track -->
-    <div class="w-10 h-6 bg-gray-300 rounded-full peer-checked:bg-blue-500 transition-colors"></div>
-    <!-- Slider -->
-    <div class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow-md peer-checked:translate-x-6 transition-transform"></div>
-  </label>
-</div>
+        <span id="lang-label" class="text-white font-semibold text-sm">தமிழ்</span>
+        <label class="relative inline-flex items-center cursor-pointer">
+          <input type="checkbox" class="sr-only peer" id="lang-toggle">
+          <div class="w-10 h-6 bg-gray-300 rounded-full peer-checked:bg-blue-500 transition-colors"></div>
+          <div class="absolute left-[2px] top-[2px] w-5 h-5 bg-white rounded-full shadow-md peer-checked:translate-x-[18px] transition-transform duration-300"></div>
+        </label>
+      </div>
     </div>
 
     <!-- Mobile Menu Button -->
@@ -164,6 +162,7 @@
       </div>
     </aside>
   </div>
+
 
 
 

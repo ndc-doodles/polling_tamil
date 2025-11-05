@@ -94,27 +94,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+// blog page js
 
-
-
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
+  // ================================
+  // 1️⃣ SLIDER LOGIC
+  // ================================
   const slides = [
-    document.getElementById('slide1'),
-    document.getElementById('slide2'),
-    document.getElementById('slide3')
+    document.getElementById("slide1"),
+    document.getElementById("slide2"),
+    document.getElementById("slide3")
   ];
 
   const progressBars = [
-    document.getElementById('progress1'),
-    document.getElementById('progress2'),
-    document.getElementById('progress3')
+    document.getElementById("progress1"),
+    document.getElementById("progress2"),
+    document.getElementById("progress3")
   ];
 
-  const progressContainers = Array.from(document.querySelectorAll('[data-index]'));
+  const progressContainers = Array.from(document.querySelectorAll("[data-index]"));
 
-  // Basic validation - bail early if essential elements missing
   if (slides.some(s => s === null) || progressBars.some(b => b === null) || progressContainers.length === 0) {
-    console.warn('Slider: missing required DOM elements (slide/progress). Check IDs and data-index attributes.');
+    console.warn("Slider: missing required DOM elements (slide/progress). Check IDs and data-index attributes.");
     return;
   }
 
@@ -123,219 +124,88 @@ document.addEventListener('DOMContentLoaded', () => {
   let progressTimer = null;
 
   function resetProgressBars() {
-    progressBars.forEach(bar => {
-      if (bar) bar.style.width = '0%';
-    });
+    progressBars.forEach(bar => bar && (bar.style.width = "0%"));
   }
 
   function clearTimers() {
-    if (progressTimer) {
-      clearInterval(progressTimer);
-      progressTimer = null;
-    }
-    if (autoSlideTimer) {
-      clearTimeout(autoSlideTimer);
-      autoSlideTimer = null;
-    }
+    if (progressTimer) clearInterval(progressTimer);
+    if (autoSlideTimer) clearTimeout(autoSlideTimer);
   }
 
   function showSlide(index) {
-    // clamp index
     index = ((index % slides.length) + slides.length) % slides.length;
-
     clearTimers();
 
-    // Show/hide slides (use opacity + pointer-events for accessibility)
     slides.forEach((slide, i) => {
       if (!slide) return;
-      if (i === index) {
-        slide.style.opacity = '1';
-        slide.style.pointerEvents = 'auto';
-      } else {
-        slide.style.opacity = '0';
-        slide.style.pointerEvents = 'none';
-      }
+      slide.style.opacity = i === index ? "1" : "0";
+      slide.style.pointerEvents = i === index ? "auto" : "none";
     });
 
-    // Reset progress bars visually
     resetProgressBars();
 
-    // Progress animation: increment width from 0 to 100 over durationMs
-    const durationMs = 5000;       // total time per slide
-    const tickMs = 50;             // interval tick (50ms -> 100 ticks for 5s)
+    const durationMs = 5000;
+    const tickMs = 50;
     const step = 100 / (durationMs / tickMs);
-
     let width = 0;
+
     progressTimer = setInterval(() => {
       width += step;
       const pct = Math.min(100, width);
-      if (progressBars[index]) progressBars[index].style.width = pct + '%';
-
-      if (pct >= 100) {
-        clearInterval(progressTimer);
-        progressTimer = null;
-      }
+      if (progressBars[index]) progressBars[index].style.width = pct + "%";
+      if (pct >= 100) clearInterval(progressTimer);
     }, tickMs);
 
-    // Schedule next slide after durationMs
     autoSlideTimer = setTimeout(() => {
       current = (index + 1) % slides.length;
       showSlide(current);
     }, durationMs);
   }
 
-  // Hook up click handlers for progress containers (jump to slide)
   progressContainers.forEach(container => {
-    container.addEventListener('click', (e) => {
+    container.addEventListener("click", () => {
       const idx = parseInt(container.dataset.index, 10);
-      if (Number.isNaN(idx)) return;
-      current = idx;
-      showSlide(current);
+      if (!Number.isNaN(idx)) {
+        current = idx;
+        showSlide(current);
+      }
     });
   });
 
-  // Start
   showSlide(current);
 
-  // Optional: expose controls to window for debugging
-  window._slider = {
-    showSlide,
-    next: () => showSlide(current + 1),
-    prev: () => showSlide(current - 1),
-    stop: clearTimers
-  };
-});
-
-
-
-(function () {
-  // === Toggle share popup visibility ===
-  document.querySelectorAll('.share-btn').forEach(btn => {
-    btn.addEventListener('click', e => {
+  // ================================
+  // 2️⃣ SHARE POPUP LOGIC
+  // ================================
+  document.querySelectorAll(".share-btn").forEach(btn => {
+    btn.addEventListener("click", e => {
       e.stopPropagation();
       const popup = btn.nextElementSibling;
-
-      // Close other popups
-      document.querySelectorAll('.share-popup').forEach(p => {
-        if (p !== popup) p.classList.add('hidden');
+      document.querySelectorAll(".share-popup").forEach(p => {
+        if (p !== popup) p.classList.add("hidden");
       });
-
-      popup.classList.toggle('hidden');
+      popup.classList.toggle("hidden");
     });
   });
 
-  // === Close all popups on outside click ===
-  document.addEventListener('click', () => {
-    document.querySelectorAll('.share-popup').forEach(p => p.classList.add('hidden'));
+  document.addEventListener("click", () => {
+    document.querySelectorAll(".share-popup").forEach(p => p.classList.add("hidden"));
   });
 
-  // === Platform-specific sharing (bold title, short desc, and link) ===
-  document.querySelectorAll('.share-popup button[data-platform]').forEach(opt => {
-    opt.addEventListener('click', e => {
+  document.querySelectorAll(".share-popup button[data-platform]").forEach(opt => {
+    opt.addEventListener("click", e => {
       e.stopPropagation();
-
-      const slide = opt.closest('[data-title]');
-      const title = slide?.dataset.title || 'Latest News';
-      const description = slide?.dataset.description?.slice(0, 120) || '';
-      const detailPage = `${window.location.origin}/polling/blog_detail.html`;
+      const container = opt.closest(".news-card, [data-title]");
+      const title = container?.dataset.title || "Latest News";
+      const description = container?.dataset.description?.slice(0, 120) || "";
+      const detailPage = `${window.location.origin}blog_detail.html`;
       const message = `**${title}**\n\n${description}...\n\nRead more: ${detailPage}`;
       const encodedMessage = encodeURIComponent(message);
-      const encodedUrl = encodeURIComponent(detailPage);
-
-      let shareUrl = '';
-
-      switch (opt.dataset.platform) {
-        case 'facebook':
-          shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
-          break;
-        case 'twitter':
-          shareUrl = `https://twitter.com/intent/tweet?text=${encodedMessage}`;
-          break;
-        case 'whatsapp':
-          shareUrl = `https://api.whatsapp.com/send?text=${encodedMessage}`;
-          break;
-        case 'linkedin':
-          shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodeURIComponent(title)}&summary=${encodeURIComponent(description)}`;
-          break;
-        default:
-          alert('Unsupported platform');
-          return;
-      }
-
-      window.open(shareUrl, '_blank', 'width=600,height=500');
-    });
-  });
-})();
-
-document.addEventListener("DOMContentLoaded", function () {
-  const selectedNews = JSON.parse(localStorage.getItem("selectedNews"));
-  if (!selectedNews) return;
-
-  // Title
-  const titleEl = document.getElementById("news-title");
-  if (titleEl) titleEl.textContent = selectedNews.title;
-
-  // Category
-  const categoryEl = document.getElementById("news-category");
-  if (categoryEl)
-    categoryEl.innerHTML =
-      'Category: <span class="font-medium text-blue-600">' +
-      (selectedNews.category || "General") +
-      "</span>";
-
-  // Date
-  const dateEl = document.getElementById("news-date");
-  if (dateEl) dateEl.textContent = "Published: " + (selectedNews.date || "");
-
-  // Description (short paragraph)
-  const descEl = document.getElementById("news-description");
-  if (descEl) descEl.textContent = selectedNews.description || "";
-
-  // Full content (optional if available)
-  const contentEl = document.getElementById("news-content");
-  if (contentEl) contentEl.innerHTML = selectedNews.content || "";
-
-  // Image
-  const imgEl = document.getElementById("news-image");
-  if (imgEl) imgEl.src = selectedNews.image || "";
-});
-
-
-
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  // Load selected news from localStorage
-  const selectedNews = JSON.parse(localStorage.getItem("selectedNews"));
-  if (!selectedNews) return;
-
-  // Populate detail page
-  document.getElementById("news-title").textContent = selectedNews.title || "Untitled";
-  document.getElementById("news-date").textContent = "Published: " + (selectedNews.date || "");
-  document.getElementById("news-description").textContent = selectedNews.description || "";
-  document.getElementById("news-image").src = selectedNews.image || "./static/images/default-news.jpg";
-
-  // Set category if present
-  const cat = document.getElementById("news-category");
-  if (cat)
-    cat.innerHTML = 'Category: <span class="font-medium text-blue-600">' +
-      (selectedNews.category || "General") + "</span>";
-
-  // === SHARE BUTTONS LOGIC ===
-  const detailUrl = window.location.href;
-  const title = selectedNews.title || "News Update";
-  const description = (selectedNews.description || "").slice(0, 120);
-  const message = `**${title}**\n\n${description}...\n\nRead more: ${detailUrl}`;
-  const encodedMessage = encodeURIComponent(message);
-
-  document.querySelectorAll("button[data-platform]").forEach(btn => {
-    btn.addEventListener("click", () => {
       let shareUrl = "";
 
-      switch (btn.dataset.platform) {
+      switch (opt.dataset.platform) {
         case "facebook":
-          shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(detailUrl)}&quote=${encodedMessage}`;
+          shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(detailPage)}&quote=${encodedMessage}`;
           break;
         case "twitter":
           shareUrl = `https://twitter.com/intent/tweet?text=${encodedMessage}`;
@@ -344,13 +214,152 @@ document.addEventListener("DOMContentLoaded", function () {
           shareUrl = `https://api.whatsapp.com/send?text=${encodedMessage}`;
           break;
         case "linkedin":
-          shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(detailUrl)}`;
+          shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(detailPage)}`;
           break;
+        default:
+          navigator.clipboard.writeText(message).then(() => alert("✅ Copied to clipboard"));
+          return;
       }
 
-      if (shareUrl) {
-        window.open(shareUrl, "_blank", "noopener,noreferrer,width=600,height=500");
+      window.open(shareUrl, "_blank", "noopener,noreferrer,width=600,height=500");
+      opt.closest(".share-popup")?.classList.add("hidden");
+    });
+  });
+
+  // ================================
+  // 3️⃣ OPEN DETAIL PAGE ON CLICK
+  // ================================
+  document.querySelectorAll(".news-card, article[data-title], [id^='slide']").forEach(card => {
+    card.addEventListener("click", e => {
+      if (e.target.closest(".share-btn") || e.target.closest(".share-popup")) return;
+
+      const title = card.dataset.title || "Untitled";
+      const date = card.dataset.date || "";
+      const image = card.dataset.image || "";
+      const description = card.dataset.description || "";
+      const category = card.dataset.category || "General";
+
+      const content = `
+        <p>${description}</p>
+        <p class="mt-4">Stay tuned for more in-depth analysis and updates on this topic.</p>
+      `;
+
+      localStorage.setItem("selectedNews", JSON.stringify({ title, date, image, description, category, content }));
+      window.location.href = "blog_detail.html";
+    });
+  });
+
+  // ================================
+  // 4️⃣ DETAIL PAGE LOADER
+  // ================================
+  const selectedNews = JSON.parse(localStorage.getItem("selectedNews"));
+  if (selectedNews) {
+    const titleEl = document.getElementById("news-title");
+    const dateEl = document.getElementById("news-date");
+    const descEl = document.getElementById("news-description");
+    const imgEl = document.getElementById("news-image");
+    const catEl = document.getElementById("news-category");
+    const contentEl = document.getElementById("news-content");
+
+    if (titleEl) titleEl.textContent = selectedNews.title;
+    if (dateEl) dateEl.textContent = "Published: " + (selectedNews.date || "");
+    if (descEl) descEl.textContent = selectedNews.description || "";
+if (imgEl) {
+  const imgPath = selectedNews.image;
+  if (imgPath.startsWith("http")) {
+    imgEl.src = imgPath;
+  } else if (imgPath.startsWith("./") || imgPath.startsWith("static")) {
+    imgEl.src = imgPath;
+  } else {
+    imgEl.src = "./" + imgPath.replace(/^\/+/, "");
+  }
+}
+
+    if (catEl) catEl.innerHTML = 'Category: <span class="font-medium text-blue-600">' + (selectedNews.category || "General") + "</span>";
+    if (contentEl) contentEl.innerHTML = selectedNews.content || "";
+
+    // Detail page share buttons
+    const detailUrl = window.location.href;
+    const message = `**${selectedNews.title}**\n\n${(selectedNews.description || "").slice(0, 120)}...\n\nRead more: ${detailUrl}`;
+    const encodedMessage = encodeURIComponent(message);
+
+    document.querySelectorAll("button[data-platform]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        let shareUrl = "";
+        switch (btn.dataset.platform) {
+          case "facebook":
+            shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(detailUrl)}&quote=${encodedMessage}`;
+            break;
+          case "twitter":
+            shareUrl = `https://twitter.com/intent/tweet?text=${encodedMessage}`;
+            break;
+          case "whatsapp":
+            shareUrl = `https://api.whatsapp.com/send?text=${encodedMessage}`;
+            break;
+          case "linkedin":
+            shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(detailUrl)}`;
+            break;
+        }
+        if (shareUrl) window.open(shareUrl, "_blank", "noopener,noreferrer,width=600,height=500");
+      });
+    });
+  }
+});
+
+
+// blog detail page js
+document.addEventListener("DOMContentLoaded", function () {
+  // 1️⃣ Get selected news data from localStorage
+  const selectedNews = JSON.parse(localStorage.getItem("selectedNews"));
+
+  // Default fallback (if nothing in localStorage)
+  const defaultData = {
+    title: "News Title Goes Here",
+    description: "No description available",
+    category: "General",
+    date: "",
+    image: "./static/images/default-news.jpg"
+  };
+
+  const news = selectedNews || defaultData;
+
+  // 2️⃣ Fill detail page
+  document.getElementById("news-title").textContent = news.title;
+  document.getElementById("news-description").textContent = news.description;
+  document.getElementById("news-date").textContent = news.date ? `Published: ${news.date}` : "";
+  document.getElementById("news-category").innerHTML = `Category: <span class="font-medium text-blue-600">${news.category}</span>`;
+
+  const imgEl = document.getElementById("news-image");
+  imgEl.src = news.image || defaultData.image;
+  imgEl.alt = news.title;
+
+  // 3️⃣ SHARE BUTTONS
+  const pageUrl = window.location.href;
+  const shortDesc = news.description ? news.description.slice(0, 120) + "..." : "";
+
+  // ✅ WhatsApp uses clean format (bold + line breaks)
+  const whatsappMsg = `*${news.title}*\n\n${shortDesc}\n\nRead more: ${pageUrl}`;
+
+  document.querySelectorAll("[data-platform]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const platform = btn.getAttribute("data-platform");
+      const title = news.title;
+      const desc = shortDesc;
+      let shareUrl = "";
+
+      if (platform === "facebook") {
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}&quote=${encodeURIComponent(title + " - " + desc)}`;
+      } else if (platform === "twitter") {
+        shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title + " - " + desc)}&url=${encodeURIComponent(pageUrl)}`;
+      } else if (platform === "whatsapp") {
+        shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(whatsappMsg)}`;
+      } else if (platform === "linkedin") {
+        shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(pageUrl)}&title=${encodeURIComponent(title)}&summary=${encodeURIComponent(desc)}`;
       }
+
+      window.open(shareUrl, "_blank", "width=600,height=500");
     });
   });
 });
+
+

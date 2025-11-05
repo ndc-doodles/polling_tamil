@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-[#151a37] font-sans">
+
+  <div class="flex min-h-screen">
+
+
+
+<div id="sidebar" class="fixed top-0 left-0 h-full w-64 bg-[#06038D] text-white p-6 z-50 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out">
+  <div class="flex items-center justify-between mb-6">
+    <div class="w-full bg-white flex justify-center pl-10">
+<a href="index.html" id="brand" class="transition-all block">
+      <h1 class="mt-2 text-lg md:text-xl md:mt-0 uppercase font-bold text-[#06038D]">Tamil Nadu Polling 2026</h1>
+      
+    </a>    </div>
+    <button onclick="toggleSidebar()" class="md:hidden text-white text-2xl">&times;</button>
+  </div>
+   <nav>
+    <ul class="space-y-4 text-sm">
+      <li>
+        <a href="admin_dashboard.html" class="block py-2 px-4 rounded bg-white text-[#151a37]">Dashboard</a>
+      </li>
+      <li>
+        <a href="admin_candidates.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">Candidates</a>
+      </li>
+      <li>
+        <a href="admin_public_opinion.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">Public Opinions</a>
+      </li>
+      <li>
+        <a href="admin_blog.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">Blogs</a>
+      </li>
+      <li>
+        <a href="admin_contact.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">Contact Form </a>
+      </li>
+      <li>
+        <a href="{% url 'logout' %}" class="block py-2 px-4 rounded bg-[red] text-white">Logout</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<button onclick="toggleSidebar()" class="md:hidden fixed top-4 left-4 z-50 bg-[#06038D] text-white p-2 rounded shadow-lg">
+  &#9776;
+</button>
+
+
+
+<!-- ===== MAIN CONTENT ===== -->
+<main class="flex-1 md:ml-64 p-6 sm:p-8 bg-gray-50 min-h-screen">
+  <h2 class="text-2xl sm:text-3xl font-bold mb-6 text-[#06038D] text-center md:text-left">
+    Manage Districts & Constituencies
+  </h2>
+
+  <!-- ===== Add District ===== -->
+  <div class="bg-white shadow p-4 sm:p-6 rounded-lg mb-6">
+    <h3 class="text-lg sm:text-xl font-semibold mb-4 text-[#06038D]">Add District</h3>
+
+    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+      <input
+        type="text"
+        id="districtInput"
+        placeholder="Enter district name"
+        class="w-full sm:w-1/2 border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-[#06038D]"
+      />
+
+      <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+        <button
+          onclick="addDistrict()"
+          class="bg-[#06038D] hover:bg-[#06038D]/80 text-white px-4 py-2 rounded transition"
+        >
+          Add District
+        </button>
+        <button
+          onclick="deleteDistrict()"
+          class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded transition"
+        >
+          Delete Selected
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== District List ===== -->
+  <div class="bg-white shadow p-4 sm:p-6 rounded-lg mb-6">
+    <h3 class="text-lg sm:text-xl font-semibold mb-4 text-[#06038D]">District List</h3>
+
+    <div
+      id="districtList"
+      class="max-h-56 sm:max-h-64 overflow-y-auto border rounded p-3 space-y-2 text-sm sm:text-base"
+    >
+      <!-- Districts will appear here -->
+    </div>
+  </div>
+
+  <!-- ===== Add Constituency ===== -->
+  <div class="bg-white shadow p-4 sm:p-6 rounded-lg">
+    <h3 class="text-lg sm:text-xl font-semibold mb-4 text-[#06038D]">Add Constituency</h3>
+
+    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+      <select
+        id="districtSelect"
+        class="w-full sm:w-1/3 border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-[#06038D]"
+      >
+        <option value="">Select District</option>
+      </select>
+
+      <input
+        type="text"
+        id="constituencyInput"
+        placeholder="Enter constituency name"
+        class="w-full sm:w-1/3 border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-[#06038D]"
+      />
+
+      <button
+        onclick="addConstituency()"
+        class="bg-[#06038D] hover:bg-[#06038D]/80 text-white px-4 py-2 rounded transition w-full sm:w-auto"
+      >
+        Add Constituency
+      </button>
+    </div>
+
+    <div
+      id="constituencyList"
+      class="mt-4 max-h-56 sm:max-h-64 overflow-y-auto border rounded p-3 text-sm sm:text-base"
+    >
+      <!-- Constituencies will appear here -->
+    </div>
+  </div>
+</main>
+
+
+
+
+</div>
+<script src="./static/js/admin_scripts.js"></script>
+</body>
+</html>

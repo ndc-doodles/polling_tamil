@@ -7,11 +7,14 @@ let menuOpen = false;
 // Navbar scroll effect
 function handleScroll() {
   if (window.scrollY > 50) {
-    navbar.classList.add('bg-[#06038D]/80');
+    // Add a strong blue background (visible even with blur)
+    navbar.classList.add('bg-blue-900', 'bg-opacity-80');
   } else {
-    navbar.classList.remove('bg-[#06038D]/80');
+    // Remove when scrolled to top
+    navbar.classList.remove('bg-blue-900', 'bg-opacity-80');
   }
 }
+
 handleScroll();
 window.addEventListener('scroll', handleScroll);
 window.addEventListener('resize', handleScroll);
@@ -51,31 +54,6 @@ function closeMenu() {
   overlay.classList.add('hidden');
 }
 
-// === Language Toggles (Sync Desktop & Mobile) ===
-const langToggle = document.getElementById('lang-toggle');
-const langLabel = document.getElementById('lang-label');
-const mobileLangToggle = document.getElementById('mobile-lang-toggle');
-const mobileLangLabel = document.getElementById('mobile-lang-label');
-
-function updateLanguageUI(isEnglish) {
-  langLabel.textContent = isEnglish ? 'ENG' : 'TAMIL';
-  mobileLangLabel.textContent = isEnglish ? 'ENG' : 'TAMIL';
-  langToggle.checked = isEnglish;
-  mobileLangToggle.checked = isEnglish;
-}
-
-// Desktop toggle
-langToggle.addEventListener('change', () => {
-  updateLanguageUI(langToggle.checked);
-});
-
-// Mobile toggle
-mobileLangToggle.addEventListener('change', () => {
-  updateLanguageUI(mobileLangToggle.checked);
-});
-
-// Default: Tamil
-updateLanguageUI(false);
 
 
 
