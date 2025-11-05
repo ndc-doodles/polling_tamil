@@ -4,40 +4,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin Dashboard - Cybexel</title>
+  <title>Admin Dashboard</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-white text-[#151a37] font-sans">
 
-  <div class="flex min-h-screen">
+  <div class="flex ">
 
 
 
-<div id="sidebar" class="fixed top-0 left-0 h-full w-64 bg-[#bc9565] text-white p-6 z-50 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out">
+<div id="sidebar" class="fixed top-0 left-0 h-full w-64 bg-[#06038D] text-white p-6 z-50 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out">
   <div class="flex items-center justify-between mb-6">
-    <div class="w-full bg-white flex justify-center">
+    <div class="w-full bg-white flex justify-center pl-10">
 <a href="index.html" id="brand" class="transition-all block">
-      <h1 class="mt-2 text-lg md:text-xl md:mt-0 uppercase font-bold text-[#bc9565]">Spares Corporation</h1>
-      <!-- <img src="./static/images/logo.png" alt="FurniCraft Logo" class="h-10 md:h-12" /> -->
+      <h1 class="mt-2 text-lg md:text-xl md:mt-0 uppercase font-bold text-[#06038D]">Tamil Nadu Polling 2026</h1>
+      
     </a>    </div>
     <button onclick="toggleSidebar()" class="md:hidden text-white text-2xl">&times;</button>
   </div>
- <nav>
+   <nav>
     <ul class="space-y-4 text-sm">
       <li>
         <a href="admin_dashboard.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">Dashboard</a>
       </li>
       <li>
-        <a href="admin_categories.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">Categories</a>
+        <a href="admin_candidates.html" class="block py-2 px-4 rounded bg-white text-[#151a37]">Candidates</a>
       </li>
       <li>
-        <a href="admin_productlisting.html" class="block py-2 px-4 rounded bg-white text-[#151a37]">Product listing</a>
+        <a href="admin_public_opinion.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">Public Opinions</a>
       </li>
       <li>
-        <a href="admin_enquiry.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">Enquiry Form Submissions</a>
+        <a href="admin_blog.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">Blogs</a>
       </li>
       <li>
-        <a href="admin_contact.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">Contact Form Submissions</a>
+        <a href="admin_contact.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">Contact Form </a>
       </li>
       <li>
         <a href="{% url 'logout' %}" class="block py-2 px-4 rounded bg-[red] text-white">Logout</a>
@@ -45,201 +45,99 @@
     </ul>
   </nav>
 </div>
-<button onclick="toggleSidebar()" class="md:hidden fixed top-4 left-4 z-50 bg-[#bc9565] text-white p-2 rounded shadow-lg">
+<button onclick="toggleSidebar()" class="md:hidden fixed top-4 left-4 z-50 bg-[#06038D] text-white p-2 rounded shadow-lg">
   &#9776;
 </button>
 
 
-<div class="flex-1 ml-0 md:ml-64 p-6 overflow-x-hidden ">
-  <form id="productForm" class="space-y-4 max-w-7xl mx-auto bg-white p-6  rounded-lg">
-    <h2 class="text-2xl font-semibold mb-4">Add New Product</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <input type="text" name="productName" placeholder="Product Name" class="border p-2 rounded w-full" required>
-      <input type="text" name="subsentence" placeholder="Subsentence" class="border p-2 rounded w-full">
+<section class="px-6 md:px-10 lg:px-20 py-10 md:ml-64 w-full">
+  <h2 class="text-2xl sm:text-3xl font-bold mb-6 text-[#06038D] text-center md:text-left">Manage Candidates</h2>
 
-      <input type="text" name="material" placeholder="Material" class="border p-2 rounded w-full">
-      <input type="text" name="category" placeholder="Category" class="border p-2 rounded w-full">
+  <!-- Candidate Form -->
+  <div class="bg-white p-6 rounded shadow mb-8 w-full max-w-4xl">
+    <h3 class="text-lg font-semibold mb-4" id="form-title">Add Candidate</h3>
+    <form id="candidate-form" class="space-y-4">
+      <div class="flex flex-col md:flex-row gap-4">
+        <div class="flex-1">
+          <label class="block text-sm font-medium mb-1">Candidate Name</label>
+          <input type="text" id="candidate-name" class="w-full border border-gray-300 rounded px-3 py-2" required>
+        </div>
+        <div class="flex-1">
+          <label class="block text-sm font-medium mb-1">District</label>
+          <select id="candidate-district" class="w-full border border-gray-300 rounded px-3 py-2" required>
+            <option value="">Select District</option>
+            <option value="district1">District 1</option>
+            <option value="district2">District 2</option>
+            <option value="district3">District 3</option>
+          </select>
+        </div>
+      </div>
 
-      <input type="number" name="price" placeholder="Price" class="border p-2 rounded w-full" required>
-      <input type="number" name="offer" placeholder="Offer" class="border p-2 rounded w-full" required>
+      <div class="flex flex-col md:flex-row gap-4">
+        <div class="flex-1">
+          <label class="block text-sm font-medium mb-1">Constituency</label>
+          <select id="candidate-constituency" class="w-full border border-gray-300 rounded px-3 py-2" required>
+            <option value="">Select Constituency</option>
+            <option value="constituency1">Constituency 1</option>
+            <option value="constituency2">Constituency 2</option>
+            <option value="constituency3">Constituency 3</option>
+          </select>
+        </div>
+        <div class="flex-1">
+          <label class="block text-sm font-medium mb-1">Party Name</label>
+          <input type="text" id="candidate-party" class="w-full border border-gray-300 rounded px-3 py-2" required>
+        </div>
+      </div>
 
-      <input type="number" name="discount" placeholder="Discount" class="border p-2 rounded w-full" required>
+      <div class="flex flex-col md:flex-row gap-4">
+        <div class="flex-1">
+          <label class="block text-sm font-medium mb-1">Candidate Image</label>
+          <input type="file" id="candidate-img" accept="image/*" class="w-full border border-gray-300 rounded px-3 py-2">
+        </div>
+        <div class="flex-1">
+          <label class="block text-sm font-medium mb-1">Party Symbol</label>
+          <input type="file" id="party-symbol" accept="image/*" class="w-full border border-gray-300 rounded px-3 py-2">
+        </div>
+      </div>
 
-      <input type="text" name="dimensions" placeholder="Dimensions" class="border p-2 rounded w-full">
-      <input type="text" name="color" placeholder="Color" class="border p-2 rounded w-full">
-      <input type="text" name="weight" placeholder="Weight" class="border p-2 rounded w-full">
-      <input type="text" name="seatingCapacity" placeholder="Seating Capacity" class="border p-2 rounded w-full">
-      <input type="text" name="warranty" placeholder="Warranty" class="border p-2 rounded w-full">
-      <input type="text" name="availability" placeholder="Availability" class="border p-2 rounded w-full">
-      <input type="text" name="returnPolicy" placeholder="Return Policy" class="border p-2 rounded w-full">
-      <input type="text" name="description" placeholder="Description" class="border p-2 rounded w-full">
-
-      
-    </div>
-    <input type="file" name="images" id="imageInput" accept="image/*" class="border p-2 rounded w-full">
-    <img id="previewImage" class="mt-2 hidden" />
-    <button type="submit" class="bg-[#bc9565] text-white px-4 py-2 rounded hover:bg-[#a47c4a]">
-      Add Product
-    </button>
-  </form>
-
-<div class="overflow-x-auto">
-  <table id="productTable" class="w-full min-w-[1600px] border border-gray-200 text-sm">
-    <thead class="bg-[#bc9565] text-white">
-      <tr>
-        <th class="p-2 text-left">Image</th>
-        <th class="p-2 text-left">Name</th>
-        <th class="p-2 text-left">Subsentence</th>
-        <th class="p-2 text-left">Price</th>
-        <th class="p-2 text-left">Offer</th>
-        <th class="p-2 text-left">Discount</th>
-        <th class="p-2 text-left">Material</th>
-        <th class="p-2 text-left">Category</th>
-        <th class="p-2 text-left">Dimensions</th>
-        <th class="p-2 text-left">Color</th>
-        <th class="p-2 text-left">Weight</th>
-        <th class="p-2 text-left">Seating</th>
-        <th class="p-2 text-left">Warranty</th>
-        <th class="p-2 text-left">Availability</th>
-        <th class="p-2 text-left">Return Policy</th>
-        <th class="p-2 text-left">Description</th>
-        <th class="p-2 text-left">Actions</th>
-      </tr>
-    </thead>
-    <tbody class="bg-white">
-      <tr>
-        <td class="p-2"><img src="https://via.placeholder.com/50" class="h-12 rounded"></td>
-        <td class="p-2">Sofa Set</td>
-        <td class="p-2">hskjdhskdhk</td>
-        <td class="p-2">15000</td>
-        <td class="p-2">10%</td>
-        <td class="p-2">1500</td>
-        <td class="p-2">Leather</td>
-        <td class="p-2">Living Room</td>
-        <td class="p-2">6x4 ft</td>
-        <td class="p-2">Brown</td>
-        <td class="p-2">20kg</td>
-        <td class="p-2">3</td>
-        <td class="p-2">2 years</td>
-        <td class="p-2">In Stock</td>
-        <td class="p-2">7 days</td>
-        <td class="p-2">Comfortable premium sofa with wooden frame</td>
-        <td class="p-2 space-x-2">
-          <button class="bg-blue-500 text-white px-2 py-1 rounded text-xs" onclick="editRow(this)">Edit</button>
-          <button class="bg-red-500 text-white px-2 py-1 rounded text-xs" onclick="deleteRow(this)">Delete</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-</div>
-
-<div id="editModal" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50">
-  <div class="bg-white p-6 rounded-lg w-[90%] max-w-4xl">
-    <h2 class="text-lg font-bold mb-4">Edit Product</h2>
-    <form id="editProductForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-      <input type="text" id="editName" class="border p-2 rounded" placeholder="Product Name" />
-      <input type="number" id="editPrice" class="border p-2 rounded" placeholder="Price" />
-      <input type="number" id="editOffer" class="border p-2 rounded" placeholder="Offer" />
-      <input type="number" id="editDiscount" class="border p-2 rounded" placeholder="Discount" />
-      <input type="text" id="editMaterial" class="border p-2 rounded" placeholder="Material" />
-      <input type="text" id="editCategory" class="border p-2 rounded" placeholder="Category" />
-      <input type="text" id="editDimensions" class="border p-2 rounded" placeholder="Dimensions" />
-      <input type="text" id="editColor" class="border p-2 rounded" placeholder="Color" />
-      <input type="text" id="editWeight" class="border p-2 rounded" placeholder="Weight" />
-      <input type="text" id="editSeating" class="border p-2 rounded" placeholder="Seating Capacity" />
-      <input type="text" id="editWarranty" class="border p-2 rounded" placeholder="Warranty" />
-      <input type="text" id="editAvailability" class="border p-2 rounded" placeholder="Availability" />
-      <input type="text" id="editReturnPolicy" class="border p-2 rounded" placeholder="Return Policy" />
-      <input type="text" id="editDescription" class="border p-2 rounded md:col-span-2" placeholder="Description" />
-
-      <input type="file" id="editImageInput" accept="image/*" class="border p-2 rounded w-full md:col-span-2" />
-      <img id="editPreviewImage" class="mt-2 max-h-24 md:col-span-2" />
-
-      <div class="md:col-span-2 flex justify-end gap-2 mt-4">
-        <button type="button" onclick="closeEditModal()" class="px-4 py-2 bg-gray-400 text-white rounded">Cancel</button>
-        <button type="submit" class="px-4 py-2 bg-[#bc9565] text-white rounded">Update</button>
+      <div class="flex gap-4">
+        <button type="submit" class="bg-[#06038D] text-white px-6 py-2 rounded hover:bg-blue-700 transition" id="submit-btn">
+          Add Candidate
+        </button>
+        <button type="button" class="bg-gray-400 text-white px-6 py-2 rounded hover:bg-gray-500 transition hidden" id="cancel-edit-btn">
+          Cancel
+        </button>
       </div>
     </form>
   </div>
-</div>
+
+  <!-- Candidate Table -->
+  <div class="overflow-x-auto bg-white rounded shadow w-full">
+    <table class="min-w-full divide-y divide-gray-200 text-sm w-full">
+      <thead class="bg-[#06038D] text-white">
+        <tr>
+          <th class="px-3 py-2 text-left">Candidate</th>
+          <th class="px-3 py-2 text-left">Name</th>
+          <th class="px-3 py-2 text-left">District</th>
+          <th class="px-3 py-2 text-left">Constituency</th>
+          <th class="px-3 py-2 text-left">Party</th>
+          <th class="px-3 py-2 text-left">Party Symbol</th>
+          <th class="px-3 py-2 text-left">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="candidate-table-body" class="divide-y divide-gray-200">
+        <!-- Candidate rows added dynamically -->
+      </tbody>
+    </table>
+  </div>
+</section>
 
 
-  <script>
-    let editIndex = null;
-    let editImageData = null;
-    const tableBody = document.querySelector("#productTable tbody");
-
-    // Edit Button Click
-    function editRow(btn) {
-      const row = btn.closest("tr");
-      editIndex = row.rowIndex - 1;
-      const cells = row.children;
-
-      document.getElementById("editPreviewImage").src = cells[0].querySelector("img").src;
-      document.getElementById("editName").value = cells[1].textContent;
-      document.getElementById("editPrice").value = cells[2].textContent;
-      document.getElementById("editMaterial").value = cells[3].textContent;
-      document.getElementById("editDimensions").value = cells[4].textContent;
-      document.getElementById("editColor").value = cells[5].textContent;
-      document.getElementById("editWeight").value = cells[6].textContent;
-      document.getElementById("editSeating").value = cells[7].textContent;
-      document.getElementById("editWarranty").value = cells[8].textContent;
-      document.getElementById("editAvailability").value = cells[9].textContent;
-      document.getElementById("editReturnPolicy").value = cells[10].textContent;
-      editImageData = cells[0].querySelector("img").src;
-
-      document.getElementById("editModal").classList.remove("hidden");
-      document.getElementById("editModal").classList.add("flex");
-    }
-
-    // Delete Button Click
-    function deleteRow(btn) {
-      btn.closest("tr").remove();
-    }
-
-    // Close Modal
-    function closeEditModal() {
-      document.getElementById("editModal").classList.add("hidden");
-    }
-
-    // Image Change in Edit
-    document.getElementById("editImageInput").addEventListener("change", (e) => {
-      const file = e.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = () => {
-          editImageData = reader.result;
-          document.getElementById("editPreviewImage").src = editImageData;
-        };
-        reader.readAsDataURL(file);
-      }
-    });
-
-    // Update Product
-    document.getElementById("editProductForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const row = tableBody.rows[editIndex];
-      row.cells[0].querySelector("img").src = editImageData;
-      row.cells[1].textContent = document.getElementById("editName").value;
-      row.cells[2].textContent = document.getElementById("editPrice").value;
-      row.cells[3].textContent = document.getElementById("editMaterial").value;
-      row.cells[4].textContent = document.getElementById("editDimensions").value;
-      row.cells[5].textContent = document.getElementById("editColor").value;
-      row.cells[6].textContent = document.getElementById("editWeight").value;
-      row.cells[7].textContent = document.getElementById("editSeating").value;
-      row.cells[8].textContent = document.getElementById("editWarranty").value;
-      row.cells[9].textContent = document.getElementById("editAvailability").value;
-      row.cells[10].textContent = document.getElementById("editReturnPolicy").value;
-
-      closeEditModal();
-    });
-  </script>
 
 
-</div>
+
+
+
 <script src="./static/js/admin_scripts.js"></script>
 </body>
 </html>

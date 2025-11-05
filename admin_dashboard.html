@@ -9,7 +9,7 @@
 </head>
 <body class="bg-white text-[#151a37] font-sans">
 
-  <div class="flex min-h-screen">
+  <div class="flex ">
 
 
 
@@ -52,7 +52,7 @@
 
 
 <!-- ===== MAIN CONTENT ===== -->
-<main class="flex-1 md:ml-64 p-6 sm:p-8 bg-gray-50 min-h-screen">
+<main class="flex-1 md:ml-64 p-6 sm:p-8 bg-gray-50 ">
   <h2 class="text-2xl sm:text-3xl font-bold mb-6 text-[#06038D] text-center md:text-left">
     Manage Districts & Constituencies
   </h2>
@@ -134,10 +134,83 @@
   </div>
 </main>
 
-
-
-
 </div>
+<section class="px-4 sm:px-6 md:px-20 py-10 ml-0 md:ml-64">
+  <h2 class="text-2xl font-bold mb-6 text-center md:text-left">Candidates List</h2>
+
+  <!-- Filters -->
+  <div class="flex flex-wrap gap-4 mb-6 justify-center md:justify-start">
+    <div class="flex flex-col">
+      <label for="filter-district" class="text-sm font-medium text-gray-700 mb-1">District</label>
+      <select id="filter-district"
+        class="border border-gray-300 rounded px-3 py-2 text-white bg-[#06038D] min-w-[150px]">
+        <option value="">All Districts</option>
+        <option value="district1">District 1</option>
+        <option value="district2">District 2</option>
+      </select>
+    </div>
+
+    <div class="flex flex-col">
+      <label for="filter-constituency" class="text-sm font-medium text-gray-700 mb-1">Constituency</label>
+      <select id="filter-constituency"
+        class="border border-gray-300 rounded px-3 py-2 text-white bg-[#06038D] min-w-[150px]">
+        <option value="">All Constituencies</option>
+        <option value="constituency1">Constituency 1</option>
+        <option value="constituency2">Constituency 2</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Candidate Table -->
+  <div class="overflow-x-auto">
+    <table class="min-w-full border border-gray-200 divide-y divide-gray-200 text-sm">
+      <thead class="text-white bg-[#06038D]">
+        <tr>
+          <th class="px-2 sm:px-4 py-2 text-left font-medium">Candidate</th>
+          <th class="px-2 sm:px-4 py-2 text-left font-medium">Name</th>
+          <th class="px-2 sm:px-4 py-2 text-left font-medium">Party</th>
+          <th class="px-2 sm:px-4 py-2 text-left font-medium">District</th>
+          <th class="px-2 sm:px-4 py-2 text-left font-medium">Constituency</th>
+          <th class="px-2 sm:px-4 py-2 text-left font-medium">Party Symbol</th>
+          <th class="px-2 sm:px-4 py-2 text-left font-medium">Votes</th>
+        </tr>
+      </thead>
+      <tbody id="candidate-table-body" class="bg-white divide-y divide-gray-200">
+        <tr class="candidate-row" data-district="district1" data-constituency="constituency1">
+          <td class="px-2 sm:px-4 py-2">
+            <img src="candidate1.jpg" alt="Candidate 1" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full">
+          </td>
+          <td class="px-2 sm:px-4 py-2">John Doe</td>
+          <td class="px-2 sm:px-4 py-2">Party A</td>
+          <td class="px-2 sm:px-4 py-2">District 1</td>
+          <td class="px-2 sm:px-4 py-2">Constituency 1</td>
+          <td class="px-2 sm:px-4 py-2">
+            <img src="partyA.png" alt="Party A" class="w-6 h-6 sm:w-8 sm:h-8">
+          </td>
+          <td class="px-2 sm:px-4 py-2">1200</td>
+        </tr>
+
+        <tr class="candidate-row" data-district="district1" data-constituency="constituency2">
+          <td class="px-2 sm:px-4 py-2">
+            <img src="candidate2.jpg" alt="Candidate 2" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full">
+          </td>
+          <td class="px-2 sm:px-4 py-2">Jane Smith</td>
+          <td class="px-2 sm:px-4 py-2">Party B</td>
+          <td class="px-2 sm:px-4 py-2">District 1</td>
+          <td class="px-2 sm:px-4 py-2">Constituency 2</td>
+          <td class="px-2 sm:px-4 py-2">
+            <img src="partyB.png" alt="Party B" class="w-6 h-6 sm:w-8 sm:h-8">
+          </td>
+          <td class="px-2 sm:px-4 py-2">950</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+
+
 <script src="./static/js/admin_scripts.js"></script>
 </body>
 </html>
